@@ -1,0 +1,7 @@
+{
+  "name": "abonnementzonen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
