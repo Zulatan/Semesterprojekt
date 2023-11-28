@@ -37,7 +37,7 @@ module.exports = (sequelize, DataType) => {
             allowNull: false
         },
         nextpayment: {
-            type: DataType.STRING,
+            type: DataType.DATE,
             allowNull: false
         }
     });

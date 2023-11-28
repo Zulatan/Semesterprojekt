@@ -1,11 +1,7 @@
 // https://sequelize.org/docs/v6/getting-started/
-
-
 require("dotenv").config({ path: `.env.local`, override: true });
-
 //refers to the library itself
 const Sequelize = require("sequelize"); 
-
 //refers to to an instance of Sequelize
 const sequelize = new Sequelize("abonnementzonendb", "root", "", { 
   host: "localhost",

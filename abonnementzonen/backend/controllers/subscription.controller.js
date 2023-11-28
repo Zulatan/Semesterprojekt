@@ -28,7 +28,8 @@ exports.create = (req, res) => {
     image: req.body.image,
     cycle: req.body.cycle,
     subscriptionplan: req.body.subscriptionplan,
-    nextpayment: req.body.nextpayment
+    nextpayment: req.body.nextpayment,
+    user_id: req.body.user_id,
   };
 
   //Save Milestone in db
@@ -43,30 +44,63 @@ exports.create = (req, res) => {
       });
 };
 
-// Update a subscription profile by the id in the request
-exports.update = (req, res) => {
+// // Update a subscription profile by the id in the request
+// exports.update = (req, res) => {
+//   const id = req.params.id;
+
+//   Subscription.update(req.body, {
+//     where: { subscription_id: id },
+//   })
+//     .then((num) => {
+//       if (num == 1) {
+//         res.send({
+//           message: "subscription was updated successfully.",
+//         });
+//       } else {
+//         res.send({
+//           message: `Cannot update the subscription with id=${id}. Maybe the subscription was not found or req.body is empty!`,
+//         });
+//       }
+//     })
+//     .catch((err) => {
+//       res.status(500).send({
+//         message: "Error updating the subscription with id=" + id,
+//       });
+//     });
+// };
+
+
+// Find a single subscription with an id
+exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Subscription.update(req.body, {
-    where: { subscription_id: id },
-  })
-    .then((num) => {
-      if (num == 1) {
-        res.send({
-          message: "subscription was updated successfully.",
-        });
-      } else {
-        res.send({
-          message: `Cannot update the subscription with id=${id}. Maybe the subscription was not found or req.body is empty!`,
-        });
-      }
+  Subscription.findByPk(id)
+    .then(data => {
+      res.send(data);
     })
-    .catch((err) => {
+    .catch(err => {
       res.status(500).send({
-        message: "Error updating the subscription with id=" + id,
+        message: "Error retrieving subscription with id=" + id
       });
     });
+
 };
+
+
+// find all subscriptions
+exports.findAll = (req, res) => {
+  Subscription.findAll()
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while retrieving the subscription."
+    });
+  });
+};
+
 
 // Delete a subscription with the specified id in the request
 exports.delete = (req, res) => {
@@ -88,7 +122,7 @@ exports.delete = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete subscription with id=" + id
+        message: "Could not delete subscription with id=" + id,
       });
     });
 

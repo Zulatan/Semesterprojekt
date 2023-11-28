@@ -55,11 +55,73 @@ exports.update = (req, res) => {
 };
 
 
+// Delete a Tutorial with the specified id in the request
+exports.delete = (req, res) => {
+  const id = req.params.id;
+
+  User.destroy({
+    where: { user_id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "User was deleted successfully!"
+        });
+      } else {
+        res.send({
+          message: `Cannot delete User with id=${id}. Maybe User was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Could not delete User with id=" + id
+      });
+    });
+
+};
+
+// Find a single user with an id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
+
+  User.findByPk(id)
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving user with id=" + id
+      });
+    });
+
+};
+
+
+// find all users
+exports.findAll = (req, res) => {
+  User.findAll()
+  .then(data => {
+    res.send(data);
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Some error occurred while retrieving User."
+    });
+  });
+};
 
 
 
 
-//kode fra oliver
+
+
+
+
+
+
+//kode fra oliver, kevin, hidesh
 exports.login = (req, res) => {
   User.findOne({
     where: {
@@ -75,17 +137,4 @@ exports.login = (req, res) => {
         message: err.message || "Some error occurred while retrieving User.",
       });
     });
-};
-
-exports.findAll = (req, res) => {
-  User.findAll()
-  .then(data => {
-    res.send(data);
-  })
-  .catch(err => {
-    res.status(500).send({
-      message:
-        err.message || "Some error occurred while retrieving User."
-    });
-  });
 };
