@@ -1,0 +1,52 @@
+ion-input{
+    --placeholder-color: rgb(0, 0, 0);
+}
+
+h1{
+    font-weight: bold;
+}
+
+p{
+    font-size: 12px;
+}
+
+ion-button{
+    --border-radius: 15px;
+}
+
+.login-google{
+    --border-color: #5C5C5C;
+    --color: #333333;
+    margin-top: 20px;
+}
+
+.login-facebook{
+    --border-color: #5C5C5C; 
+    --color: #333333;
+}
+
+.google-f{
+    color: #DB4437;
+}
+
+.fb-f{
+    color: #4285F4;
+}
+
+.ikkebruger{
+    margin-top: 30px;
+}
+
+.opretnybruger{
+    color: #00619A;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.h1ryk{
+    margin-top: 300px;
+}
+
+.buttonned{
+    font-weight: 600;
+}

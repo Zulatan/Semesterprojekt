@@ -1,0 +1,45 @@
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-list>
+          <ion-img src="assets/images/logo.png"></ion-img>
+          <h1 class="ion-padding-start ion-text-uppercase h1ryk">Log ind</h1>
+          <ion-item>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input type="email" class="" placeholder="Email"></ion-input>
+          </ion-item>
+        
+          <ion-item class="ion-margin-top">
+            <ion-icon name="lock-open-outline"></ion-icon>
+            <ion-input type="password" class="" placeholder="Kodeord"></ion-input>
+          </ion-item>
+      
+          <p class="ion-padding-start">Glemt kodeord?</p>
+
+          <ion-button class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary">Log ind</ion-button>
+
+          <p class="ion-text-center ion-padding-buttom">Eller</p>
+
+          
+          <ion-button class="login-google ion-padding-start ion-padding-end ion-text-capitalize" size="default" expand="block" fill="outline">
+          <ion-icon class="google-f" slot="start" name="logo-google" size="large"></ion-icon>
+            Log ind med Google
+          </ion-button>
+          
+          <ion-button class="login-facebook ion-padding-start ion-padding-end ion-margin-top ion-text-capitalize" size="default" expand="block" fill="outline">
+            <ion-icon class="fb-f" slot="start" name="logo-facebook" size="large"></ion-icon>
+            Log ind med Facebook
+          </ion-button>
+
+          <p class="ion-text-center ikkebruger">Har du ikke en bruger? <span class="opretnybruger ion-text-uppercase">opret ny bruger</span></p>
+          
+        </ion-list>
+
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

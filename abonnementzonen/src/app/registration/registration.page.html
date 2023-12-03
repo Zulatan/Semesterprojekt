@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true">
+  <ion-col size="12">
+    <ion-img src="assets/images/logo.png"></ion-img>
+    <h1 class="ion-padding-start ion-text-uppercase h1ryk">opret bruger</h1>
+  </ion-col>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input type="text" class="" placeholder="Fornavn"></ion-input>
+          </ion-item>
+        </ion-list>        
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input type="text" class="" placeholder="Efternavn"></ion-input>
+          </ion-item>
+        </ion-list>        
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-list>
+          <ion-item>
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input type="Email" class="" placeholder="Email"></ion-input>
+          </ion-item>
+
+          <ion-item class="ion-margin-top">
+            <ion-icon name="mail-outline"></ion-icon>
+            <ion-input type="password" class="" placeholder="Kodeord"></ion-input>
+          </ion-item>
+        
+          <ion-item class="ion-margin-top">
+            <ion-icon name="lock-open-outline"></ion-icon>
+            <ion-input type="password" class="" placeholder="Angiv adgangskode igen"></ion-input>
+          </ion-item>
+
+          <ion-button class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary">opret bruger</ion-button>
+
+          <p class="ion-text-center ikkebruger">Har du allerede en bruger? <span class="logindbruger ion-text-uppercase">Log ind</span></p>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
