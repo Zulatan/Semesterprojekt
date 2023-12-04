@@ -112,15 +112,6 @@ exports.findAll = (req, res) => {
   });
 };
 
-
-
-
-
-
-
-
-
-
 //kode fra oliver, kevin, hidesh
 exports.login = (req, res) => {
   User.findOne({

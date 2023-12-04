@@ -3,7 +3,7 @@ require("dotenv").config({ path: `.env.local`, override: true });
 //refers to the library itself
 const Sequelize = require("sequelize"); 
 //refers to to an instance of Sequelize
-const sequelize = new Sequelize("abonnementzonendb", "root", "", { 
+const sequelize = new Sequelize("abonnementzonendb", "root", "root", { 
   host: "localhost",
   dialect: "mysql",
   port: 3306,

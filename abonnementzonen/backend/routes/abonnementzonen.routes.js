@@ -7,6 +7,9 @@ module.exports = (app) => {
   //create a new user
   router.post("/user", user.create);
 
+  //login med user
+  router.post("/login", user.login);
+
   //delete a user with an id as param
   router.delete("/user/:id", user.delete);
 
