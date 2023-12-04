@@ -1,0 +1,48 @@
+
+.abonnementer-top-container {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    .user-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .notification-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+
+.abonnementer-container {
+    padding: 0 20px;
+    ion-title {
+        padding: 0;
+    }
+}
+
+.tilføj-abonnement {
+    padding: 20px 20px;
+    ion-button {
+        margin: 0;
+        border-radius: 20px;
+    }
+    button {
+        border-radius: 20px;
+    }
+}
+
+
+
