@@ -1,13 +1,13 @@
 <ion-content [fullscreen]="true">
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <ion-col size="12">
+    <ion-col size="12" class="coloverskrift">
       <ion-img src="assets/images/logo.png"></ion-img>
       <h1 class="ion-padding-start ion-text-uppercase h1ryk">opret bruger</h1>
     </ion-col>
 
     <ion-grid>
       <ion-row>
-        <ion-col size="6">
+        <ion-col size="6" class="colnavn">
           <ion-list>
             <ion-item>
               <ion-icon name="person-outline" color="tertiary"></ion-icon>
@@ -16,7 +16,7 @@
           </ion-list>        
         </ion-col>
 
-        <ion-col size="6">
+        <ion-col size="6" class="colnavn">
           <ion-list>
             <ion-item>
               <ion-input type="text" class="" placeholder="Efternavn" formControlName="lname"></ion-input>
@@ -41,7 +41,7 @@
               <ion-input type="password" class="" placeholder="Angiv adgangskode igen"></ion-input>
             </ion-item>
 
-            <ion-button class="buttonned" type="submit" expand="block" color="primary" [disabled]="registrationForm.invalid">opret bruger</ion-button>
+            <ion-button class="buttonned ion-padding" type="submit" expand="block" color="primary" [disabled]="registrationForm.invalid">opret bruger</ion-button>
 
             <p class="ion-text-center ikkebruger">Har du allerede en bruger? <span class="logindbruger ion-text-uppercase">Log ind</span></p>
             

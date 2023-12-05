@@ -8,24 +8,34 @@ ion-input{
 ion-item{
     --border-color: rgb(0, 0, 0);
     padding-right: 11px;
+    padding-left: -32px;
     
 }
 
+ion-button{
+    --border-radius: 15px;
+    font-weight: 600;
+}
+
+ion-img{
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
 
 h1{
     font-weight: bold;
 }
 
 .h1ryk{
-    margin-top: 75px;
+    margin-top: 225px;
+    margin-left: 10px;
 }
 
 p{
     font-size: 12px;
-}
-
-ion-button{
-    --border-radius: 15px;
 }
 
 .logindbruger{
@@ -37,6 +47,11 @@ ion-button{
 .buttonned{
     margin-top: 125px;
     font-weight: 600;
+    padding: 0px 10px 0px 10px;
+}
+
+.colnavn{
+    margin-top: -40px;
 }
 
 @media (prefers-color-scheme: dark) {
