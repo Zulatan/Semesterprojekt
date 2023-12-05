@@ -19,6 +19,13 @@ const routes: Routes = [
     path: 'landingpage',
     loadChildren: () => import('./landingpage/landingpage.module').then( m => m.LandingpagePageModule)
   },
+  
+  {
+    path: 'tab1',
+    loadChildren: () => import('./forside/tab1.module').then(m => m.Tab1PageModule)
+  },
+
+
 
 
 

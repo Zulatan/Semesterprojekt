@@ -67,7 +67,7 @@
             
             <p class="ion-padding-start">Glemt kodeord?</p>
             
-            <ion-button type="submit" class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary">Log ind</ion-button>
+            <ion-button type="submit" class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary" (click)="navigateToForside()">Log ind</ion-button>
           </form>
 
           <p class="ion-text-center ion-padding-buttom">Eller</p>
@@ -82,7 +82,7 @@
             Log ind med Facebook
           </ion-button>
 
-          <p class="ion-text-center ikkebruger">Har du ikke en bruger? <span class="opretnybruger ion-text-uppercase">opret ny bruger</span></p>
+          <p class="ion-text-center ikkebruger">Har du ikke en bruger? <span (click)="navigateToOpretbruger()" class="opretnybruger ion-text-uppercase">opret ny bruger</span></p>
           
         </ion-list>
       </ion-col>

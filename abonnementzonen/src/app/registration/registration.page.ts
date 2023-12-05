@@ -17,6 +17,7 @@ export class RegistrationPage implements OnInit {
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -26,13 +27,17 @@ import { HttpClient } from '@angular/common/http';
 export class RegistrationPage implements OnInit {
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.registrationForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
+  }
+
+  navigateToLogin(){
+    this.router.navigate(['/login']);
   }
 
   ngOnInit(): void {}
