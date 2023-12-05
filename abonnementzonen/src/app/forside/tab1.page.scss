@@ -1,0 +1,64 @@
+ion-content {
+    padding: 100px;
+}
+.abonnementer-top-container {
+    padding: 40px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    .user-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .notification-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.forside-header-text {
+    padding: 0 20px;
+}
+
+.forside-din-oversigt {
+    padding: 0 20px;
+}
+
+
+.forside-din-oversigt-ion-grid {
+    padding: 0 20px;
+    .forside-din-oversigt-ion-row {
+        background-color: var( --ion-color-primary, accent200);
+        color: #ffffff; 
+        border-radius: 10px;
+        padding: 0 10px;    
+    }
+}
+
+.dine-abonnementer-section {
+    padding: 0 20px;
+}
+
+.bank-wrapped-section {
+    padding: 0 20px;
+}
+
+.bank-wrapped-logo-image {
+    width: 143px;
+    height: 18px;
+}
+
+.bank-wrapped-card-title {
+    margin-top: 70px;
+}
