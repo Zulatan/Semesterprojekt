@@ -1,5 +1,14 @@
 ion-input{
     --placeholder-color: rgb(0, 0, 0);
+    --placeholder-opacity: 100;
+    margin-left: 10px;
+
+}
+
+ion-item{
+    --border-color: rgb(0, 0, 0);
+    padding-right: 11px;
+    
 }
 
 h1{
@@ -12,17 +21,6 @@ p{
 
 ion-button{
     --border-radius: 15px;
-}
-
-.login-google{
-    --border-color: #5C5C5C;
-    --color: #333333;
-    margin-top: 20px;
-}
-
-.login-facebook{
-    --border-color: #5C5C5C; 
-    --color: #333333;
 }
 
 .google-f{
@@ -44,9 +42,37 @@ ion-button{
 }
 
 .h1ryk{
-    margin-top: 300px;
+    margin-top: 75px;
 }
 
 .buttonned{
     font-weight: 600;
+}
+
+.login-google{
+    /*--border-color: #e40c0c;
+    --color: #e91111;*/
+    margin-top: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .login-google{
+       /* --border-color: #ffffff;*/
+       /* --color: #9e1313; */
+        margin-top: 20px;
+    }
+
+    ion-input{
+        --placeholder-color: rgb(255, 255, 255);
+        --placeholder-opacity: 100;
+        margin-left: 10px;
+    
+    }
+
+    ion-item{
+        --border-color: rgb(255, 255, 255);
+        padding-right: 11px;
+        
+    }
+    
 }

@@ -1,13 +1,23 @@
 ion-input{
     --placeholder-color: rgb(0, 0, 0);
+    --placeholder-opacity: 100;
+    margin-left: 10px;
+    --border-style: solid;
 }
+
+ion-item{
+    --border-color: rgb(0, 0, 0);
+    padding-right: 11px;
+    
+}
+
 
 h1{
     font-weight: bold;
 }
 
 .h1ryk{
-    margin-top: 200px;
+    margin-top: 75px;
 }
 
 p{
@@ -27,4 +37,20 @@ ion-button{
 .buttonned{
     margin-top: 125px;
     font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    ion-input{
+        --placeholder-color: rgb(255, 255, 255);
+        --placeholder-opacity: 100;
+        margin-left: 10px;
+    
+    }
+
+    ion-item{
+        --border-color: rgb(255, 255, 255);
+        padding-right: 11px;
+        
+    }
 }
