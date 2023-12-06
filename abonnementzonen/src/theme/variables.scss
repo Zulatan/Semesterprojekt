@@ -7,7 +7,7 @@
 /** Ionic CSS Variables **/
 
 @font-face {
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat';
   src: url('/src/assets/fonts/Montserrat-Regular.ttf') format('ttf');
   
 }
@@ -299,15 +299,15 @@ html {
 }
 
 
-.ion-text-uppercase{
-  font-family: 'Oswold';
+.ion-text-uppercase-{
+  font-family: 'Oswold-Bold';
   text-transform: uppercase;
   font-weight: 1000;
   font-size: xx-large;
 }
 
 .ion-text-uppercase-secondary{
-  font-family: 'Oswold';
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   font-weight: 1000;
   font-size: x-large;
@@ -321,19 +321,19 @@ html {
 }
 
 ion-card-content{
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: medium;
 }
 
 p{
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: medium;
 }
 
 ion-label{
-  font-family: 'Montserrat-Regular';
+  font-family: 'Montserrat';
   font-weight: 500;
   font-size: 13px;
   font-stretch: expanded;
