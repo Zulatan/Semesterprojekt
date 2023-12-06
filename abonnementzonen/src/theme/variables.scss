@@ -1,7 +1,51 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
 
+
+
+
 /** Ionic CSS Variables **/
+
+@font-face {
+  font-family: 'Oswold-Bold';
+  src: url('/src/assets/fonts/Oswald-Bold.ttf') format('ttf');
+  
+}
+
+
+@font-face {
+  font-family: 'Oswold-Extralight';
+  src: url('/src/assets/fonts/Oswald-ExtraLight.ttf') format('ttf');
+  
+}
+
+@font-face {
+  font-family: 'Oswold-light';
+  src: url('/src/assets/fonts/Oswald-Light.ttf') format('ttf');
+  
+}
+
+@font-face {
+  font-family: 'Oswold-Medium';
+  src: url('/src/assets/fonts/Oswald-Medium.ttf') format('ttf');
+  
+}
+
+@font-face {
+  font-family: 'Oswold-Regular';
+  src: url('/src/assets/fonts/Oswald-Regular.ttf') format('ttf');
+  
+}
+
+@font-face {
+  font-family: 'Oswold-Semibold';
+  src: url('/src/assets/fonts/Oswald-SemiBold.ttf') format('ttf');
+  
+}
+
+
+
+
 :root {
   /** primary - accent200 **/
   --ion-color-primary: #00619A;
@@ -246,3 +290,54 @@ html {
    */
   --ion-dynamic-font: var(--ion-default-dynamic-font);
 }
+
+
+.ion-text-uppercase{
+  font-family: 'Oswold';
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: xx-large;
+}
+
+.ion-text-uppercase-secondary{
+  font-family: 'Oswold';
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: x-large;
+}
+
+.bank-wrapped-card-title{
+  font-family: 'Montserrat';
+  text-transform: uppercase;
+  font-weight: 1000;
+  font-size: x-large;
+}
+
+ion-card-content{
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: medium;
+}
+
+p{
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: medium;
+}
+
+ion-label{
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 13px;
+  font-stretch: expanded;
+
+
+}
+
+
+
+
+
+
+
+
