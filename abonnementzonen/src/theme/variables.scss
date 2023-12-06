@@ -7,6 +7,13 @@
 /** Ionic CSS Variables **/
 
 @font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('/src/assets/fonts/Montserrat-Regular.ttf') format('ttf');
+  
+}
+
+
+@font-face {
   font-family: 'Oswold-Bold';
   src: url('/src/assets/fonts/Oswald-Bold.ttf') format('ttf');
   
@@ -314,19 +321,19 @@ html {
 }
 
 ion-card-content{
-  font-family: 'Montserrat';
+  font-family: 'Montserrat-Regular';
   font-weight: 500;
   font-size: medium;
 }
 
 p{
-  font-family: 'Montserrat';
+  font-family: 'Montserrat-Regular';
   font-weight: 500;
   font-size: medium;
 }
 
 ion-label{
-  font-family: 'Montserrat';
+  font-family: 'Montserrat-Regular';
   font-weight: 500;
   font-size: 13px;
   font-stretch: expanded;
