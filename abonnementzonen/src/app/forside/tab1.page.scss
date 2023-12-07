@@ -1,20 +1,3 @@
-ion-tab-bar {
- 
-    ion-tab-button:checked {
-        color: var(--ion-color-primary);
-    }
-
-  }
-
-  ion-tab-button {
-  
-    &::after {
-      // Ændr farven på teksten, når tab-knappen er aktiv
-      color: var(--ion-color-primary);
-    }
-  }  
-
-
 ion-content {
     padding: 100px;
 }
