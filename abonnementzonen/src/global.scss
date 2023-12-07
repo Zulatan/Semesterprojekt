@@ -25,12 +25,62 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
-/* src/assets/fonts/Oswold-Bold.css */
+/* Oswold font import | Styling med Oswold */
 
-h1, h2 {
-   font-family: 'Oswald', sans-serif;
-   @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
-    
+h1{
+  font-family: 'Oswald', sans-serif;
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+  font-weight: 1000;
+  font-size: xx-large;
+  text-transform: uppercase;
+ }
+
+
+/* Montserrat font import | Styling med Montserrat*/
+h2{
+  font-family: 'Oswald', sans-serif;
+  font-weight: 1000;
+  font-size: x-large;
+  text-transform: uppercase;
+  @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+
+}
+
+h3, h4{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 }
 
 
+p{
+  font-family: 'Montserrat';
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  font-weight: 500;
+  font-size: 14px;
+}
+ 
+
+/*farver til knapperne når man er på siden*/
+ion-tab-bar {
+ 
+  &::after{
+      color: var(--ion-color-primary);
+  }
+}
+
+ion-tab-button {
+    
+  &::after {
+    color: var(--ion-color-primary);
+  }
+} 
+
+ion-icon{
+  
+  &::after{
+    color: var(--ion-color-primary);
+  }
+}
