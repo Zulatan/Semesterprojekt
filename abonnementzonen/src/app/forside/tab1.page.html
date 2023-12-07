@@ -1,6 +1,3 @@
-
-
-
 <ion-content>
     <div class="abonnementer-top-container">
         <!-- user og notification icons -->
@@ -16,7 +13,7 @@
       </div>
 
       <div class="forside-header-text">
-        <p>Velkommen, Bitch ass <!-- {{ username }} --></p>
+        <p>Velkommen: x <!-- {{ username }} --></p>
       </div>
 
 
@@ -24,7 +21,7 @@
         <h1 color="primary" class="ion-text-uppercase">Din oversigt</h1>
     </div>
 
-    <ion-grid class="forside-din-oversigt-ion-grid">
+    <ion-grid class="forside-din-oversigt-ion-grid ion-margin">
         <ion-row class="forside-din-oversigt-ion-row">
             <ion-col size="4">
                 <p>Total Måned</p>
@@ -42,20 +39,53 @@
       </ion-grid>
     
       <div class="dine-abonnementer-section">
-        <h2 class="ion-text-uppercase-secondary">Dine abonnementer</h2>
+        <h2 class="ion-text-uppercase ion-margin-start">Dine abonnementer</h2>
       </div>
 
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <h2 class="ion-text-uppercase-secondary">Bank wrapped</h2>
-          <ion-card>
-            <ion-img class="bank-wrapped-logo-image ion-margin-top ion-margin-start" src="assets/images/Logo.png"></ion-img>
+          <h2 class="ion-text-uppercase">Bank wrapped</h2>
+          <ion-card class="bank-wrapped-card">
+            <ion-img class="bank-wrapped-logo-image ion-margin-top ion-margin-start" src="assets/images/logo.png"></ion-img>
             <ion-card-header>
               <ion-card-title class="bank-wrapped-card-title">Bank Wrapped</ion-card-title>
             </ion-card-header>
           
-            <ion-card-content>Tryk for at se din wrapped for det nye år</ion-card-content>
+            <ion-card-content class="card-content-tekst">Tryk for at se din wrapped for det nye år</ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <!--Aktive tilbud section-->
+      <ion-row>
+        <ion-col size="12">
+          <h2 class="ion-text-uppercase">Aktive tilbud</h2>
+          <ion-card class="viaplay-card">
+            <ion-img class="viaplay-logo-image ion-margin-top ion-margin-start" src="assets/images/Viaplay.png"></ion-img>
+            <ion-card-header>
+              <ion-card-title class="viaplay-card-title">10% rabat</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="card-content-tekst">Læs mere</ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card class="disney-card">
+            <ion-img class="disney-logo-image ion-margin-top ion-margin-start" src="assets/images/disney.png"></ion-img>
+            <ion-card-header>
+              <ion-card-title class="disney-card-title">Graits oprettelse</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="card-content-tekst">Læs mere</ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size="12">
+          <ion-card class="spotify-card">
+            <ion-img class="spotify-logo-image ion-margin-top ion-margin-start" src="assets/images/spotify.png"></ion-img>
+            <ion-card-header>
+              <ion-card-title class="spotify-card-title">3 mnd. 99,-</ion-card-title>
+            </ion-card-header>
+            <ion-card-content class="card-content-tekst">Læs mere</ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
