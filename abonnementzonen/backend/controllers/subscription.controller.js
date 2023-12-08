@@ -21,17 +21,14 @@ exports.create = (req, res) => {
   //Create a subscription
   const subscription = {
     title: req.body.title,
-    price: req.body.price,
     startdate: req.body.startdate,
     category: req.body.category,
     image: req.body.image,
-    cycle: req.body.cycle,
     subscriptionplan: req.body.subscriptionplan,
-    nextpayment: req.body.nextpayment,
     user_id: req.body.user_id,
   };
 
-  //Save Milestone in db
+  //Save subscription in db
   Subscription.create(subscription)
       .then((data) => {
           res.send(data);
@@ -43,30 +40,30 @@ exports.create = (req, res) => {
       });
 };
 
-// // Update a subscription profile by the id in the request
-// exports.update = (req, res) => {
-//   const id = req.params.id;
+// Update a subscription profile by the id in the request
+exports.update = (req, res) => {
+  const id = req.params.id;
 
-//   Subscription.update(req.body, {
-//     where: { subscription_id: id },
-//   })
-//     .then((num) => {
-//       if (num == 1) {
-//         res.send({
-//           message: "subscription was updated successfully.",
-//         });
-//       } else {
-//         res.send({
-//           message: `Cannot update the subscription with id=${id}. Maybe the subscription was not found or req.body is empty!`,
-//         });
-//       }
-//     })
-//     .catch((err) => {
-//       res.status(500).send({
-//         message: "Error updating the subscription with id=" + id,
-//       });
-//     });
-// };
+  Subscription.update(req.body, {
+    where: { subscription_id: id },
+  })
+    .then((num) => {
+      if (num == 1) {
+        res.send({
+          message: "subscription was updated successfully.",
+        });
+      } else {
+        res.send({
+          message: `Cannot update the subscription with id=${id}. Maybe the subscription was not found or req.body is empty!`,
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message: "Error updating the subscription with id=" + id,
+      });
+    });
+};
 
 
 // Find a single subscription with an id
@@ -82,7 +79,6 @@ exports.findOne = (req, res) => {
         message: "Error retrieving subscription with id=" + id
       });
     });
-
 };
 
 
@@ -124,5 +120,4 @@ exports.delete = (req, res) => {
         message: "Could not delete subscription with id=" + id,
       });
     });
-
 };

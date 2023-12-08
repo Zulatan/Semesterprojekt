@@ -1,9 +1,12 @@
-/*import { initializeApp } from 'firebase/app';
-import { environment } from '../environments/environment';*/
+import { initializeApp } from 'firebase/app';
+import { environment } from '../environments/environment';
 
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+const baseUrl = 'http://localhost:8080/api';
+
 
 @Injectable({
     providedIn: 'root',
@@ -18,23 +21,40 @@ import { Observable } from 'rxjs';
     }
   }
 
-
-/*@Injectable({
-    providedIn: 'root',
-})*/
-
-/*export class SubscriptionService {
-private app = initializeApp(environment.firebaseConfig);
-
 export class SubscriptionService {
-    private apiUrl = 'http://localhost:8080/api/subscription';
+private app = initializeApp(environment.firebaseConfig);
 
 private apiUrl = 'http://localhost:8080/api';
 
 constructor(private http: HttpClient) {}
 
-getSubscriptionOptions(): Observable<string[]> {
-    return this.http.get<string[]>(this.apiUrl);
-}
-}*/
+    // getSubscriptionOptions(): Observable<string[]> {
+    //     return this.http.get<string[]>(this.baseUrl);
+    // }
 
+    //Create sub
+    createSubscription(data: any): Observable<any> {
+        return this.http.post<{ message: string }>(baseUrl + '/subscription', data);
+    }
+
+    //GetAll subs
+    getAllSubscription(): Observable<any[]> {
+        return this.http.get<any[]>(baseUrl + '/subscription');
+    }
+
+    //Get a single sub
+    getSubscription(id: any): Observable<any> {
+        return this.http.get(`${baseUrl}/subscription/${id}`);
+    }
+
+    //Delete a sub
+    deleteSubscription(id: any): Observable<any> {
+        return this.http.delete(`${baseUrl}/subscription/${id}`);
+    }
+
+    //Update a sub
+    updateSubscription(id: any, data: any): Observable<any> {
+        return this.http.put(`${baseUrl}/subscription/${id}`, data);
+    }
+}
+}

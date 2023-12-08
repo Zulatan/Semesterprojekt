@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -11,27 +12,20 @@ import { ModalController } from '@ionic/angular';
 export class Tab2Page {
   private apiURL = '';
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController, private http: HttpClient) {}
 
-  selectedData: any = {
-    selectedOption: null,
-  };
-
-  selectKategoriOptions = [
-    { value: 'streamingtjeneste', label: 'Streamingtjeneste' },
-    { value: 'fitness', label: 'Fitness' },
-    { value: 'forsikring', label: 'Forsikring' },
-    { value: 'el', label: 'El' },
-    { value: 'andet', label: 'Andet' },
-  ];
-
-  selectPlatformOptions = [
-    { value: 'streamingtjeneste', label: 'Netflix' },
-    { value: 'streamingtjeneste', label: 'HBO MAX' },
-    { value: 'streamingtjeneste', label: 'Disney +' },
-    { value: 'streamingtjeneste', label: 'Viaplay' },
-    { value: 'streamingtjeneste', label: 'TV2 Play' }
-  ];
+  subscription: any = {
+    subscription_id: null,
+    title: '',
+    price: '',
+    startdate: '',
+    category: '',
+    image: '',
+    cycle: '',
+    subscriptionplan: '',
+    nextpayment: '',
+    user_id: null
+  }
 
   isModalOpen = false;
 
@@ -44,10 +38,20 @@ export class Tab2Page {
   }
 
   saveSelectedOption() {
-    // Do something with the selected option
-    console.log('Selected Option:', this.selectedData.selectedOption);
-
     // Close the modal
     this.closeModal();
   }
+
+
+  // onSubscriptionSubmit() {
+  //     // Make HTTP POST request to your Node.js server
+  //     this.http.post('http://localhost:8080/api/subscription')
+  //       .subscribe(response => {
+  //         console.log('Registration successful', response);
+  //         // You can handle success, navigate to another page, etc.
+  //       }, error => {
+  //         console.error('Registration failed', error);
+  //         // Handle the error, show a message to the user, etc.
+  //       });
+  //   }
 }

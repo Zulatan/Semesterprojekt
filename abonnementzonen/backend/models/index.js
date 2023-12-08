@@ -17,6 +17,7 @@ db.sequelize = sequelize;
 
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.subscription = require("./subscription.model.js")(sequelize, Sequelize);
+db.payment = require("./payment.model.js")(sequelize, Sequelize);
 
 //relation between models (tables)
 db.user.hasMany(db.subscription, {
@@ -24,9 +25,18 @@ db.user.hasMany(db.subscription, {
     as: "user",
     onDelete: "cascade", //delete all subscription if user is deleted
   });
+db.subscription.hasMany(db.payment, {
+    foreignKey: "subscription_id",
+    as: "subscription",
+    onDelete: "cascade", //delete all subscription if user is deleted
+  });
   db.subscription.belongsTo(db.user, {
     foreignKey: "user_id",
     as: "user",
+  });
+  db.payment.belongsTo(db.subscription, {
+    foreignKey: "subscription_id",
+    as: "subscription",
   });
 
 module.exports = db;
