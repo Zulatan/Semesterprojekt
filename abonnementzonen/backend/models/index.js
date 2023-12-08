@@ -7,7 +7,7 @@ const sequelize = new Sequelize("abonnementzonendb", "root", "", {
   host: "localhost",
   dialect: "mysql",
   port: 3306,
-  password: process.env.SECRET,
+ /*  password: process.env.SECRET, */
 });
 
 const db = {};
