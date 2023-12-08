@@ -45,12 +45,9 @@
       <ion-row *ngFor="let subscription of subscriptions">
         <ion-col size="12">
           <h2 class="ion-text-uppercase">{{ subscription.title }}</h2>
-          <p>priser: {{ subscription.price }}</p>
           <p>Start dato: {{ subscription.startdate }}</p>
           <p>Kategori: {{ subscription.category }}</p>
-          <p>betalingsinterval: {{ subscription.cycle }}</p>
           <p>abonnementplan: {{ subscription.subscriptionplan }}</p>
-          <p>Næste betaling: {{ subscription.nextpayment }}</p>
           
           <!-- Display other subscription details as needed -->
         </ion-col>
