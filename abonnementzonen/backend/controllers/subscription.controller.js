@@ -3,7 +3,6 @@ const Subscription = db.subscription;
 
 const Op = db.Sequelize.Op;
 
-
 // Create and save new Milestone
 exports.create = (req, res) => {
   //Validering
