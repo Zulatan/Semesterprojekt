@@ -1,6 +1,8 @@
 module.exports = (app) => {
   const user = require("../controllers/user.controller.js");
   const subscription = require("../controllers/subscription.controller.js");
+  const payment = require("../controllers/payment.controller.js");
+
   var router = require("express").Router();
 
   //for users below
@@ -22,6 +24,8 @@ module.exports = (app) => {
   //find all users
   router.get("/users", user.findAll);
 
+
+
   //for subscriptions below
   //create a subscription
   router.post("/subscription", subscription.create);
@@ -35,8 +39,23 @@ module.exports = (app) => {
   //find a single sub with id as param
   router.get("/subscription/:id", subscription.findOne);
 
-  //find all users
+  //find all subscriptions
   router.get("/subscription", subscription.findAll);
+
+
+  // For payments below
+  //create a payment
+  router.post("/payment", payment.create);
+
+  // find all payments
+  router.get("/payment", payment.findAll);
+  
+  //update a payment
+  router.put("/payment/:id", payment.update);
+  
+  //delete a payment
+  router.delete("/payment/:id", payment.delete);
+
 
   app.use("/api", router);
 };

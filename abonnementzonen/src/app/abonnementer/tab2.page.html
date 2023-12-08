@@ -21,129 +21,52 @@
       <ion-content>
         <ion-title>Tilføj abonnement</ion-title>
         <ion-list>
-          <!--Categori-->
+
+
+          <!-- create subscription category -->
           <ion-item>
-            <ion-select
-            [(ngModel)]="selectedData.selectedOption"
-            label="Kategori"
-            interface="alert"
-            placeholder=""
-            >
-                <ion-select-option
-                *ngFor="let option of selectKategoriOptions"
-                [value]="option.value"
-                >{{ option.label }}
-                </ion-select-option>
+            <ion-select [(ngModel)]="subscription.category" label="Kategori" placeholder=" vælg kategori">
+              <ion-select-option value="Streamingtjeneste">Streamingtjeneste</ion-select-option>
+              <ion-select-option value="Fitness">Fitness</ion-select-option>
+              <ion-select-option value="El">El</ion-select-option>
             </ion-select>
           </ion-item>
-          <!--platform-->
+
+          <!-- create subscription price -->
           <ion-item>
-            <ion-select
-            [(ngModel)]="selectedData.selectedOption"
-            label="Platform"
-            interface="alert"
-            placeholder=""
-            >
-                <ion-select-option
-                *ngFor="let option of selectPlatformOptions"
-                [value]="option.value"
-                >{{ option.label }}
-                </ion-select-option>
+                <ion-input [(ngModel)]="subscription.price" label="Pris" placeholder="tap for at taste pris"></ion-input>
+          </ion-item>
+
+
+          <!-- create subscription cycle -->
+          <ion-item>
+            <ion-select [(ngModel)]="subscription.cycle" label="Cyclus" placeholder="Vælg cyclys">
+              <ion-select-option value="Månedligt">Månedlig</ion-select-option>
+              <ion-select-option value="Kvartallet">Kvartal</ion-select-option>
+              <ion-select-option value="Årligt">Årlig</ion-select-option>
             </ion-select>
           </ion-item>
+
         </ion-list>
-        <ion-button (click)="saveSelectedOption()">Gem valg</ion-button>
+        <ion-button (click)="saveSelectedOption()">Færdiggør</ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
 
-  <p>Abonnement info: {{ selectedData.selectedOption }}</p>
+  <!-- the created subscription displayed -->
+<ion-list>
+  <ion-label> {{ subscription.category }} </ion-label>
+  <ion-label> {{ subscription.price }} </ion-label>
+  <ion-label> {{ subscription.cycle }} </ion-label>
+</ion-list>
 
+
+
+
+
+<!-- button for adding sub -->
   <div class="tilføj-abonnement">
     <ion-button expand="block" (click)="openModal()">Tilføj abonnement</ion-button>
   </div>
 
-  <!-- 
-    <div class="abonnementer-container">
-        <ion-title>Alle abonnementer</ion-title>
-        <div class="abonnementer-list"></div>
-    </div>
-
-    tilføj abonnement herunder
-    <div class="tilføj-abonnement">
-        <ion-button expand="block" (click)="setOpen(true)">Tilføj abonnement</ion-button>
-        <ion-modal [isOpen]="isModalOpen">
-            <ng-template>
-                <ion-buttons slot="end">
-                    <ion-button (click)="setOpen(false)"><ion-icon name="close-outline" size="large"></ion-icon></ion-button>
-                </ion-buttons>
-                <ion-content>
-                    <p>{{ selectedData.selected.Option }}</p>
-                    <ion-title>Tilføj abonnement</ion-title>
-                    <ion-list> 
-                        <ion-item>
-                            <ion-select [(ngModel)]="selectedData.selectedOption" label="Kategori" interface="alert" placeholder="">
-                              <ion-select-option *ngFor="let option of selectOptions" [value]="option.value" value="streamingtjeneste">Streamingtjeneste</ion-select-option>
-                              <ion-select-option value="fitness">Fitness</ion-select-option>
-                              <ion-select-option value="forsikring">Forsikring</ion-select-option>
-                              <ion-select-option value="el">El</ion-select-option>
-                              <ion-select-option value="andet">Andet</ion-select-option>
-                            </ion-select>
-                        </ion-item>
-                      </ion-list>
-
-                    <ion-list> 
-                        <ion-item>
-                            <ion-select label="Platform" interface="alert" placeholder="">
-                                <ion-select-option value="streamingtjeneste">Netflix</ion-select-option>
-                            </ion-select>
-                        </ion-item>
-                      </ion-list>
-
-                    <ion-list> 
-                        <ion-item>
-                            <ion-select label="Betalingstype" interface="alert" placeholder="">
-                                <ion-select-option value="månedlig">Månedligt</ion-select-option>
-                                <ion-select-option value="kvartal">Kvartallet</ion-select-option>
-                                <ion-select-option value="årlig">Årligt</ion-select-option>
-                            </ion-select>
-                        </ion-item>
-                    </ion-list>
-
-                    <ion-list> 
-                        <ion-item>
-                            <ion-select label="Abonnement Plan" interface="alert" placeholder="">
-                                <ion-select-option value="månedlig">Basic</ion-select-option>
-                            </ion-select>
-                        </ion-item>
-                    </ion-list>
-
-                    <ion-list> 
-                        <ion-item>
-                            <ion-label>Start dato</ion-label>
-                            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-                            <ion-modal [keepContentsMounted]="true">
-                                <ng-template>
-                                    <ion-datetime id="datetime"></ion-datetime>
-                                </ng-template>
-                            </ion-modal>    
-                        </ion-item>
-                    </ion-list>
-
-                    <ion-list> 
-                        <ion-item>
-                            <ion-label>Næste betaling</ion-label>
-                            <ion-datetime-button datetime="datetime"></ion-datetime-button>
-                            <ion-modal [keepContentsMounted]="true">
-                                <ng-template>
-                                    <ion-datetime id="datetime"></ion-datetime>
-                                </ng-template>
-                            </ion-modal>    
-                        </ion-item>
-                    </ion-list>
-                </ion-content>
-            </ng-template>
-        </ion-modal>
-    </div>
-</ion-content> -->
-</ion-content>
+ </ion-content>
