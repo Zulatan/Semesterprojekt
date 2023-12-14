@@ -1,6 +1,5 @@
 const db = require("../models");
 const Payment = db.payment;
-const Subscription = db.subscription;
 
 const Op = db.Sequelize.Op;
 

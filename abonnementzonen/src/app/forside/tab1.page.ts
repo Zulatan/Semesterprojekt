@@ -25,7 +25,9 @@ export class Tab1Page implements OnInit {
   constructor(private subscriptionService: SubscriptionService) {}
 
   ngOnInit() {
-    this.subscriptionService.getAllSubscriptions().subscribe((data) => {
+    console.log('Before Sequelize Query');
+    this.subscriptionService.getAllSubscriptionsWithPayments().subscribe((data) => {
+      console.log('Subscription with payments:', data);
       this.subscriptions = data;
     });
   }

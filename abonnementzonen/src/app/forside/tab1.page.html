@@ -50,6 +50,11 @@
           <p>abonnementplan: {{ subscription.subscriptionplan }}</p>
           
           <!-- Display other subscription details as needed -->
+          <div *ngIf="subscription.payment">
+            <p>Pris: {{ subscription.payment.price }}</p>
+            <p>Næste betaling: {{ subscription.payment.nextpayment | date: 'yyyy-MM-dd' }}</p>
+            <p>Cyklus: {{ subscription.payment.cycle }}</p>
+          </div>
         </ion-col>
       </ion-row>
 

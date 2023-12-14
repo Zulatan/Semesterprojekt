@@ -1,5 +1,6 @@
 const db = require("../models");
 const Subscription = db.subscription;
+const Payment = db.payment; // Import the Payment model
 
 const Op = db.Sequelize.Op;
 
@@ -26,6 +27,7 @@ exports.create = (req, res) => {
     image: req.body.image,
     subscriptionplan: req.body.subscriptionplan,
     user_id: req.body.user_id,
+    payment_id: req.body.payment_id
   };
 
   //Save subscription in db
@@ -94,6 +96,27 @@ exports.findAll = (req, res) => {
         err.message || "Some error occurred while retrieving the subscription."
     });
   });
+};
+
+exports.findAllWithPayments = (req, res) => {
+  console.log('Inside findAllWithPayments'); // Add this
+  Subscription.findAll({
+    include: [{
+      model: Payment,
+      as: "payment",
+    }],
+  })
+    .then(data => {
+      console.log('Data from findAllWithPayments:', data); // Add this
+      res.send(data);
+    })
+    .catch(err => {
+      console.error('Error in findAllWithPayments:', err); // Log the error
+      console.error(err);
+      res.status(500).send({
+        message: err.message || "Some error occurred while retrieving subscriptions with payments.",
+      });
+    });
 };
 
 

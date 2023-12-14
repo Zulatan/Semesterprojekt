@@ -15,6 +15,16 @@ const baseUrl = 'http://localhost:8080/api';
     getAllSubscriptions(): Observable<any[]> {
       return this.http.get<any[]>(`${this.apiUrl}`);
     }
+/*
+    getAllSubscriptionsWithPayments(): Observable<any[]> {
+        return this.http.get<any[]>(`${this.apiUrl}/all-with-payments`); // Adjust the endpoint
+    }
+*/
+
+    getAllSubscriptionsWithPayments(): Observable<any[]> {
+        return this.http.get<any[]>(`${this.apiUrl}/all-with-payments`);
+        /*router.get("/subscription/all-with-payments", subscription.findAllWithPayments);*/
+    }
 
     //Create sub
     createSubscription(data: any): Observable<any> {

@@ -22,5 +22,12 @@ module.exports = (sequelize, DataType) => {
         }
     });
 
+    Payment.associate = (models) => {
+        Payment.hasOne(models.Subscription, {
+          foreignKey: "payment_id",
+          as: "subscription",
+        });
+      };
+
     return Payment;
 };
