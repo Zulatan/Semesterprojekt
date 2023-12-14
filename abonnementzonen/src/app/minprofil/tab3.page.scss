@@ -1,21 +1,60 @@
-.minprofil-top-section {
-    padding: 40px 20px 10px 20px;
+.minprofil-top-section{
+    // padding: 40px 20px 30px 20px;
     display: flex;
-    justify-content: space-between;
-    .user-icon-bg {
-        width: 80px;
-        height: 80px;
-        background: var(--bg200, #E5E5E5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 50px;
-        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-    }
-
-    .user-icon{
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 110px;
+    
+    .inner-scroll{
         height: 40px;
-        width: 80px;
+    }
+    
+
+    .minprofil-ion-fab{
+        height: auto;
+    }
+}
+
+.minprofil-top-middle {
+    padding: 40px 20px 30px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .minprofil-title{
+        padding-top: 10px;
+        margin-left: 30px;
+        text-align: center;
     }
 
+    .minprofil-email{
+        padding-top: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
 }
+    .ion-padding{
+        width: 100px;
+        height: 100px;
+    }
+
+    .minprofil-ion-fab{
+    }
+
+
+    .edit-icon{
+        height: 25px;
+        width: 25px;
+        color: var(--ion-color-primary);
+        padding-left: 5px;
+        border-radius: 20px;
+    }
+
+    .edit-icon{
+    }
+
+
+
+
