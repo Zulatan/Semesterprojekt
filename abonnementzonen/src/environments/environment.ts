@@ -6,6 +6,7 @@ export const environment = {
   firebaseConfig: {
     apiKey: "AIzaSyANfu1dnilNyxBfqcG1hVCnB7wrHhefIGg",
     authDomain: "abonnementzonendb.firebaseapp.com",
+    databaseURL: "https://abonnementzonendb-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "abonnementzonendb",
     storageBucket: "abonnementzonendb.appspot.com",
     messagingSenderId: "90106635185",

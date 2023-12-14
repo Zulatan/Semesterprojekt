@@ -13,6 +13,9 @@
       </div>
 
       <div class="forside-header-text">
+        <div *ngIf="user">
+          <p>Welcome, {{ user.displayName || user.email }}!</p>
+        </div>
         <p>Velkommen: x <!-- {{ username }} --></p>
       </div>
 
