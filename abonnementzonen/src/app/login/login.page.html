@@ -54,25 +54,26 @@
           <ion-img src="assets/images/logo.png"></ion-img>
           <h1 class="ion-padding-start ion-text-uppercase h1ryk">Log ind</h1>
           
-          <form>
+          <form [formGroup]="loginForm"> 
             <ion-item>
               <ion-icon name="mail-outline"></ion-icon>
-              <ion-input type="email" class="" placeholder="Email"></ion-input>
+              <ion-input formControlName="email" type="email" class="" placeholder="Email"></ion-input>
             </ion-item>
             
             <ion-item class="ion-margin-top">
               <ion-icon name="lock-open-outline"></ion-icon>
-              <ion-input type="password" class="" placeholder="Kodeord"></ion-input>
+              <ion-input formControlName="password" type="password" placeholder="Kodeord"></ion-input>
             </ion-item>
             
             <p class="ion-padding-start">Glemt kodeord?</p>
             
-            <ion-button type="submit" class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary" (click)="navigateToForside()">Log ind</ion-button>
+            <!-- <ion-button type="submit" class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary" (click)="navigateToForside()">Log ind</ion-button> -->
+            <ion-button type="submit" class="ion-padding ion-text-capitalize buttonned" expand="block" color="primary" (click)="loginWithEmailAndPassword()">Log ind</ion-button>
           </form>
 
           <p class="ion-text-center ion-padding-buttom">Eller</p>
 
-          <ion-button class="login-google ion-padding-start ion-padding-end ion-text-capitalize" size="default" expand="block" fill="outline">
+          <ion-button (click)="loginWithGoogle()" class="login-google ion-padding-start ion-padding-end ion-text-capitalize" size="default" expand="block" fill="outline">
             <ion-icon class="google-f" slot="start" name="logo-google" size="large"></ion-icon>
             Log ind med Google
           </ion-button>

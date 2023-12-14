@@ -18,6 +18,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -27,7 +28,7 @@ import { Router } from '@angular/router';
 export class RegistrationPage implements OnInit {
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private authService: AuthService) {
     this.registrationForm = this.fb.group({
       fname: ['', Validators.required],
       lname: ['', Validators.required],
@@ -57,4 +58,14 @@ export class RegistrationPage implements OnInit {
         });
     }
   }
+
+  registerWithEmailAndPassword() {
+
+    const userData = Object.assign(this.registrationForm.value, {email: this.registrationForm.value.email});
+
+    this.authService.registerWithEmailAndPassword(userData).then((res: any) => {
+      this.router.navigateByUrl('login')
+    }).catch((error: any) => {
+      console.error(error);
+  })}
 }

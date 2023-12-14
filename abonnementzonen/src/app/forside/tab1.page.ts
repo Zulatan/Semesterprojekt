@@ -13,6 +13,7 @@ export class Tab1Page {
 
 import { Component, OnInit } from '@angular/core';
 import { SubscriptionService } from '../../services/database'; // Adjust the path
+import { AuthService } from 'src/services/auth.service';
 
 @Component({
   selector: 'app-tab1',
@@ -21,12 +22,17 @@ import { SubscriptionService } from '../../services/database'; // Adjust the pat
 })
 export class Tab1Page implements OnInit {
   subscriptions: any[] = [];
+  user: any;
 
-  constructor(private subscriptionService: SubscriptionService) {}
+  constructor(private subscriptionService: SubscriptionService, private authService: AuthService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscriptionService.getAllSubscriptions().subscribe((data) => {
       this.subscriptions = data;
+    });
+
+    this.authService.getUserData().subscribe((user) => {
+      this.user = user;
     });
   }
 }

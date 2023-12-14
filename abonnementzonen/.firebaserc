@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "abonnementzonendb": {
+      "hosting": {
+        "app": [
+          "abonnementzonendb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "abonnementzonendb"
+  }
+}
