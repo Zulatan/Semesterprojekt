@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from 'src/services/auth.service';
 
 
 
@@ -9,10 +10,18 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab2Page {
+export class Tab2Page implements OnInit {
   private apiURL = '';
 
-  constructor(private modalController: ModalController, private http: HttpClient) {}
+  user: any;
+
+  constructor(private modalController: ModalController, private http: HttpClient, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.getUserData().subscribe((user) => {
+      this.user = user;
+    });
+  }
 
   subscription: any = {
     subscription_id: null,
@@ -29,6 +38,7 @@ export class Tab2Page {
 
   isModalOpen = false;
 
+  
   openModal() {
     this.isModalOpen = true;
   }
@@ -42,7 +52,6 @@ export class Tab2Page {
     this.closeModal();
   }
 
-
   // onSubscriptionSubmit() {
   //     // Make HTTP POST request to your Node.js server
   //     this.http.post('http://localhost:8080/api/subscription')
@@ -54,4 +63,5 @@ export class Tab2Page {
   //         // Handle the error, show a message to the user, etc.
   //       });
   //   }
+
 }
