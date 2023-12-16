@@ -4,19 +4,24 @@
     <div class="user-icon-bg">
       <ion-icon name="person-outline" color=""></ion-icon>
     </div>
-    <h1>
-      <!-- {{ username }} -->
-    </h1>
     <div class="notification-icon-bg">
       <ion-icon name="notifications-outline" size="" color=""></ion-icon>
     </div>
   </div>
 
+  <div class="velkommen-text" *ngIf="user">
+    <p>Velkommen, {{ user.displayName || user.email }}!</p>
+  </div>
+
+  <div class="alle-abonnementer-text">
+    <p>ALLE ABONNEMENTER</p>
+  </div>
+
   <!-- add sub below  from chatgpt https://chat.openai.com/share/a4038f3c-5a2b-4fc0-8f57-6d5bd94ed967-->
-  <ion-modal [isOpen]="isModalOpen">
+  <ion-modal class="modal-content" [isOpen]="isModalOpen">
     <ng-template>
-      <ion-buttons slot="end">
-        <ion-button (click)="closeModal()"><ion-icon name="close-outline" size="large"></ion-icon></ion-button>
+      <ion-buttons class="ion-margin-topx" slot="end">
+        <ion-button (click)="closeModal()"><ion-icon name="close-outline" size="large"></ion-icon>Luk</ion-button>
       </ion-buttons>
       <ion-content>
         <ion-title>Tilføj abonnement</ion-title>
@@ -27,28 +32,69 @@
           <ion-item>
             <ion-select [(ngModel)]="subscription.category" label="Kategori" placeholder=" vælg kategori">
               <ion-select-option value="Streamingtjeneste">Streamingtjeneste</ion-select-option>
-              <ion-select-option value="Fitness">Fitness</ion-select-option>
-              <ion-select-option value="El">El</ion-select-option>
             </ion-select>
           </ion-item>
 
-          <!-- create subscription price -->
+          <!-- create subscription platform -->
           <ion-item>
-                <ion-input [(ngModel)]="subscription.price" label="Pris" placeholder="tap for at taste pris"></ion-input>
+            <ion-select [(ngModel)]="subscription.category" label="Platform" placeholder=" vælg platform">
+              <ion-select-option value="Netflix">Netflix</ion-select-option>
+              <ion-select-option value="HBO MAX">HBO MAX</ion-select-option>
+              <ion-select-option value="Nordisk Film +">Nordisk Film +</ion-select-option>
+              <ion-select-option value="TV2 Play">TV2 Play</ion-select-option>
+              <ion-select-option value="Disney +">Disney +</ion-select-option>
+              <ion-select-option value="Viaplay">Viaplay</ion-select-option>
+            </ion-select>
           </ion-item>
 
-
-          <!-- create subscription cycle -->
+          <!-- create subscription interval -->
           <ion-item>
-            <ion-select [(ngModel)]="subscription.cycle" label="Cyclus" placeholder="Vælg cyclys">
+            <ion-select [(ngModel)]="subscription.cycle" label="Betalingsinterval" placeholder="vælg interval">
               <ion-select-option value="Månedligt">Månedlig</ion-select-option>
               <ion-select-option value="Kvartallet">Kvartal</ion-select-option>
               <ion-select-option value="Årligt">Årlig</ion-select-option>
             </ion-select>
           </ion-item>
 
+          <!-- create subscription abonnement plan -->
+          <ion-item>
+            <ion-select [(ngModel)]="subscription.category" label="Abonnement plan" placeholder="vælg plan">
+              <ion-select-option value="Streamingtjeneste">Basic</ion-select-option>
+              <ion-select-option value="Streamingtjeneste">Standard</ion-select-option>
+              <ion-select-option value="Streamingtjeneste">Premium</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <!-- create subscription start dato -->
+          <ion-item>
+            <ion-label label="Start Dato">Start dato</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime id="datetime"></ion-datetime>
+              </ng-template>
+            </ion-modal>
+          </ion-item>
+          
+          <!-- create subscription næste betaling -->
+          <ion-item>
+            <ion-label>Næste betaling</ion-label>
+            <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+            <ion-modal [keepContentsMounted]="true">
+              <ng-template>
+                <ion-datetime id="datetime"></ion-datetime>
+              </ng-template>
+            </ion-modal>
+          </ion-item>
+
+
         </ion-list>
-        <ion-button (click)="saveSelectedOption()">Færdiggør</ion-button>
+        <ion-button class="ion-float-right tilføj-abonnement-button-modal" (click)="saveSelectedOption()">
+          <ion-icon slot="end" name="add-outline"></ion-icon>
+          Tilføj
+        </ion-button>
       </ion-content>
     </ng-template>
   </ion-modal>
@@ -65,8 +111,12 @@
 
 
 <!-- button for adding sub -->
-  <div class="tilføj-abonnement">
-    <ion-button expand="block" (click)="openModal()">Tilføj abonnement</ion-button>
+  <div class="tilføj-abonnement-button-add">
+    <div class="label-text"></div>
+    <ion-button (click)="openModal()">
+      <ion-icon slot="end" name="add-outline"></ion-icon>
+      Tilføj
+    </ion-button>
   </div>
 
  </ion-content>

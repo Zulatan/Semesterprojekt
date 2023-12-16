@@ -4,7 +4,7 @@ const Payment = db.payment; // Import the Payment model
 
 const Op = db.Sequelize.Op;
 
-// Create and save new Milestone
+// Create and save new subscription
 exports.create = (req, res) => {
   //Validering
   if (!req.body.title) {
