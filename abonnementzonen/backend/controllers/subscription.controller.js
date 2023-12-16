@@ -119,28 +119,60 @@ exports.findAllWithPayments = (req, res) => {
     });
 };
 
+//Ny subscription og payment destroyer
 
 // Delete a subscription with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Subscription.destroy({
-    where: { subscription_id: id }
-  })
-    .then(num => {
-      if (num == 1) {
-        res.send({
-          message: "subscription was deleted successfully!"
+  // Find the subscription with the specified id
+  Subscription.findByPk(id)
+    .then(subscription => {
+      if (!subscription) {
+        // Subscription not found
+        res.status(404).send({
+          message: `Subscription with id=${id} not found.`,
         });
-      } else {
-        res.send({
-          message: `Cannot delete subscription with id=${id}. Maybe the subscription was not found!`
-        });
+        return;
       }
+
+      // Delete the associated payment, if it exists
+      if (subscription.payment_id) {
+        Payment.destroy({
+          where: { payment_id: subscription.payment_id }
+        })
+          .then(() => {
+            console.log(`Payment with id=${subscription.payment_id} deleted.`);
+          })
+          .catch(err => {
+            console.error('Error deleting payment:', err);
+          });
+      }
+
+      // Now, delete the subscription
+      Subscription.destroy({
+        where: { subscription_id: id }
+      })
+        .then(num => {
+          if (num == 1) {
+            res.send({
+              message: "Subscription and associated payment were deleted successfully!"
+            });
+          } else {
+            res.send({
+              message: `Cannot delete subscription with id=${id}. Maybe the subscription was not found!`
+            });
+          }
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: "Could not delete subscription with id=" + id,
+          });
+        });
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete subscription with id=" + id,
+        message: "Error retrieving subscription with id=" + id
       });
     });
 };

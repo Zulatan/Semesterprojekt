@@ -37,4 +37,23 @@ export class Tab1Page implements OnInit {
       this.user = user;
     });
   }
+
+  onDeleteButtonClick(subscriptionId: number): void {
+    this.subscriptionService.deleteSubscription(subscriptionId).subscribe(
+      response => {
+        console.log(response.message);
+
+        this.subscriptions = this.subscriptions.filter(sub => sub.subscription_id !== subscriptionId);
+        // Optionally, update the subscriptions list or perform any other action
+      },
+      error => {
+        console.error('Error deleting subscription:', error);
+        // Handle error, if needed
+      }
+    );
+  }
+
+
+
 }
+

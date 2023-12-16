@@ -45,6 +45,7 @@
         <h2 class="ion-text-uppercase ion-margin-start">Dine abonnementer</h2>
       </div>
 <!--Testkode her 44-50-->
+    <ion-grid>
       <ion-row *ngFor="let subscription of subscriptions">
         <ion-col size="12">
           <h2 class="ion-text-uppercase">{{ subscription.title }}</h2>
@@ -53,13 +54,18 @@
           <p>abonnementplan: {{ subscription.subscriptionplan }}</p>
           
           <!-- Display other subscription details as needed -->
-          <div *ngIf="subscription.payment">
+          <div>
             <p>Pris: {{ subscription.payment.price }}</p>
             <p>Næste betaling: {{ subscription.payment.nextpayment | date: 'yyyy-MM-dd' }}</p>
             <p>Cyklus: {{ subscription.payment.cycle }}</p>
           </div>
+          
+          <ion-button color="danger" (click)="onDeleteButtonClick(subscription.subscription_id)">
+            Delete
+          </ion-button>
         </ion-col>
       </ion-row>
+    </ion-grid>
 
     <ion-grid>
       <ion-row>

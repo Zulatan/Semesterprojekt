@@ -10,9 +10,7 @@ import { PhotoService, UserPhoto } from '../services/photo.service';
 })
 export class Tab3Page implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) {}
-  constructor(public photoService: PhotoService) { }
-
+  constructor(private authService: AuthService, private router: Router, public photoService: PhotoService) {}
 
   logout() {
     this.authService.logout().then(() => {
