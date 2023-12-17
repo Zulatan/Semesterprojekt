@@ -23,6 +23,7 @@ import { AuthService } from 'src/services/auth.service';
 export class Tab1Page implements OnInit {
   subscriptions: any[] = [];
   user: any;
+  selectedSubscription: any ={}; // Add this property
 
   constructor(private subscriptionService: SubscriptionService, private authService: AuthService) {}
 
@@ -52,8 +53,20 @@ export class Tab1Page implements OnInit {
       }
     );
   }
+  
+/* old
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+*/
+  isModalOpen = true;
 
 
-
+  setOpen(isOpen: boolean, subscription?: any): void {
+    this.isModalOpen = isOpen;
+    if (subscription) {
+      this.selectedSubscription = subscription;
+    }
+  }
 }
 

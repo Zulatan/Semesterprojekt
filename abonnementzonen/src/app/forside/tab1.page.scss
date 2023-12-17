@@ -131,3 +131,77 @@ ion-col{
 .spotify-logo-image {
     width: 100px;
 }
+
+/*indhentede abonnementer*/
+
+.backgroundrow{
+    background: linear-gradient(to left, #E5E5E5 97%, #00619A 3px);
+}
+
+.abonnementkort p{
+    margin: 0px 0px 0px 0px;
+}
+
+.Pricebigger{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.intervalsmall{
+    font-size: 10px;
+}
+
+.abonnement-boks{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.modal-knap{
+    --background-hover-opacity: 0%;
+    --color: #000000;
+    font-size: 12px;
+    text-transform: none;
+    text-decoration: underline;
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-knap-col{
+    padding: 0px;
+}
+
+/*inde i modal*/
+
+.modal-tilbage-pil{
+    --background-hover-opacity: 0%;
+}
+
+.abonnement-oplysninger ion-col{
+    padding: 0px;
+    margin: 0px;
+}
+
+.abonnement-modal-tekst{
+    margin: 10px 0px 0px 0px;
+}
+
+.abonnement-oplysninger h2{
+    margin: 10px 0px 0px 0px;
+}
+
+.payment-price-big{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0px 0px 0px;
+}
+
+/*buttons i modal*/
+.abonnement-modal-knapper{
+   padding: 0px;
+}
+
+.abonnement-modal-knapper ion-button{
+    --background-hover-opacity: 0%;
+    text-transform: none;
+    font-size: 12px;
+    padding: 0px 0px 0px 0px;
+
+}
