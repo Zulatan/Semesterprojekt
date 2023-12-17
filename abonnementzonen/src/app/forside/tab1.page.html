@@ -46,15 +46,15 @@
 <!--Testkode her 44-50-->
     <ion-grid class="ion-margin-start ion-margin-end ion-margin-top" *ngFor="let subscription of subscriptions">
       <ion-row class="abonnement-boks ion-align-items-center backgroundrow ion-margin-top">
-        <ion-col class="abonnementkort" size="3">
+        <ion-col class="abonnementkort-et" size="3">
           <p>img</p>
         </ion-col>
-        <ion-col class="abonnementkort" size="5">
+        <ion-col class="abonnementkort-to" size="6">
           <p class="ion-text-right">{{ subscription.title }}</p>
         </ion-col>
-        <ion-col class="abonnementkort" size="4">
-          <p class="Pricebigger ion-text-center">{{ subscription.payment.price }},-</p>
-          <p class="intervalsmall ion-text-center">{{ subscription.payment.cycle }}</p>
+        <ion-col class="abonnementkort-tre" size="3">
+          <p class="Pricebigger ion-text-end">{{ subscription.payment.price }},-</p>
+          <p class="intervalsmall ion-text-end">{{ subscription.payment.cycle }}</p>
         </ion-col>
       </ion-row>
       
@@ -91,7 +91,7 @@
 
               <ion-row class="">
                 <ion-col size="7" class="abonnement-modal-knapper">
-                  <ion-button fill="clear" size="">
+                  <ion-button class="abonnement-modal-knap-ekstra" fill="clear" size="" (click)="AlertsetOpen()">
                     <ion-icon slot="start" size="large" name="close-circle-outline"></ion-icon>
                     Opsig abonnement
                   </ion-button>
@@ -105,12 +105,95 @@
                     <ion-icon slot="start" size="large" name="reader-outline"></ion-icon>
                     Vis lignende abonnementer
                   </ion-button>
-                  
                 </ion-col>
               </ion-row>
 
+              <hr class="line-border">
 
+              <ion-row class="modal-detaljer">
+                <ion-col size="12">
+                  <h2>Detaljer</h2>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-left-ekstra">Gentagende</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-right-ekstra ion-text-right">{{ selectedSubscription.payment.cycle }}</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-left">Månedligt gennemsnit</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-right ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-left">Årligt gennemsnit</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-right ion-text-right">1500 kr.</p>
+                </ion-col>
+              </ion-row>
 
+              <hr class="line-border">
+
+              <ion-row class="modal-kort">
+                <ion-col size="12">
+                  <h2>Kort</h2>
+                </ion-col>
+                <ion-col size="6">
+                  <p>Visa/Debit</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="ion-text-right modal-kort-tyk">... 5329</p>
+                </ion-col>
+              </ion-row>
+
+              <hr class="line-border">
+
+              <ion-row class="modal-seneste-betalinger ion-align-items-center">
+                <ion-col size="12">
+                  <h2>Seneste betalinger</h2>
+                </ion-col>
+                <ion-col size="2">
+                  <p>img</p>
+                </ion-col>
+                <ion-col class="" size="5">
+                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
+                  <p class="modal-seneste-indbetaling">05-05-2023</p>
+                </ion-col>
+                <ion-col size="5">
+                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+
+                <ion-col size="12">
+                </ion-col>
+                <ion-col size="2">
+                  <p>img</p>
+                </ion-col>
+                <ion-col class="" size="5">
+                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
+                  <p class="modal-seneste-indbetaling">05-04-2023</p>
+                </ion-col>
+                <ion-col size="5">
+                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+                <ion-col size="12">
+
+                </ion-col>
+                <ion-col size="2">
+                  <p>img</p>
+                </ion-col>
+                <ion-col class="" size="5">
+                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
+                  <p class="modal-seneste-indbetaling">06-03-2023</p>
+                </ion-col>
+                <ion-col size="5">
+                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+                <ion-col class="ion-text-center" size="12">
+                  <ion-button class="modal-seneste-knap ion-margin-top ion-margin-bottom" shape="round">Vis alle</ion-button>
+                </ion-col>
+              </ion-row>
             </ion-grid>
           </ion-content>
         </ng-template>
