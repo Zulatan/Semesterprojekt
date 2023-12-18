@@ -24,12 +24,13 @@ app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 
 require("./routes/abonnementzonen.routes")(app);
-// require(".routes/user.routes")(app);
 /* tilføjet som test linje under */
 app.get("/api/subscription/all", subscriptionController.findAll);
 
 // For some reason, when commenting out the code below it still fetches the data.
 app.get("/api/subscription/all-with-payments", subscriptionController.findAllWithPayments);
+
+app.put("/api/subscription/:id", subscriptionController.update);
 
 
 // set port, listen for requests

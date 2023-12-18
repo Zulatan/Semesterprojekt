@@ -15,6 +15,16 @@ const baseUrl = 'http://localhost:8080/api';
     getAllSubscriptions(): Observable<any[]> {
       return this.http.get<any[]>(`${this.apiUrl}`);
     }
+
+// Update subscription details only
+updateSubscription(subscriptionId: number, updatedData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${subscriptionId}`, updatedData);
+  }
+
+// Update both subscription and payment details
+updateSubscriptionAndPayment(subscriptionId: number, updatedData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${subscriptionId}`, updatedData);
+  }
 /*
     getAllSubscriptionsWithPayments(): Observable<any[]> {
         return this.http.get<any[]>(`${this.apiUrl}/all-with-payments`); // Adjust the endpoint
@@ -44,10 +54,5 @@ const baseUrl = 'http://localhost:8080/api';
     //Delete a sub
     deleteSubscription(id: any): Observable<any> {
         return this.http.delete(`${baseUrl}/subscription/${id}`);
-    }
-
-    //Update a sub
-    updateSubscription(id: any, data: any): Observable<any> {
-        return this.http.put(`${baseUrl}/subscription/${id}`, data);
     }
 }

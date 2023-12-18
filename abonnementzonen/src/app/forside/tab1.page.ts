@@ -1,5 +1,3 @@
-
-
 import { Component, OnInit } from '@angular/core';
 import { SubscriptionService } from '../../services/database';
 import { AuthService } from 'src/services/auth.service';
@@ -28,6 +26,43 @@ export class Tab1Page implements OnInit {
     this.authService.getUserData().subscribe((user) => {
       this.user = user;
     });
+    console.log("is modal two open", this.isModalTwoOpen)
+  }
+
+  updateSubscriptionDetails(): void {
+    // Assuming you have a selectedSubscription object with the updated data
+    const updatedData = {
+      category: this.selectedSubscription.category,
+      title: this.selectedSubscription.title,
+      cycle: this.selectedSubscription.cycle,
+      plan: this.selectedSubscription.plan,
+      startdate: this.selectedSubscription.startdate,
+      nextpayment: this.selectedSubscription.nextpayment
+      // Add other fields as needed
+    };
+    console.log('Updated data', updatedData)
+    // Assuming you have the subscription ID
+    const subscriptionId = this.selectedSubscription.subscription_id;
+  
+    // Call the service method to update the subscription
+    this.subscriptionService.updateSubscription(subscriptionId, updatedData)
+    .subscribe(
+      (response) => {
+        // Handle success, e.g., show a success message
+        console.log('Subscription updated successfully', response);
+
+        // Optionally, update the local subscription object
+        const updatedSubscriptionIndex = this.subscriptions.findIndex(sub => sub.subscription_id === subscriptionId);
+        if (updatedSubscriptionIndex !== -1) {
+          this.subscriptions[updatedSubscriptionIndex] = { ...this.subscriptions[updatedSubscriptionIndex], ...updatedData };
+        }
+      },
+      (error) => {
+        // Handle error, e.g., show an error message
+        console.error('Error updating subscription', error);
+      }
+    );
+      
   }
 
   onDeleteButtonClick(subscriptionId: number): void {
@@ -104,5 +139,13 @@ export class Tab1Page implements OnInit {
     this.isModalOpen = false;
     console.log('Modal closed successfully');
   }
+  isModalTwoOpen = false;
+
+  setTwoOpen(isOpen: boolean) {
+    this.isModalTwoOpen = isOpen;
+  }
+
+
+
 }
 
