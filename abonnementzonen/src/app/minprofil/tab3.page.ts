@@ -6,7 +6,20 @@ import { PhotoService, UserPhoto } from '../services/photo.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
+
+
 export class Tab3Page {
+
+  public alertButtons = [
+    {
+      text: 'No',
+      cssClass: 'alert-button-cancel',
+    },
+    {
+      text: 'Yes',
+      cssClass: 'alert-button-confirm',
+    },
+  ];
 
   constructor(public photoService: PhotoService) { }
 
@@ -24,6 +37,25 @@ export class Tab3Page {
   async deletePhoto(photo: UserPhoto) {
     await this.photoService.deletePhoto(photo);
   }
+
+  // Method to get styles dynamically
+  getImageStyles() {
+    // Replace these with the actual styles you want to set dynamically
+    const width = '100%';
+    const maxWidth = '300px';
+    const borderRadius = '200px';
+    const boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+    const backgroundColor = 'rgb(0, 97, 154)';
+
+    return {
+      width,
+      'max-width': maxWidth,
+      'border-radius': borderRadius,
+      'box-shadow': boxShadow,
+      'backgroundcolor': backgroundColor,
+    };
+  } 
+
   
 }
 
