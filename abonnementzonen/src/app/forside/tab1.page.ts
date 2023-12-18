@@ -31,15 +31,20 @@ export class Tab1Page implements OnInit {
 
   updateSubscriptionDetails(): void {
     // Assuming you have a selectedSubscription object with the updated data
+    const payment = {
+      nextpayment: this.selectedSubscription.nextpayment,
+      cycle: this.selectedSubscription.cycle,
+    }
+
     const updatedData = {
       category: this.selectedSubscription.category,
       title: this.selectedSubscription.title,
-      cycle: this.selectedSubscription.cycle,
       subscriptionplan: this.selectedSubscription.subscriptionplan,
       startdate: this.selectedSubscription.startdate,
-      nextpayment: this.selectedSubscription.nextpayment
-      // Add other fields as needed
+      payment_id: this.selectedSubscription.payment_id,
+      payment: payment
     };
+
     console.log('Updated data', updatedData)
     // Assuming you have the subscription ID
     const subscriptionId = this.selectedSubscription.subscription_id;
@@ -108,6 +113,7 @@ export class Tab1Page implements OnInit {
   setOpen(isOpen: boolean, subscription?: any): void {
     this.isModalOpen = isOpen;
     if (subscription) {
+      console.log("virker ikke", subscription)
       this.selectedSubscription = subscription;
     }
   }
