@@ -35,7 +35,7 @@ export class Tab1Page implements OnInit {
       category: this.selectedSubscription.category,
       title: this.selectedSubscription.title,
       cycle: this.selectedSubscription.cycle,
-      plan: this.selectedSubscription.plan,
+      subscriptionplan: this.selectedSubscription.subscriptionplan,
       startdate: this.selectedSubscription.startdate,
       nextpayment: this.selectedSubscription.nextpayment
       // Add other fields as needed
@@ -135,9 +135,6 @@ export class Tab1Page implements OnInit {
         console.log('Error response:', error);
       }
     );
-  
-    this.isModalOpen = false;
-    console.log('Modal closed successfully');
   }
   isModalTwoOpen = false;
 

@@ -34,7 +34,7 @@ module.exports = (app) => {
   //delete a subscription
   router.delete("/subscription/:id", subscription.delete);
 
-  router.put("/subscription/:id", subscription.update)
+  router.put("/subscription/:id", subscription.update);
 
   // //update a subscription with an id as param
   // router.put("/subscriotion/:id", subscription.update)
