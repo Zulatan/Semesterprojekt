@@ -1,30 +1,33 @@
 // https://sequelize.org/docs/v6/core-concepts/model-basics/
 //model basics + kode fra babyjourneydb 
 module.exports = (sequelize, DataType) => {
-    const User = sequelize.define("user", {
-        user_id: {
+    const Payment = sequelize.define("payment", {
+        payment_id: {
             type: DataType.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
-        fname: {
+        price: {
             type: DataType.STRING,
             allowNull: false
         },
-        lname: {
-            type: DataType.STRING,
-            allowNull: false
+        nextpayment: {
+            type: DataType.DATE,
+            allowNull:false
         },
-        email: {
-            type: DataType.STRING,
-            allowNull: true
-        },
-        password: {
+        cycle: {
             type: DataType.STRING,
             allowNull: false
         }
     });
 
-    return User;
+    Payment.associate = (models) => {
+        Payment.hasOne(models.Subscription, {
+          foreignKey: "payment_id",
+          as: "subscription",
+        });
+      };
+
+    return Payment;
 };

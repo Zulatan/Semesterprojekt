@@ -3,7 +3,7 @@ require("dotenv").config({ path: `.env.local`, override: true });
 //refers to the library itself
 const Sequelize = require("sequelize"); 
 //refers to to an instance of Sequelize
-const sequelize = new Sequelize("abonnementzonendb", "root", "", { 
+const sequelize = new Sequelize("abonnementzonendb", "root", "root", { 
   host: "localhost",
   dialect: "mysql",
   port: 3306,
@@ -17,8 +17,28 @@ db.sequelize = sequelize;
 
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.subscription = require("./subscription.model.js")(sequelize, Sequelize);
+db.payment = require("./payment.model.js")(sequelize, Sequelize);
 
 //relation between models (tables)
+/*db.user.hasMany(db.subscription, {
+    foreignKey: "user_id",
+    as: "user",
+    onDelete: "cascade", //delete all subscription if user is deleted
+  });
+db.subscription.hasOne(db.payment, {
+    foreignKey: "subscription_id",
+    as: "payments",
+    onDelete: "cascade", //delete all subscription if user is deleted
+  });
+  db.subscription.belongsTo(db.user, {
+    foreignKey: "user_id",
+    as: "user",
+  });
+  db.payment.belongsTo(db.subscription, {
+    foreignKey: "subscription_id",
+    as: "subscription",
+  });*/
+
 db.user.hasMany(db.subscription, {
   foreignKey: "user_id",
   as: "subscriptions", // Note the change in alias                                   - changed

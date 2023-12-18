@@ -28,7 +28,9 @@
           <ion-list>
             <ion-item>
               <ion-icon name="mail-outline" color="tertiary"></ion-icon>
-              <ion-input type="Email" class="" placeholder="Email" formControlName="email"></ion-input>
+              <ion-input type="Email" class="" placeholder="Email" formControlName="email"   errorText="Invalid email"
+              ngModel
+              email></ion-input>
             </ion-item>
 
             <ion-item class="ion-margin-top">
@@ -41,7 +43,8 @@
               <ion-input type="password" class="" placeholder="Angiv adgangskode igen"></ion-input>
             </ion-item>
 
-            <ion-button class="buttonned ion-padding" type="submit" expand="block" color="primary" [disabled]="registrationForm.invalid" (click)="navigateToLogin()">opret bruger</ion-button>
+            <!-- <ion-button class="buttonned ion-padding" type="submit" expand="block" color="primary" [disabled]="registrationForm.invalid" (click)="navigateToLogin()">opret bruger</ion-button> -->
+            <ion-button class="buttonned ion-padding" type="submit" expand="block" color="primary" [disabled]="registrationForm.invalid" (click)="registerWithEmailAndPassword()">Opret Bruger</ion-button>
 
             <p class="ion-text-center ikkebruger">Har du allerede en bruger? <span (click)="navigateToLogin()" class="logindbruger ion-text-uppercase">Log ind</span></p>
             

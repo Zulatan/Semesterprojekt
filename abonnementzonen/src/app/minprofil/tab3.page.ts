@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/services/auth.service';
+import { Router } from '@angular/router';
 import { PhotoService, UserPhoto } from '../services/photo.service'; 
 
 @Component({
@@ -6,10 +8,9 @@ import { PhotoService, UserPhoto } from '../services/photo.service';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
+export class Tab3Page implements OnInit {
 
-
-export class Tab3Page {
-
+  constructor(private authService: AuthService, private router: Router, public photoService: PhotoService) {}
   public alertButtons = [
     {
       text: 'No',
@@ -21,8 +22,15 @@ export class Tab3Page {
     },
   ];
 
-  constructor(public photoService: PhotoService) { }
 
+  logout() {
+    this.authService.logout().then(() => {
+      // Redirect or perform other actions after logout
+      this.router.navigateByUrl('login')
+    }).catch((error) => {
+      console.error(error);
+    });
+  }
   async ngOnInit() {
     await this.photoService.loadSaved();
    } 
