@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SubscriptionService } from '../../services/database';
 import { AuthService } from 'src/services/auth.service';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class Tab1Page implements OnInit {
   user: any;
   selectedSubscription: any ={};
 
-  constructor(private subscriptionService: SubscriptionService, private authService: AuthService, private alertController: AlertController) {}
+  constructor(private subscriptionService: SubscriptionService, private authService: AuthService, private alertController: AlertController, private modalController: ModalController) {}
 
   ngOnInit() {
     console.log('Before Sequelize Query');
@@ -32,7 +32,8 @@ export class Tab1Page implements OnInit {
     // Assuming you have a selectedSubscription object with the updated data
     const payment = {
       nextpayment: this.selectedSubscription.nextpayment,
-      cycle: this.selectedSubscription.cycle
+      cycle: this.selectedSubscription.cycle,
+      price: this.selectedSubscription.payment.price
     }
 
     const updatedData = {
@@ -60,6 +61,7 @@ export class Tab1Page implements OnInit {
         if (updatedSubscriptionIndex !== -1) {
           this.subscriptions[updatedSubscriptionIndex] = { ...this.subscriptions[updatedSubscriptionIndex], ...updatedData };
         }
+        this.closeModals();
       },
       (error) => {
         // Handle error, e.g., show an error message
@@ -149,7 +151,10 @@ export class Tab1Page implements OnInit {
     this.isModalTwoOpen = isOpen;
   }
 
-
+  closeModals(): void {
+    this.isModalOpen = false;
+    this.isModalTwoOpen = false;
+  }
 
 }
 

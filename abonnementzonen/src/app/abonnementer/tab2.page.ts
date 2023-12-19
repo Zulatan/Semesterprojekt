@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from 'src/services/auth.service';
-import { AlertController } from '@ionic/angular';
 import { SubscriptionService } from '../../services/database';
 
 @Component({
@@ -65,7 +64,8 @@ export class Tab2Page implements OnInit {
     // Assuming you have a selectedSubscription object with the updated data
     const payment = {
       nextpayment: this.selectedSubscription.nextpayment,
-      cycle: this.selectedSubscription.cycle
+      cycle: this.selectedSubscription.cycle,
+      price: this.selectedSubscription.payment.price
     }
 
     const updatedData = {
@@ -93,6 +93,7 @@ export class Tab2Page implements OnInit {
         if (updatedSubscriptionIndex !== -1) {
           this.subscriptions[updatedSubscriptionIndex] = { ...this.subscriptions[updatedSubscriptionIndex], ...updatedData };
         }
+        this.closeModals();
       },
       (error) => {
         // Handle error, e.g., show an error message
@@ -180,6 +181,11 @@ export class Tab2Page implements OnInit {
 
   setTwoOpen(isOpen: boolean) {
     this.isModalTwoOpen = isOpen;
+  }
+
+  closeModals(): void {
+    this.isModalTwoOpen = false;
+    this.isModalTreeOpen = false;
   }
 
 
