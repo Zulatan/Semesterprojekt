@@ -101,6 +101,54 @@
 
       }
 
+      ion-list button[ion-item] {
+        width: 96%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 4px;
+        height: 58px;
+        background-color: var(--ion-color-secondary);
+        color: var(--ion-color-dark);
+      }
+
+      ion-list button[ion-item] ion-fab-button{
+        background-color: var(--ion-color-secondary);
+        margin-left: 8px;
+        margin-top: 3px;
+    }
+
+      ion-list button[ion-item] ion-fab-button ion-icon {
+        height: 40px;
+        width: 30px;
+        background-color: none;
+        
+    }
+
+    ion-list button[ion-item] {
+        display: flex;
+        align-items:center;
+      }
+      
+
+    ion-list button[ion-item] ion-label {
+        flex: 1;
+    }
+
+    ion-list button[ion-item] ion-label h4 {
+        margin: 6px 0px 0px 7px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+ 
+    }
+
+    .arrow-icon {
+        color: var(--ion-color-dark);
+        font-size: 20px;
+        margin-right: 8px;    
+    }
+
     .minprofil-chip{
         border-radius: 100px;
         background: none;
@@ -118,10 +166,6 @@
         font-size: 15px;
     }
 
-    .list-ion-label-pb{
-        margin-left: 8px;
-    }
-
     .list-ion-label-fabbutton{
         margin: 0px;
     }
@@ -131,7 +175,10 @@
     }
 
     .ion-item-edit-log_af{
-        padding-top: 25px;
+        padding-top: 5px;
+        margin: 0;
+        width: 100%;
+        margin-top: 20px;
     }
 
 
@@ -164,6 +211,7 @@
 
     .minprofil-top-section ion-img {
         height: 80px;
+        border-radius: 200px;
 
       }
 
@@ -178,9 +226,24 @@
             }
       }
 
-      #log_af_button{
-        color: var(dark);
+    
+      .ion-img-camera {
+        width: 150px; 
+
+
       }
+
+      .style-img img{
+        display: block;
+        width: 47%;
+        height: 87%;
+        border-radius: 200%;
+        background: rosybrown;
+        
+
+      }
+
+
       /*ion-img {
         display: block;
         width: 104px;

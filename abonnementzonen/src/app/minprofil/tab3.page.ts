@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { AuthService } from 'src/services/auth.service';
 import { Router } from '@angular/router';
-import { PhotoService, UserPhoto } from '../services/photo.service'; 
+import { PhotoService, UserPhoto } from '../services/photo.service';
+import { AlertController } from '@ionic/angular';
+import { NotificationSettingsModalComponent } from '../notification-settings-modal/notification-settings-modal.component';
+
+
 
 @Component({
   selector: 'app-tab3',
@@ -10,7 +15,6 @@ import { PhotoService, UserPhoto } from '../services/photo.service';
 })
 export class Tab3Page implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, public photoService: PhotoService) {}
   public alertButtons = [
     {
       text: 'No',
@@ -22,6 +26,8 @@ export class Tab3Page implements OnInit {
     },
   ];
 
+
+  constructor(private modalController: ModalController, private alertController: AlertController, private authService: AuthService, private router: Router, public photoService: PhotoService) {}
 
   logout() {
     this.authService.logout().then(() => {
@@ -46,26 +52,104 @@ export class Tab3Page implements OnInit {
     await this.photoService.deletePhoto(photo);
   }
 
-  // Method to get styles dynamically
-  getImageStyles() {
-    // Replace these with the actual styles you want to set dynamically
-    const width = '100%';
-    const maxWidth = '300px';
-    const borderRadius = '200px';
-    const boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-    const backgroundColor = 'rgb(0, 97, 154)';
 
-    return {
-      width,
-      'max-width': maxWidth,
-      'border-radius': borderRadius,
-      'box-shadow': boxShadow,
-      'backgroundcolor': backgroundColor,
-    };
-  } 
+  //alert log af
+  async LogAfAlert() {
+    const alert = await this.alertController.create({
+      header: 'Log af',
+      message: 'Du er i gang med at logge ud',
+      buttons: [
+        {
+          text:'Annuller',
+          role: 'cancel'
+        },
+        {
+          text: 'Bekræft'
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+  //alert log af
+  async SletKontoAlert() {
+    const alert = await this.alertController.create({
+      header: 'Slet konto',
+      message: 'Du er igang med at slette din konto',
+      buttons: [
+        {
+          text:'Annuller',
+          role: 'cancel'
+        },
+        {
+          text: 'Bekræft'
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+ //feedback alert
+ async presentFeedbackAlert() {
+  const alert = await this.alertController.create({
+    header: 'Hjælp & feedback',
+    message: 'Har du brug for hjælp eller har du lyst til at give feedback, så giv os venligst besked',
+    inputs: [
+      {
+        placeholder: 'Navn',
+      },
+
+      {
+        name: 'feedback',
+        type: 'text',
+        placeholder: 'Skriv din besked'
+      }
+    ],
+    buttons: [
+      {
+        text: 'Annuller',
+        role: 'cancel',
+      },
+      {
+        text: 'Send',
+      }
+    ]
+  });
+
+  await alert.present();
+}
 
   
+  //modal til notifikationer
+  async openNotificationSettingsModal() {
+    const modal = await this.modalController.create({
+      component: NotificationSettingsModalComponent,
+    });
+
+    modal.onDidDismiss().then((data) => {
+      if (data && data.data) {
+        console.log('Notification Enabled:', data.data.notificationEnabled);
+      }
+    });
+
+    return await modal.present();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Are you sure?',
+      buttons: this.alertButtons,
+    });
+
+    await alert.present();
+  }
+
 }
+  
 
 /*
   changeColorAndText() {

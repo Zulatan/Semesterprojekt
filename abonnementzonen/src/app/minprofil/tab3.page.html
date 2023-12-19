@@ -3,7 +3,7 @@
   <ion-grid>
     <ion-row>
       <ion-fab vertical="top" horizontal="center">
-        <ion-img class="ion-img-camera" [ngStyle]="getImageStyles()" *ngIf="photoService.photos.length > 0" [src]="photoService.photos[0].webviewPath"></ion-img>
+        <ion-img class="ion-img-camera style-img" *ngIf="photoService.photos.length > 0" [src]="photoService.photos[0].webviewPath"></ion-img>
         <ion-button class="ion-button-delete" *ngIf="photoService.photos.length > 0" (click)="deletePhoto(photoService.photos[0])" lines="none" fill="clear" color="primary">Slet profilbillede</ion-button>
         <ion-chip class="minprofil-chip" vertical="top" horizontal="center" *ngIf="!photoService.photos.length">
             <ion-icon class="icon-person" name="person-circle"></ion-icon>
@@ -12,8 +12,8 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-<!--min profil detajler-->
 
+<!--min profil detajler-->
   <ion-content>
     <ion-grid class="minprofil-section">
       <div class="minprofil-title">
@@ -34,39 +34,44 @@
       </div>
     </ion-grid>
 
-    <ion-list>
-      <ion-item detail="true" lines="none">
-        <ion-icon class="list-ion-icon" aria-hidden="true" name="lock-open-outline" slot="start"></ion-icon>
-        <ion-label>
-          <h4 class="list-ion-label">Adgangskode</h4>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-
-
+    <!--min profil - liste- start -->
+      <!--min profil - liste - skift adgangskode-->
       <ion-list>
         <ion-item detail="true" lines="none">
-            <ion-fab-button aria-hidden="true" slot="start" size="small" (click)="addPhotoToGallery()" class="ion-padding" color="transparent">
-              <ion-icon class="camera-icon" aria-hidden="true" name="camera-outline" color="dark" ></ion-icon>
-            </ion-fab-button>
+          <ion-icon class="list-ion-icon" aria-hidden="true" name="lock-open-outline" slot="start"></ion-icon>
           <ion-label>
-            <h4 class="list-ion-label list-ion-label-pb">Ændre profilbillede</h4>
+            <h4 class="list-ion-label">Adgangskode</h4>
           </ion-label>
         </ion-item>
       </ion-list>
 
 
+      <!--min profil - liste - ændre i profilbillede-->
       <ion-list>
-        <ion-item detail="true" lines="none">
+        <button ion-item detail="true" (click)="addPhotoToGallery()" lines="none">
+            <ion-fab-button aria-hidden="true" slot="start" size="small" class="ion-padding" color="transparent">
+              <ion-icon class="camera-icon" aria-hidden="true" name="camera-outline" color="dark" ></ion-icon>
+            </ion-fab-button>
+            <ion-label>
+              <h4 class="list-ion-label list-ion-label-pb">Ændre profilbillede</h4>
+            </ion-label>
+            <ion-icon class="arrow-icon" name="chevron-forward-outline"></ion-icon>
+        </button>
+      </ion-list>
+
+      <!--min profil - liste - hjælp og feedback-->
+      <ion-list>
+        <ion-item detail="true" (click)="presentFeedbackAlert()" lines="none">
           <ion-icon class="list-ion-icon" aria-hidden="true" name="happy-outline" slot="start"></ion-icon>
           <ion-label>
             <h4 class="list-ion-label">Hjælp & feedback</h4>
           </ion-label>
         </ion-item>
       </ion-list>
-  
+    
+      <!--min profil - liste - indstillinger (notifikationer)-->
       <ion-list>
-        <ion-item detail="true" lines="none">
+        <ion-item detail="true" (click)="openNotificationSettingsModal()" lines="none">
           <ion-icon class="list-ion-icon" aria-hidden="true" name="settings-outline" slot="start"></ion-icon>
           <ion-label>
             <h4 class="list-ion-label">Indstillinger</h4>
@@ -74,21 +79,21 @@
         </ion-item>
       </ion-list>
 
-
+      <!--min profil - liste - logaf-->
       <ion-list>
-        <ion-item detail="true" class="ion-item-edit ion-item-edit-log_af" lines="none">
-          <ion-icon class="list-ion-icon" aria-hidden="true" name="lock-open-outline" slot="start"></ion-icon>
-          <ion-button id="log_af_button" >
-            <ion-label>
-              <h4 class="list-ion-label">Log af</h4>
-            </ion-label>
-            <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" [buttons]="alertButtons"></ion-alert>
-        </ion-button>
-        </ion-item>
+          <ion-item detail="true" (click)="LogAfAlert()" class="ion-item-edit ion-item-edit-log_af" lines="none">
+            <ion-icon class="list-ion-icon" aria-hidden="true" name="lock-open-outline" slot="start"></ion-icon>
+              <ion-label>
+                <h4 class="list-ion-label">Log af</h4>
+              </ion-label>
+              <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" [buttons]="alertButtons"></ion-alert>
+          </ion-item>
       </ion-list>
 
+
+      <!--min profil - liste - slet konto-->
       <ion-list>
-        <ion-item detail="true" class="ion-item-edit ion-item-edit-slet_konto" lines="none">
+        <ion-item detail="true" (click)="SletKontoAlert()" class="ion-item-edit ion-item-edit-slet_konto" lines="none">
           <ion-icon class="list-ion-icon" aria-hidden="true" name="close-circle-outline" slot="start"></ion-icon>
           <ion-label>
             <h4 class="list-ion-label">Slet konto</h4>
@@ -96,6 +101,7 @@
         </ion-item>
       </ion-list>
 
+      <!--min profil - liste - slut-->
   </ion-content>
 
 

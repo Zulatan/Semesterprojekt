@@ -13,10 +13,14 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth'
 import { FirestoreModule } from '@angular/fire/firestore'
 
 import { environment } from 'src/environments/environment';
+import { NotificationSettingsModalComponent } from './notification-settings-modal/notification-settings-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule, FirestoreModule],
+  declarations: [AppComponent, NotificationSettingsModalComponent],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AngularFireModule.initializeApp(environment.firebaseConfig), AngularFireAuthModule, FirestoreModule, ReactiveFormsModule,],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
