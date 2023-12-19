@@ -26,14 +26,13 @@ export class Tab1Page implements OnInit {
     this.authService.getUserData().subscribe((user) => {
       this.user = user;
     });
-    console.log("is modal two open", this.isModalTwoOpen)
   }
 
   updateSubscriptionDetails(): void {
     // Assuming you have a selectedSubscription object with the updated data
     const payment = {
       nextpayment: this.selectedSubscription.nextpayment,
-      cycle: this.selectedSubscription.cycle,
+      cycle: this.selectedSubscription.cycle
     }
 
     const updatedData = {
@@ -141,6 +140,8 @@ export class Tab1Page implements OnInit {
         console.log('Error response:', error);
       }
     );
+    this.isModalOpen = false;
+    console.log('Modal closed successfully');
   }
   isModalTwoOpen = false;
 
