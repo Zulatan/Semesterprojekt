@@ -62,25 +62,3 @@ ion-button{
     --color: #e91111;*/
     margin-top: 20px;
 }
-
-@media (prefers-color-scheme: light) {
-    .login-google{
-       /* --border-color: #ffffff;*/
-       /* --color: #9e1313; */
-        margin-top: 20px;
-    }
-
-    ion-input{
-        --placeholder-color: rgb(255, 255, 255);
-        --placeholder-opacity: 100;
-        margin-left: 10px;
-    
-    }
-
-    ion-item{
-        --border-color: rgb(255, 255, 255);
-        padding-right: 11px;
-        
-    }
-    
-}

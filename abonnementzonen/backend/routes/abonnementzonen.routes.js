@@ -24,7 +24,8 @@ module.exports = (app) => {
   //find all users
   router.get("/users", user.findAll);
 
-
+  //test
+  router.get("/subscription/all-with-payments", subscription.findAllWithPayments);
 
   //for subscriptions below
   //create a subscription
@@ -32,6 +33,8 @@ module.exports = (app) => {
 
   //delete a subscription
   router.delete("/subscription/:id", subscription.delete);
+
+  router.put("/subscription/:id", subscription.update);
 
   // //update a subscription with an id as param
   // router.put("/subscriotion/:id", subscription.update)
@@ -42,20 +45,18 @@ module.exports = (app) => {
   //find all subscriptions
   router.get("/subscription", subscription.findAll);
 
-
   // For payments below
   //create a payment
   router.post("/payment", payment.create);
 
   // find all payments
   router.get("/payment", payment.findAll);
-  
+
   //update a payment
   router.put("/payment/:id", payment.update);
   
   //delete a payment
   router.delete("/payment/:id", payment.delete);
-
 
   app.use("/api", router);
 };

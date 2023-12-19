@@ -46,13 +46,19 @@ h2{
 
 }
 
-h3, h4{
+h3{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+
+}
+
+h4{
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 18px;
 
 }
-
 
 p{
   font-family: 'Montserrat';
@@ -94,6 +100,11 @@ ion-card-content{
   font-family: 'Montserrat';
   font-weight: 500;
   font-size: medium;
+  padding: 5px;
+}
+
+ion-chip{
+  padding: 5px;
 }
 
 
@@ -103,5 +114,21 @@ ion-label{
   font-size: 13px;
   font-stretch: expanded;
 
-
 }
+
+
+.custom-alert-message {
+  --background: #FFFFFF;
+  text-align: center;
+}
+
+.custom-alert-buttons { 
+  color: #005D7E !important;
+  font-weight: bold !important;
+}
+
+.alert-button-group.sc-ion-alert-md{
+  background-color: #E5E5E5;
+}
+
+

@@ -24,39 +24,261 @@
     </div>
 
     <ion-grid class="forside-din-oversigt-ion-grid ion-margin">
-        <ion-row class="forside-din-oversigt-ion-row">
-            <ion-col size="4">
-                <p>Total Måned</p>
-                <p>89,-</p>
-            </ion-col>
-            <ion-col size="4">
-                <p>Total Kvartal</p>
-                <p>59,-</p>
-            </ion-col>
-            <ion-col size="4">
-                <p>Total Årlig</p>
-                <p>699,-</p>
-            </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-row class="forside-din-oversigt-ion-row">
+          <ion-col size="4">
+              <p>Total Måned</p>
+              <p>89,-</p>
+          </ion-col>
+          <ion-col class="forrside-din-oversigt-borders" size="4">
+              <p>Total Kvartal</p>
+              <p>59,-</p>
+          </ion-col>
+          <ion-col size="4">
+              <p>Total Årlig</p>
+              <p>699,-</p>
+          </ion-col>
+      </ion-row>
+    </ion-grid>
     
       <div class="dine-abonnementer-section">
         <h2 class="ion-text-uppercase ion-margin-start">Dine abonnementer</h2>
       </div>
 <!--Testkode her 44-50-->
-      <ion-row *ngFor="let subscription of subscriptions">
-        <ion-col size="12">
-          <h2 class="ion-text-uppercase">{{ subscription.title }}</h2>
-          <p>priser: {{ subscription.price }}</p>
-          <p>Start dato: {{ subscription.startdate }}</p>
-          <p>Kategori: {{ subscription.category }}</p>
-          <p>betalingsinterval: {{ subscription.cycle }}</p>
-          <p>abonnementplan: {{ subscription.subscriptionplan }}</p>
-          <p>Næste betaling: {{ subscription.nextpayment }}</p>
-          
-          <!-- Display other subscription details as needed -->
+    <ion-grid class="ion-margin-start ion-margin-end ion-margin-top" *ngFor="let subscription of subscriptions">
+      <ion-row class="abonnement-boks ion-align-items-center backgroundrow ion-margin-top">
+        <ion-col class="abonnementkort-et" size="3">
+          <ion-img class="placeholder-image" src="assets/images/placeholder_image.png"></ion-img>
+        </ion-col>
+        <ion-col class="abonnementkort-to" size="6">
+          <p class="ion-text-right">{{ subscription.title }}</p>
+        </ion-col>
+        <ion-col class="abonnementkort-tre" size="3">
+          <p class="Pricebigger ion-text-end">{{ subscription.payment.price }},-</p>
+          <p class="intervalsmall ion-text-end">{{ subscription.payment.cycle }}</p>
         </ion-col>
       </ion-row>
+      
+      <!--Ion-modal-->
+      <ion-row>
+        <ion-col size="12" class="modal-knap-col ion-text-right">
+          <ion-button class="modal-knap ion-no-padding" fill="clear" size="small" (click)="setOpen(true, subscription)">Flere detaljer</ion-button>
+        </ion-col> 
+      </ion-row>
+
+      <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button class="modal-tilbage-pil" (click)="setOpen(false)">
+                <ion-icon size="large" slot="start" name="arrow-back"></ion-icon>
+                Tilbage
+              </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+
+          <ion-content class="ion-padding-start ion-padding-end">
+            <ion-grid>
+              <ion-row class="abonnement-oplysninger">
+                <ion-col size="8">
+                  <h2>{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</h2>
+                  <p class="payment-price-big">{{ selectedSubscription.payment.price }} kr.</p>
+                  <p class="abonnement-modal-tekst">Tilmeldt: {{ selectedSubscription.startdate | date: 'dd-MM-yyyy' }}</p>
+                  <p class="abonnement-modal-tekst">Næste betaling: {{ selectedSubscription.payment.nextpayment | date: 'dd-MM-yyyy' }}</p>
+                </ion-col>
+                <ion-col size="4">
+                  <ion-img class="placeholder-image-detaljer" src="assets/images/placeholder_image.png"></ion-img>
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="">
+                <ion-col size="7" class="abonnement-modal-knapper">
+                  <ion-button class="abonnement-modal-knap-ekstra" fill="clear" size="" (click)="AlertsetOpen()">
+                    <ion-icon slot="start" size="large" name="close-circle-outline"></ion-icon>
+                    Opsig abonnement
+                  </ion-button>
+                  
+                  <ion-button fill="clear" size="" (click)="setTwoOpen(true)">
+                    <ion-icon slot="start" size="large" name="create-outline"></ion-icon>
+                    Rediger abonnement
+                  </ion-button>
+       
+                  <ion-modal [isOpen]="isModalTwoOpen">
+                    <ng-template>
+                        <ion-toolbar>
+                          <ion-buttons slot="start">
+                            <ion-button (click)="setTwoOpen(false)">
+                              <ion-icon size="large" slot="start" name="arrow-back"></ion-icon>
+                              Annuler
+                            </ion-button>
+                          </ion-buttons>
+                        </ion-toolbar>
+
+                      <ion-content class="ion-padding-start ion-padding-end">
+                        <ion-list>
+
+                          <h2>Rediger abonnement</h2>
+                          <!-- update subscription category -->
+                          <ion-item>
+                            <ion-select [(ngModel)]="selectedSubscription.category" label="Kategori" placeholder=" vælg kategori">
+                              <ion-select-option value="Streamingtjeneste">Streamingtjeneste</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                
+                          <!-- update subscription platform -->
+                          <ion-item>
+                            <ion-select [(ngModel)]="selectedSubscription.title" label="Platform" placeholder=" vælg platform">
+                              <ion-select-option value="Netflix">Netflix</ion-select-option>
+                              <ion-select-option value="HBO MAX">HBO MAX</ion-select-option>
+                              <ion-select-option value="Nordisk Film+">Nordisk Film+</ion-select-option>
+                              <ion-select-option value="TV2 Play">TV2 Play</ion-select-option>
+                              <ion-select-option value="Disney+">Disney+</ion-select-option>
+                              <ion-select-option value="Viaplay">Viaplay</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                
+                          <!-- update subscription interval -->
+                          <ion-item>
+                            <ion-select [(ngModel)]="selectedSubscription.cycle" label="Betalingsinterval" placeholder="vælg interval">
+                              <ion-select-option value="Månedligt">Månedlig</ion-select-option>
+                              <ion-select-option value="Kvartallet">Kvartal</ion-select-option>
+                              <ion-select-option value="Årligt">Årlig</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                
+                          <!-- update subscription abonnement plan -->
+                          <ion-item>
+                            <ion-select [(ngModel)]="selectedSubscription.subscriptionplan" label="Abonnement plan" placeholder="vælg plan">
+                              <ion-select-option value="Basic">Basic</ion-select-option>
+                              <ion-select-option value="Standard">Standard</ion-select-option>
+                              <ion-select-option value="Premium">Premium</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+
+                          <!-- create subscription start dato -->
+                          <ion-item>
+                            <ion-label label="Start Dato">Start dato</ion-label>
+                            <ion-datetime-button datetime="startDatetime"></ion-datetime-button>
+                          
+                            <ion-modal [keepContentsMounted]="true">
+                              <ng-template>
+                                <ion-datetime [(ngModel)]="selectedSubscription.startdate" id="startDatetime"></ion-datetime>
+                              </ng-template>
+                            </ion-modal>
+                          </ion-item>
+                          
+                          <!-- update subscription næste betaling -->
+                          <ion-item>
+                            <ion-label>Næste betaling</ion-label>
+                            <ion-datetime-button datetime="nextPaymentDatetime"></ion-datetime-button>
+                          
+                            <ion-modal [keepContentsMounted]="true">
+                              <ng-template>
+                                <ion-datetime [(ngModel)]="selectedSubscription.nextpayment" id="nextPaymentDatetime"></ion-datetime>
+                              </ng-template>
+                            </ion-modal>
+                          </ion-item>
+
+                          <ion-button expand="full" (click)="updateSubscriptionDetails(); closeModals();">Gem</ion-button>
+
+                        </ion-list>
+                      </ion-content>
+                    </ng-template>
+                  </ion-modal>
+                    
+                  <ion-button fill="clear" size="">
+                    <ion-icon slot="start" size="large" name="reader-outline"></ion-icon>
+                    Vis lignende abonnementer
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+
+              <hr class="line-border">
+
+              <ion-row class="modal-detaljer">
+                <ion-col size="12">
+                  <h2>Detaljer</h2>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-left-ekstra">Gentagende</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-right-ekstra ion-text-right">{{ selectedSubscription.payment.cycle }}</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-left">Månedligt gennemsnit</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-right ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-left">Årligt gennemsnit</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="modal-detaljer-p-right ion-text-right">1500 kr.</p>
+                </ion-col>
+              </ion-row>
+
+              <hr class="line-border">
+
+              <ion-row class="modal-kort">
+                <ion-col size="12">
+                  <h2>Kort</h2>
+                </ion-col>
+                <ion-col size="6">
+                  <p>Visa/Debit</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="ion-text-right modal-kort-tyk">... 5329</p>
+                </ion-col>
+              </ion-row>
+
+              <hr class="line-border">
+
+              <ion-row class="modal-seneste-betalinger ion-align-items-center">
+                  <ion-col size="12">
+                    <h2>Seneste betalinger</h2>
+                  </ion-col>
+                  <ion-col class="" size="2">
+                    <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>
+                  </ion-col>
+                  <ion-col class="" size="5">
+                    <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
+                    <p class="modal-seneste-indbetaling">05-05-2023</p>
+                  </ion-col>
+                  <ion-col class="" size="5">
+                    <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                  </ion-col>
+ 
+                <ion-col size="2">
+                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>
+                </ion-col>
+                <ion-col class="" size="5">
+                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
+                  <p class="modal-seneste-indbetaling">05-04-2023</p>
+                </ion-col>
+                <ion-col size="5">
+                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+
+                <ion-col size="2">
+                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>
+                </ion-col>
+                <ion-col class="" size="5">
+                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
+                  <p class="modal-seneste-indbetaling">06-03-2023</p>
+                </ion-col>
+                <ion-col size="5">
+                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>
+                </ion-col>
+                <ion-col class="ion-text-center" size="12">
+                  <ion-button class="modal-seneste-knap ion-margin-top ion-margin-bottom" shape="round">Vis alle</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </ion-grid>
 
     <ion-grid>
       <ion-row>
