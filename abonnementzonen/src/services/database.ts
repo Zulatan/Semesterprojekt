@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
-const baseUrl = 'http://localhost:8080/api';
+const baseUrl = environment.production ? 'https://eksamen2023.onrender.com/api' : 'http://localhost:8080/api'
 
 @Injectable({
     providedIn: 'root',
   })
   export class SubscriptionService {
-    private apiUrl = 'http://localhost:8080/api/subscription'; // Adjust the URL to your MySQL backend
+    private apiUrl = environment.production ? 'https://eksamen2023.onrender.com/api/subscription' : 'http://localhost:8080/api/subscription'
   
     constructor(private http: HttpClient) {}
   
