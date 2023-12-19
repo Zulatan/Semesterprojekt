@@ -23,16 +23,16 @@ exports.create = async (req, res) => {
       nextpayment: date,
       cycle: req.body.payment.cycle,
     };
-  //Create a subscription
-  const subscription = {
-    title: req.body.title,
-    startdate: req.body.startdate,
-    category: req.body.category,
-    image: req.body.image,
-    subscriptionplan: req.body.subscriptionplan,
-    user_id: req.body.user_id,
-    payment_id: req.body.payment_id
-  };
+  // //Create a subscription
+  // const subscription = {
+  //   title: req.body.title,
+  //   startdate: req.body.startdate,
+  //   category: req.body.category,
+  //   image: req.body.image,
+  //   subscriptionplan: req.body.subscriptionplan,
+  //   user_id: req.body.user_id,
+  //   payment_id: req.body.payment_id
+  // };
 
     // Save payment in the database
     const createdPayment = await Payment.create(payment);

@@ -50,8 +50,8 @@
             <!-- create subscription price -->
             <ion-item>
               <ion-select [(ngModel)]="subscription.payment.price" label="Pris" placeholder=" vælg pris">
-                <ion-select-option value="69,-">69,-</ion-select-option>
-                <ion-select-option value="159,-">159,-</ion-select-option>
+                <ion-select-option value="69">69</ion-select-option>
+                <ion-select-option value="159">159</ion-select-option>
               </ion-select>
             </ion-item>
 
@@ -87,8 +87,8 @@
             
             <!-- create subscription næste betaling -->
             <ion-item>
-              <ion-label>Næste betaling</ion-label>
-              <ion-datetime-button datetime="startdatetime"></ion-datetime-button>
+              <ion-label label="Næste Betaling">Næste betaling</ion-label>
+              <ion-datetime-button datetime="næstebetaling"></ion-datetime-button>
 
               <ion-modal [keepContentsMounted]="true">
                 <ng-template>

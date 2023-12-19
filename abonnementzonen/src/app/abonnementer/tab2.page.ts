@@ -3,7 +3,7 @@ import { ModalController, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from 'src/services/auth.service';
 import { SubscriptionService } from '../../services/database';
-import { SubscriptionService } from 'src/services/subscription.service';
+import { SubscriptionCreationService } from 'src/services/subscription.service';
 
 @Component({
   selector: 'app-tab2',
@@ -16,7 +16,7 @@ export class Tab2Page implements OnInit {
   user: any;
   selectedSubscription: any ={};
 
-  constructor(private alertController: AlertController, private subscriptionService: SubscriptionService, private modalController: ModalController, private http: HttpClient, private authService: AuthService) {}
+  constructor(private alertController: AlertController, private subscriptionService: SubscriptionService, private modalController: ModalController, private http: HttpClient, private authService: AuthService, private subscriptionCreationService: SubscriptionCreationService) {}
 
   ngOnInit(): void {
     console.log('Before Sequelize Query');
@@ -48,8 +48,6 @@ export class Tab2Page implements OnInit {
       cycle: '',
     },
   };
-
-  subscriptions: any[] = [];
 
 
   isModalOpen = false;
@@ -225,20 +223,6 @@ export class Tab2Page implements OnInit {
     this.isModalTwoOpen = false;
     this.isModalTreeOpen = false;
   }
-
-
-
-  // onSubscriptionSubmit() {
-  //     // Make HTTP POST request to your Node.js server
-  //     this.http.post('http://localhost:8080/api/subscription')
-  //       .subscribe(response => {
-  //         console.log('Registration successful', response);
-  //         // You can handle success, navigate to another page, etc.
-  //       }, error => {
-  //         console.error('Registration failed', error);
-  //         // Handle the error, show a message to the user, etc.
-  //       });
-  //   }
 
   // Fetch all subscriptions and display them
   fetchSubscriptions() {
