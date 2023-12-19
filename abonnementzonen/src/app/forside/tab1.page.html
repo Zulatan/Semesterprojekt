@@ -29,7 +29,7 @@
               <p>Total Måned</p>
               <p>89,-</p>
           </ion-col>
-          <ion-col size="4">
+          <ion-col class="forrside-din-oversigt-borders" size="4">
               <p>Total Kvartal</p>
               <p>59,-</p>
           </ion-col>
@@ -86,7 +86,7 @@
                   <p class="abonnement-modal-tekst">Næste betaling: {{ selectedSubscription.payment.nextpayment | date: 'dd-MM-yyyy' }}</p>
                 </ion-col>
                 <ion-col size="4">
-                  img
+                  <ion-img class="placeholder-image-detaljer" src="assets/images/placeholder_image.png"></ion-img>
                 </ion-col>
               </ion-row>
 
@@ -239,7 +239,7 @@
                   <h2>Seneste betalinger</h2>
                 </ion-col>
                 <ion-col size="2">
-                  <p>img</p>
+                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>
                 </ion-col>
                 <ion-col class="" size="5">
                   <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
@@ -252,7 +252,7 @@
                 <ion-col size="12">
                 </ion-col>
                 <ion-col size="2">
-                  <p>img</p>
+                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>
                 </ion-col>
                 <ion-col class="" size="5">
                   <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>
@@ -265,7 +265,7 @@
 
                 </ion-col>
                 <ion-col size="2">
-                  <p>img</p>
+                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>
                 </ion-col>
                 <ion-col class="" size="5">
                   <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>

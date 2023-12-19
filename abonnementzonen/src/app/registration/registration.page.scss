@@ -53,19 +53,3 @@ p{
 .colnavn{
     margin-top: -40px;
 }
-
-@media (prefers-color-scheme: dark) {
-
-    ion-input{
-        --placeholder-color: rgb(255, 255, 255);
-        --placeholder-opacity: 100;
-        margin-left: 10px;
-    
-    }
-
-    ion-item{
-        --border-color: rgb(255, 255, 255);
-        padding-right: 11px;
-        
-    }
-}

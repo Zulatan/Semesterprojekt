@@ -47,11 +47,33 @@ ion-col{
     width: 50px;
 }
 
+.placeholder-image-detaljer{
+    margin: 10px 0px 0px 0px;
+}
+
+.placeholder-image-seneste{
+    height: 40px;
+    width: 40px;
+}
+
 
 .forside-din-oversigt-ion-grid {
     background-color: var( --ion-color-primary, accent200);
     color: #ffffff; 
     border-radius: 10px; 
+}
+
+.forside-din-oversigt-ion-row{
+    padding: 10px 0px 10px 0px;
+}
+
+.forside-din-oversigt-ion-row ion-col{
+    padding: 10px;
+}
+
+.forrside-din-oversigt-borders{
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
 }
 
 .bank-wrapped-card {
