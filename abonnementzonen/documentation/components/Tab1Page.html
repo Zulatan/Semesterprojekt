@@ -1,0 +1,1863 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>abonnementzonen documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">abonnementzonen documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Tab1Page</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/forside/tab1.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab1</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>tab1.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>tab1.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#isModalOpen" >isModalOpen</a>
+                            </li>
+                            <li>
+                                <a href="#isModalTwoOpen" >isModalTwoOpen</a>
+                            </li>
+                            <li>
+                                <a href="#selectedSubscription" >selectedSubscription</a>
+                            </li>
+                            <li>
+                                <a href="#subscriptions" >subscriptions</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#AlertsetOpen" >AlertsetOpen</a>
+                            </li>
+                            <li>
+                                <a href="#closeModals" >closeModals</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDeleteButtonClick" >onDeleteButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#onOpsigButtonClick" >onOpsigButtonClick</a>
+                            </li>
+                            <li>
+                                <a href="#setOpen" >setOpen</a>
+                            </li>
+                            <li>
+                                <a href="#setTwoOpen" >setTwoOpen</a>
+                            </li>
+                            <li>
+                                <a href="#updateSubscriptionDetails" >updateSubscriptionDetails</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(subscriptionService: <a href="../injectables/SubscriptionService.html" target="_self">SubscriptionService</a>, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, alertController: AlertController, modalController: ModalController)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/forside/tab1.page.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>subscriptionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SubscriptionService.html" target="_self" >SubscriptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertController</td>
+                                                  
+                                                        <td>
+                                                                    <code>AlertController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalController</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AlertsetOpen"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>AlertsetOpen</b></span>
+                        <a href="#AlertsetOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>AlertsetOpen()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="90"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:90</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeModals"></a>
+                    <span class="name">
+                        <span ><b>closeModals</b></span>
+                        <a href="#closeModals"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeModals()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="157"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:157</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="19"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onDeleteButtonClick"></a>
+                    <span class="name">
+                        <span ><b>onDeleteButtonClick</b></span>
+                        <a href="#onDeleteButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onDeleteButtonClick(subscriptionId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>subscriptionId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOpsigButtonClick"></a>
+                    <span class="name">
+                        <span ><b>onOpsigButtonClick</b></span>
+                        <a href="#onOpsigButtonClick"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOpsigButtonClick()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="125"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setOpen"></a>
+                    <span class="name">
+                        <span ><b>setOpen</b></span>
+                        <a href="#setOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setOpen(isOpen: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, subscription?: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="117"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:117</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>isOpen</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                                <td>subscription</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setTwoOpen"></a>
+                    <span class="name">
+                        <span ><b>setTwoOpen</b></span>
+                        <a href="#setTwoOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setTwoOpen(isOpen: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="153"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:153</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>isOpen</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateSubscriptionDetails"></a>
+                    <span class="name">
+                        <span ><b>updateSubscriptionDetails</b></span>
+                        <a href="#updateSubscriptionDetails"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateSubscriptionDetails()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/forside/tab1.page.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isModalOpen"></a>
+                    <span class="name">
+                        <span ><b>isModalOpen</b></span>
+                        <a href="#isModalOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="114" class="link-to-prism">src/app/forside/tab1.page.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isModalTwoOpen"></a>
+                    <span class="name">
+                        <span ><b>isModalTwoOpen</b></span>
+                        <a href="#isModalTwoOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/app/forside/tab1.page.ts:151</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedSubscription"></a>
+                    <span class="name">
+                        <span ><b>selectedSubscription</b></span>
+                        <a href="#selectedSubscription"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{}</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/forside/tab1.page.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="subscriptions"></a>
+                    <span class="name">
+                        <span ><b>subscriptions</b></span>
+                        <a href="#subscriptions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/forside/tab1.page.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/forside/tab1.page.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { SubscriptionService } from &#x27;../../services/database&#x27;;
+import { AuthService } from &#x27;src/services/auth.service&#x27;;
+import { AlertController, ModalController } from &#x27;@ionic/angular&#x27;;
+
+
+@Component({
+  selector: &#x27;app-tab1&#x27;,
+  templateUrl: &#x27;tab1.page.html&#x27;,
+  styleUrls: [&#x27;tab1.page.scss&#x27;]
+})
+export class Tab1Page implements OnInit {
+  subscriptions: any[] &#x3D; [];
+  user: any;
+  selectedSubscription: any &#x3D;{};
+
+  constructor(private subscriptionService: SubscriptionService, private authService: AuthService, private alertController: AlertController, private modalController: ModalController) {}
+
+  ngOnInit() {
+    console.log(&#x27;Before Sequelize Query&#x27;);
+    this.subscriptionService.getAllSubscriptionsWithPayments().subscribe((data) &#x3D;&gt; {
+      console.log(&#x27;Subscription with payments:&#x27;, data);
+      this.subscriptions &#x3D; data;
+
+      this.subscriptions &#x3D; data.sort((a, b) &#x3D;&gt; new Date(b.startdate).getTime() - new Date(a.startdate).getTime()).slice(0, 3);
+
+    });
+
+    this.authService.getUserData().subscribe((user) &#x3D;&gt; {
+      this.user &#x3D; user;
+    });
+  }
+
+  updateSubscriptionDetails(): void {
+    // Assuming you have a selectedSubscription object with the updated data
+    const payment &#x3D; {
+      nextpayment: this.selectedSubscription.nextpayment,
+      cycle: this.selectedSubscription.cycle,
+      price: this.selectedSubscription.payment.price
+    }
+
+    const updatedData &#x3D; {
+      category: this.selectedSubscription.category,
+      title: this.selectedSubscription.title,
+      subscriptionplan: this.selectedSubscription.subscriptionplan,
+      startdate: this.selectedSubscription.startdate,
+      payment_id: this.selectedSubscription.payment_id,
+      payment: payment
+    };
+
+    console.log(&#x27;Updated data&#x27;, updatedData)
+    // Assuming you have the subscription ID
+    const subscriptionId &#x3D; this.selectedSubscription.subscription_id;
+  
+    // Call the service method to update the subscription
+    this.subscriptionService.updateSubscription(subscriptionId, updatedData)
+    .subscribe(
+      (response) &#x3D;&gt; {
+        // Handle success, e.g., show a success message
+        console.log(&#x27;Subscription updated successfully&#x27;, response);
+
+        // Optionally, update the local subscription object
+        const updatedSubscriptionIndex &#x3D; this.subscriptions.findIndex(sub &#x3D;&gt; sub.subscription_id &#x3D;&#x3D;&#x3D; subscriptionId);
+        if (updatedSubscriptionIndex !&#x3D;&#x3D; -1) {
+          this.subscriptions[updatedSubscriptionIndex] &#x3D; { ...this.subscriptions[updatedSubscriptionIndex], ...updatedData };
+        }
+        this.closeModals();
+      },
+      (error) &#x3D;&gt; {
+        // Handle error, e.g., show an error message
+        console.error(&#x27;Error updating subscription&#x27;, error);
+      }
+    );
+      
+  }
+
+  onDeleteButtonClick(subscriptionId: number): void {
+    this.subscriptionService.deleteSubscription(subscriptionId).subscribe(
+      response &#x3D;&gt; {
+        console.log(response.message);
+  
+        this.subscriptions &#x3D; this.subscriptions.filter(sub &#x3D;&gt; sub.subscription_id !&#x3D;&#x3D; subscriptionId);
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error deleting subscription:&#x27;, error);
+      }
+    );
+  }
+
+  async AlertsetOpen(): Promise&lt;void&gt; {
+    const alert &#x3D; await this.alertController.create({
+      header: &#x27;Bekræft opsigelse&#x27;,
+      message: &#x27;Du er ved at opsige dit abonnement.&#x27;,
+      buttons: [
+        {
+          text: &#x27;Cancel&#x27;,
+          role: &#x27;cancel&#x27;,
+          handler: () &#x3D;&gt; {
+            console.log(&#x27;Opsigelse annulleret&#x27;);
+          }
+        },
+        {
+          text: &#x27;Bekræft&#x27;,
+          handler: () &#x3D;&gt; {
+            this.onOpsigButtonClick();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+  
+  isModalOpen &#x3D; false;
+
+
+  setOpen(isOpen: boolean, subscription?: any): void {
+    this.isModalOpen &#x3D; isOpen;
+    if (subscription) {
+      console.log(&quot;virker ikke&quot;, subscription)
+      this.selectedSubscription &#x3D; subscription;
+    }
+  }
+
+  onOpsigButtonClick(): void {
+    const subscriptionToDelete &#x3D; this.subscriptions.find(sub &#x3D;&gt; sub.subscription_id &#x3D;&#x3D;&#x3D; this.selectedSubscription.subscription_id);
+  
+    if (!subscriptionToDelete) {
+      console.error(&#x27;Subscription not found for deletion:&#x27;, this.selectedSubscription.subscription_id);
+      
+      this.isModalOpen &#x3D; false;
+      
+      return;
+    }
+  
+    this.subscriptionService.deleteSubscription(subscriptionToDelete.subscription_id).subscribe(
+      response &#x3D;&gt; {
+        console.log(response.message);
+  
+        this.subscriptions &#x3D; this.subscriptions.filter(sub &#x3D;&gt; sub.subscription_id !&#x3D;&#x3D; subscriptionToDelete.subscription_id);
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error deleting subscription:&#x27;, error);
+  
+        console.log(&#x27;Error response:&#x27;, error);
+      }
+    );
+    this.isModalOpen &#x3D; false;
+    console.log(&#x27;Modal closed successfully&#x27;);
+  }
+  isModalTwoOpen &#x3D; false;
+
+  setTwoOpen(isOpen: boolean) {
+    this.isModalTwoOpen &#x3D; isOpen;
+  }
+
+  closeModals(): void {
+    this.isModalOpen &#x3D; false;
+    this.isModalTwoOpen &#x3D; false;
+  }
+
+}
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;ion-content&gt;
+    &lt;div class&#x3D;&quot;abonnementer-top-container&quot;&gt;
+        &lt;!-- user og notification icons --&gt;
+        &lt;div class&#x3D;&quot;user-icon-bg&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;person-outline&quot; color&#x3D;&quot;&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/div&gt;
+        &lt;h1&gt;
+          &lt;!-- {{ username }} --&gt;
+        &lt;/h1&gt;
+        &lt;div class&#x3D;&quot;notification-icon-bg&quot;&gt;
+          &lt;ion-icon name&#x3D;&quot;notifications-outline&quot; size&#x3D;&quot;&quot; color&#x3D;&quot;&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;forside-header-text&quot;&gt;
+        &lt;div *ngIf&#x3D;&quot;user&quot;&gt;
+          &lt;p&gt;Welcome, {{ user.displayName || user.email }}!&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+    &lt;div class&#x3D;&quot;forside-din-oversigt&quot;&gt;
+        &lt;h1 color&#x3D;&quot;primary&quot; class&#x3D;&quot;ion-text-uppercase&quot;&gt;Din oversigt&lt;/h1&gt;
+    &lt;/div&gt;
+
+    &lt;ion-grid class&#x3D;&quot;forside-din-oversigt-ion-grid ion-margin&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;forside-din-oversigt-ion-row&quot;&gt;
+          &lt;ion-col size&#x3D;&quot;4&quot;&gt;
+              &lt;p&gt;Total Måned&lt;/p&gt;
+              &lt;p&gt;89,-&lt;/p&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col class&#x3D;&quot;forrside-din-oversigt-borders&quot; size&#x3D;&quot;4&quot;&gt;
+              &lt;p&gt;Total Kvartal&lt;/p&gt;
+              &lt;p&gt;59,-&lt;/p&gt;
+          &lt;/ion-col&gt;
+          &lt;ion-col size&#x3D;&quot;4&quot;&gt;
+              &lt;p&gt;Total Årlig&lt;/p&gt;
+              &lt;p&gt;699,-&lt;/p&gt;
+          &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/ion-grid&gt;
+    
+      &lt;div class&#x3D;&quot;dine-abonnementer-section&quot;&gt;
+        &lt;h2 class&#x3D;&quot;ion-text-uppercase ion-margin-start&quot;&gt;Dine abonnementer&lt;/h2&gt;
+      &lt;/div&gt;
+&lt;!--Testkode her 44-50--&gt;
+    &lt;ion-grid class&#x3D;&quot;ion-margin-start ion-margin-end ion-margin-top&quot; *ngFor&#x3D;&quot;let subscription of subscriptions&quot;&gt;
+      &lt;ion-row class&#x3D;&quot;abonnement-boks ion-align-items-center backgroundrow ion-margin-top&quot;&gt;
+        &lt;ion-col class&#x3D;&quot;abonnementkort-et&quot; size&#x3D;&quot;3&quot;&gt;
+          &lt;ion-img class&#x3D;&quot;placeholder-image&quot; src&#x3D;&quot;assets/images/placeholder_image.png&quot;&gt;&lt;/ion-img&gt;
+        &lt;/ion-col&gt;
+        &lt;ion-col class&#x3D;&quot;abonnementkort-to&quot; size&#x3D;&quot;6&quot;&gt;
+          &lt;p class&#x3D;&quot;ion-text-right&quot;&gt;{{ subscription.title }}&lt;/p&gt;
+        &lt;/ion-col&gt;
+        &lt;ion-col class&#x3D;&quot;abonnementkort-tre&quot; size&#x3D;&quot;3&quot;&gt;
+          &lt;p class&#x3D;&quot;Pricebigger ion-text-end&quot;&gt;{{ subscription.payment.price }},-&lt;/p&gt;
+          &lt;p class&#x3D;&quot;intervalsmall ion-text-end&quot;&gt;{{ subscription.payment.cycle }}&lt;/p&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+      
+      &lt;!--Ion-modal--&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot; class&#x3D;&quot;modal-knap-col ion-text-right&quot;&gt;
+          &lt;ion-button class&#x3D;&quot;modal-knap ion-no-padding&quot; fill&#x3D;&quot;clear&quot; size&#x3D;&quot;small&quot; (click)&#x3D;&quot;setOpen(true, subscription)&quot;&gt;Flere detaljer&lt;/ion-button&gt;
+        &lt;/ion-col&gt; 
+      &lt;/ion-row&gt;
+
+      &lt;ion-modal [isOpen]&#x3D;&quot;isModalOpen&quot;&gt;
+        &lt;ng-template&gt;
+          &lt;ion-toolbar&gt;
+            &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+              &lt;ion-button class&#x3D;&quot;modal-tilbage-pil&quot; (click)&#x3D;&quot;setOpen(false)&quot;&gt;
+                &lt;ion-icon size&#x3D;&quot;large&quot; slot&#x3D;&quot;start&quot; name&#x3D;&quot;arrow-back&quot;&gt;&lt;/ion-icon&gt;
+                Tilbage
+              &lt;/ion-button&gt;
+            &lt;/ion-buttons&gt;
+          &lt;/ion-toolbar&gt;
+
+          &lt;ion-content class&#x3D;&quot;ion-padding-start ion-padding-end&quot;&gt;
+            &lt;ion-grid&gt;
+              &lt;ion-row class&#x3D;&quot;abonnement-oplysninger&quot;&gt;
+                &lt;ion-col size&#x3D;&quot;8&quot;&gt;
+                  &lt;h2&gt;{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}&lt;/h2&gt;
+                  &lt;p class&#x3D;&quot;payment-price-big&quot;&gt;{{ selectedSubscription.payment.price }} kr.&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;abonnement-modal-tekst&quot;&gt;Tilmeldt: {{ selectedSubscription.startdate | date: &#x27;dd-MM-yyyy&#x27; }}&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;abonnement-modal-tekst&quot;&gt;Næste betaling: {{ selectedSubscription.payment.nextpayment | date: &#x27;dd-MM-yyyy&#x27; }}&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;4&quot;&gt;
+                  &lt;ion-img class&#x3D;&quot;placeholder-image-detaljer&quot; src&#x3D;&quot;assets/images/placeholder_image.png&quot;&gt;&lt;/ion-img&gt;
+                &lt;/ion-col&gt;
+              &lt;/ion-row&gt;
+
+              &lt;ion-row class&#x3D;&quot;&quot;&gt;
+                &lt;ion-col size&#x3D;&quot;7&quot; class&#x3D;&quot;abonnement-modal-knapper&quot;&gt;
+                  &lt;ion-button class&#x3D;&quot;abonnement-modal-knap-ekstra&quot; fill&#x3D;&quot;clear&quot; size&#x3D;&quot;&quot; (click)&#x3D;&quot;AlertsetOpen()&quot;&gt;
+                    &lt;ion-icon slot&#x3D;&quot;start&quot; size&#x3D;&quot;large&quot; name&#x3D;&quot;close-circle-outline&quot;&gt;&lt;/ion-icon&gt;
+                    Opsig abonnement
+                  &lt;/ion-button&gt;
+                  
+                  &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;&quot; (click)&#x3D;&quot;setTwoOpen(true)&quot;&gt;
+                    &lt;ion-icon slot&#x3D;&quot;start&quot; size&#x3D;&quot;large&quot; name&#x3D;&quot;create-outline&quot;&gt;&lt;/ion-icon&gt;
+                    Rediger abonnement
+                  &lt;/ion-button&gt;
+       
+                  &lt;ion-modal [isOpen]&#x3D;&quot;isModalTwoOpen&quot;&gt;
+                    &lt;ng-template&gt;
+                        &lt;ion-toolbar&gt;
+                          &lt;ion-buttons slot&#x3D;&quot;start&quot;&gt;
+                            &lt;ion-button (click)&#x3D;&quot;setTwoOpen(false)&quot;&gt;
+                              &lt;ion-icon size&#x3D;&quot;large&quot; slot&#x3D;&quot;start&quot; name&#x3D;&quot;arrow-back&quot;&gt;&lt;/ion-icon&gt;
+                              Annuler
+                            &lt;/ion-button&gt;
+                          &lt;/ion-buttons&gt;
+                        &lt;/ion-toolbar&gt;
+
+                      &lt;ion-content class&#x3D;&quot;ion-padding-start ion-padding-end&quot;&gt;
+                        &lt;ion-list&gt;
+
+                          &lt;h2&gt;Rediger abonnement&lt;/h2&gt;
+                          &lt;!-- update subscription category --&gt;
+                          &lt;ion-item&gt;
+                            &lt;ion-select [(ngModel)]&#x3D;&quot;selectedSubscription.category&quot; label&#x3D;&quot;Kategori&quot; placeholder&#x3D;&quot; vælg kategori&quot;&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Streamingtjeneste&quot;&gt;Streamingtjeneste&lt;/ion-select-option&gt;
+                            &lt;/ion-select&gt;
+                          &lt;/ion-item&gt;
+                
+                          &lt;!-- update subscription platform --&gt;
+                          &lt;ion-item&gt;
+                            &lt;ion-select [(ngModel)]&#x3D;&quot;selectedSubscription.title&quot; label&#x3D;&quot;Platform&quot; placeholder&#x3D;&quot; vælg platform&quot;&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Netflix&quot;&gt;Netflix&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;HBO MAX&quot;&gt;HBO MAX&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Nordisk Film+&quot;&gt;Nordisk Film+&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;TV2 Play&quot;&gt;TV2 Play&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Disney+&quot;&gt;Disney+&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Viaplay&quot;&gt;Viaplay&lt;/ion-select-option&gt;
+                            &lt;/ion-select&gt;
+                          &lt;/ion-item&gt;
+                
+                          &lt;!-- update subscription interval --&gt;
+                          &lt;ion-item&gt;
+                            &lt;ion-select [(ngModel)]&#x3D;&quot;selectedSubscription.cycle&quot; label&#x3D;&quot;Betalingsinterval&quot; placeholder&#x3D;&quot;vælg interval&quot;&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Månedligt&quot;&gt;Månedlig&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Kvartallet&quot;&gt;Kvartal&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Årligt&quot;&gt;Årlig&lt;/ion-select-option&gt;
+                            &lt;/ion-select&gt;
+                          &lt;/ion-item&gt;
+                
+                          &lt;!-- update subscription abonnement plan --&gt;
+                          &lt;ion-item&gt;
+                            &lt;ion-select [(ngModel)]&#x3D;&quot;selectedSubscription.subscriptionplan&quot; label&#x3D;&quot;Abonnement plan&quot; placeholder&#x3D;&quot;vælg plan&quot;&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Basic&quot;&gt;Basic&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Standard&quot;&gt;Standard&lt;/ion-select-option&gt;
+                              &lt;ion-select-option value&#x3D;&quot;Premium&quot;&gt;Premium&lt;/ion-select-option&gt;
+                            &lt;/ion-select&gt;
+                          &lt;/ion-item&gt;
+
+                          &lt;!-- create subscription start dato --&gt;
+                          &lt;ion-item&gt;
+                            &lt;ion-label label&#x3D;&quot;Start Dato&quot;&gt;Start dato&lt;/ion-label&gt;
+                            &lt;ion-datetime-button datetime&#x3D;&quot;startDatetime&quot;&gt;&lt;/ion-datetime-button&gt;
+                          
+                            &lt;ion-modal [keepContentsMounted]&#x3D;&quot;true&quot;&gt;
+                              &lt;ng-template&gt;
+                                &lt;ion-datetime [(ngModel)]&#x3D;&quot;selectedSubscription.startdate&quot; id&#x3D;&quot;startDatetime&quot;&gt;&lt;/ion-datetime&gt;
+                              &lt;/ng-template&gt;
+                            &lt;/ion-modal&gt;
+                          &lt;/ion-item&gt;
+                          
+                          &lt;!-- update subscription næste betaling --&gt;
+                          &lt;ion-item&gt;
+                            &lt;ion-label&gt;Næste betaling&lt;/ion-label&gt;
+                            &lt;ion-datetime-button datetime&#x3D;&quot;nextPaymentDatetime&quot;&gt;&lt;/ion-datetime-button&gt;
+                          
+                            &lt;ion-modal [keepContentsMounted]&#x3D;&quot;true&quot;&gt;
+                              &lt;ng-template&gt;
+                                &lt;ion-datetime [(ngModel)]&#x3D;&quot;selectedSubscription.nextpayment&quot; id&#x3D;&quot;nextPaymentDatetime&quot;&gt;&lt;/ion-datetime&gt;
+                              &lt;/ng-template&gt;
+                            &lt;/ion-modal&gt;
+                          &lt;/ion-item&gt;
+
+                          &lt;ion-button expand&#x3D;&quot;full&quot; (click)&#x3D;&quot;updateSubscriptionDetails(); closeModals();&quot;&gt;Gem&lt;/ion-button&gt;
+
+                        &lt;/ion-list&gt;
+                      &lt;/ion-content&gt;
+                    &lt;/ng-template&gt;
+                  &lt;/ion-modal&gt;
+                    
+                  &lt;ion-button fill&#x3D;&quot;clear&quot; size&#x3D;&quot;&quot;&gt;
+                    &lt;ion-icon slot&#x3D;&quot;start&quot; size&#x3D;&quot;large&quot; name&#x3D;&quot;reader-outline&quot;&gt;&lt;/ion-icon&gt;
+                    Vis lignende abonnementer
+                  &lt;/ion-button&gt;
+                &lt;/ion-col&gt;
+              &lt;/ion-row&gt;
+
+              &lt;hr class&#x3D;&quot;line-border&quot;&gt;
+
+              &lt;ion-row class&#x3D;&quot;modal-detaljer&quot;&gt;
+                &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+                  &lt;h2&gt;Detaljer&lt;/h2&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-detaljer-p-left-ekstra&quot;&gt;Gentagende&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-detaljer-p-right-ekstra ion-text-right&quot;&gt;{{ selectedSubscription.payment.cycle }}&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-detaljer-p-left&quot;&gt;Månedligt gennemsnit&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-detaljer-p-right ion-text-right&quot;&gt;{{ selectedSubscription.payment.price }} kr.&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-detaljer-p-left&quot;&gt;Årligt gennemsnit&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-detaljer-p-right ion-text-right&quot;&gt;1500 kr.&lt;/p&gt;
+                &lt;/ion-col&gt;
+              &lt;/ion-row&gt;
+
+              &lt;hr class&#x3D;&quot;line-border&quot;&gt;
+
+              &lt;ion-row class&#x3D;&quot;modal-kort&quot;&gt;
+                &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+                  &lt;h2&gt;Kort&lt;/h2&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p&gt;Visa/Debit&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;6&quot;&gt;
+                  &lt;p class&#x3D;&quot;ion-text-right modal-kort-tyk&quot;&gt;... 5329&lt;/p&gt;
+                &lt;/ion-col&gt;
+              &lt;/ion-row&gt;
+
+              &lt;hr class&#x3D;&quot;line-border&quot;&gt;
+
+              &lt;ion-row class&#x3D;&quot;modal-seneste-betalinger ion-align-items-center&quot;&gt;
+                  &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+                    &lt;h2&gt;Seneste betalinger&lt;/h2&gt;
+                  &lt;/ion-col&gt;
+                  &lt;ion-col class&#x3D;&quot;&quot; size&#x3D;&quot;2&quot;&gt;
+                    &lt;ion-img class&#x3D;&quot;placeholder-image-seneste&quot; src&#x3D;&quot;assets/images/placeholder_image.png&quot;&gt;&lt;/ion-img&gt;
+                  &lt;/ion-col&gt;
+                  &lt;ion-col class&#x3D;&quot;&quot; size&#x3D;&quot;5&quot;&gt;
+                    &lt;p class&#x3D;&quot;modal-seneste-title&quot;&gt;{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}&lt;/p&gt;
+                    &lt;p class&#x3D;&quot;modal-seneste-indbetaling&quot;&gt;05-05-2023&lt;/p&gt;
+                  &lt;/ion-col&gt;
+                  &lt;ion-col class&#x3D;&quot;&quot; size&#x3D;&quot;5&quot;&gt;
+                    &lt;p class&#x3D;&quot;modal-senest-pris ion-text-right&quot;&gt;{{ selectedSubscription.payment.price }} kr.&lt;/p&gt;
+                  &lt;/ion-col&gt;
+ 
+                &lt;ion-col size&#x3D;&quot;2&quot;&gt;
+                  &lt;ion-img class&#x3D;&quot;placeholder-image-seneste&quot; src&#x3D;&quot;assets/images/placeholder_image.png&quot;&gt;&lt;/ion-img&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col class&#x3D;&quot;&quot; size&#x3D;&quot;5&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-seneste-title&quot;&gt;{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;modal-seneste-indbetaling&quot;&gt;05-04-2023&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;5&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-senest-pris ion-text-right&quot;&gt;{{ selectedSubscription.payment.price }} kr.&lt;/p&gt;
+                &lt;/ion-col&gt;
+
+                &lt;ion-col size&#x3D;&quot;2&quot;&gt;
+                  &lt;ion-img class&#x3D;&quot;placeholder-image-seneste&quot; src&#x3D;&quot;assets/images/placeholder_image.png&quot;&gt;&lt;/ion-img&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col class&#x3D;&quot;&quot; size&#x3D;&quot;5&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-seneste-title&quot;&gt;{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}&lt;/p&gt;
+                  &lt;p class&#x3D;&quot;modal-seneste-indbetaling&quot;&gt;06-03-2023&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col size&#x3D;&quot;5&quot;&gt;
+                  &lt;p class&#x3D;&quot;modal-senest-pris ion-text-right&quot;&gt;{{ selectedSubscription.payment.price }} kr.&lt;/p&gt;
+                &lt;/ion-col&gt;
+                &lt;ion-col class&#x3D;&quot;ion-text-center&quot; size&#x3D;&quot;12&quot;&gt;
+                  &lt;ion-button class&#x3D;&quot;modal-seneste-knap ion-margin-top ion-margin-bottom&quot; shape&#x3D;&quot;round&quot;&gt;Vis alle&lt;/ion-button&gt;
+                &lt;/ion-col&gt;
+              &lt;/ion-row&gt;
+            &lt;/ion-grid&gt;
+          &lt;/ion-content&gt;
+        &lt;/ng-template&gt;
+      &lt;/ion-modal&gt;
+    &lt;/ion-grid&gt;
+
+    &lt;ion-grid&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;h2 class&#x3D;&quot;ion-text-uppercase&quot;&gt;Bank wrapped&lt;/h2&gt;
+          &lt;ion-card class&#x3D;&quot;bank-wrapped-card&quot;&gt;
+            &lt;ion-img class&#x3D;&quot;bank-wrapped-logo-image ion-margin-top ion-margin-start&quot; src&#x3D;&quot;assets/images/logo.png&quot;&gt;&lt;/ion-img&gt;
+            &lt;ion-card-header&gt;
+              &lt;ion-card-title class&#x3D;&quot;bank-wrapped-card-title&quot;&gt;Bank Wrapped&lt;/ion-card-title&gt;
+            &lt;/ion-card-header&gt;
+          
+            &lt;ion-card-content class&#x3D;&quot;card-content-tekst&quot;&gt;Tryk for at se din wrapped for det nye år&lt;/ion-card-content&gt;
+          &lt;/ion-card&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+      &lt;!--Aktive tilbud section--&gt;
+      &lt;ion-row&gt;
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;h2 class&#x3D;&quot;ion-text-uppercase&quot;&gt;Aktive tilbud&lt;/h2&gt;
+          &lt;ion-card class&#x3D;&quot;viaplay-card&quot;&gt;
+            &lt;ion-img class&#x3D;&quot;viaplay-logo-image ion-margin-top ion-margin-start&quot; src&#x3D;&quot;assets/images/Viaplay.png&quot;&gt;&lt;/ion-img&gt;
+            &lt;ion-card-header&gt;
+              &lt;ion-card-title class&#x3D;&quot;viaplay-card-title&quot;&gt;10% rabat&lt;/ion-card-title&gt;
+            &lt;/ion-card-header&gt;
+            &lt;ion-card-content class&#x3D;&quot;card-content-tekst&quot;&gt;Læs mere&lt;/ion-card-content&gt;
+          &lt;/ion-card&gt;
+        &lt;/ion-col&gt;
+
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;ion-card class&#x3D;&quot;disney-card&quot;&gt;
+            &lt;ion-img class&#x3D;&quot;disney-logo-image ion-margin-top ion-margin-start&quot; src&#x3D;&quot;assets/images/disney.png&quot;&gt;&lt;/ion-img&gt;
+            &lt;ion-card-header&gt;
+              &lt;ion-card-title class&#x3D;&quot;disney-card-title&quot;&gt;Graits oprettelse&lt;/ion-card-title&gt;
+            &lt;/ion-card-header&gt;
+            &lt;ion-card-content class&#x3D;&quot;card-content-tekst&quot;&gt;Læs mere&lt;/ion-card-content&gt;
+          &lt;/ion-card&gt;
+        &lt;/ion-col&gt;
+
+        &lt;ion-col size&#x3D;&quot;12&quot;&gt;
+          &lt;ion-card class&#x3D;&quot;spotify-card&quot;&gt;
+            &lt;ion-img class&#x3D;&quot;spotify-logo-image ion-margin-top ion-margin-start&quot; src&#x3D;&quot;assets/images/spotify.png&quot;&gt;&lt;/ion-img&gt;
+            &lt;ion-card-header&gt;
+              &lt;ion-card-title class&#x3D;&quot;spotify-card-title&quot;&gt;3 mnd. 99,-&lt;/ion-card-title&gt;
+            &lt;/ion-card-header&gt;
+            &lt;ion-card-content class&#x3D;&quot;card-content-tekst&quot;&gt;Læs mere&lt;/ion-card-content&gt;
+          &lt;/ion-card&gt;
+        &lt;/ion-col&gt;
+      &lt;/ion-row&gt;
+    &lt;/ion-grid&gt;
+
+      
+&lt;/ion-content&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>tab1.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"> .abonnementer-top-container {
+    padding: 40px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    .user-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .notification-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/*Alt efter ikonerne*/
+
+ion-grid{
+    padding: 0px;
+}
+
+ion-col{
+    padding: 16px;
+}
+
+.forside-header-text {
+    padding: 0 20px;
+}
+
+.forside-din-oversigt {
+    padding: 0 20px;
+}
+
+.placeholder-image{
+    height: 50px;
+    width: 50px;
+}
+
+.placeholder-image-detaljer{
+    margin: 10px 0px 0px 0px;
+}
+
+.placeholder-image-seneste{
+    height: 40px;
+    width: 40px;
+}
+
+
+.forside-din-oversigt-ion-grid {
+    background-color: var( --ion-color-primary, accent200);
+    color: #ffffff; 
+    border-radius: 10px; 
+}
+
+.forside-din-oversigt-ion-row{
+    padding: 10px 0px 10px 0px;
+}
+
+.forside-din-oversigt-ion-row ion-col{
+    padding: 10px;
+}
+
+.forrside-din-oversigt-borders{
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+.bank-wrapped-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #CEE7F5 , #005D7E);
+    --color: #C8FFFF;
+}
+
+.bank-wrapped-logo-image {
+    width: 143px;
+    height: 18px;
+}
+
+.bank-wrapped-card-title {
+    margin-top: 70px;
+    --color: #C8FFFF;
+    font-weight: bold;
+}
+
+.card-content-tekst{
+    text-decoration: underline;
+    /*font-family: &#x27;montserrat&#x27;, sans-serif;*/
+    /* hvis jeg sletter denne, vil den gå tilbage til
+    eller anden font, men stadig vise montserrat?*/ 
+}
+
+/*aktive tilbud - general*/
+
+.card-content-tekst{
+    text-decoration: underline;
+    /*font-family: &#x27;montserrat&#x27;, sans-serif;*/
+    /* hvis jeg sletter denne, vil den gå tilbage til
+    eller anden font, men stadig vise montserrat?*/ 
+}
+
+/*dedikeret styling*/
+
+.viaplay-card-title {
+    margin-top: 70px;
+    --color: #162931;
+    font-weight: bold;
+}
+
+.viaplay-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #C20000 , #9000C2);
+    --color: #162931;
+}
+
+.viaplay-logo-image {
+    width: 100px;
+}
+
+.disney-card-title {
+    margin-top: 39px;
+    --color: #97E6ED;
+    font-weight: bold;
+}
+
+.disney-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #A1F3F8 , #081750);
+    --color: #97E6ED;
+}
+
+.disney-logo-image {
+    width: 100px;
+}
+
+.spotify-card-title {
+    margin-top: 70px;
+    --color: #FFFFFF;
+    font-weight: bold;
+}
+
+.spotify-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #093516 , #299933);
+    --color: #FFFFFF;
+}
+
+.spotify-logo-image {
+    width: 100px;
+}
+
+/*generel modal*/
+
+.line-border{
+    border: 1px solid #E5E5E5;
+    height: 0px;
+    margin: 30px 0px 20px 0px;
+}
+
+/*indhentede abonnementer*/
+
+.backgroundrow{
+    background: linear-gradient(to left, #E5E5E5 97%, #00619A 3px);
+}
+
+.abonnementkort p{
+    margin: 0px 0px 0px 0px;
+}
+
+.Pricebigger{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.intervalsmall{
+    font-size: 10px;
+    margin: 0px;
+}
+
+.abonnement-boks{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.abonnementkort-et{
+    padding: 10px 0px 10px 16px;
+}
+
+.abonnementkort-to{
+    padding: 10px 0px 10px 10px;
+}
+
+.abonnementkort-tre{
+    padding: 10px 20px 10px 5px;
+}
+
+.modal-knap{
+    --background-hover-opacity: 0%;
+    --color: #000000;
+    font-size: 12px;
+    text-transform: none;
+    text-decoration: underline;
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-knap-col{
+    padding: 0px;
+}
+
+/*inde i modal*/
+
+.modal-tilbage-pil{
+    --background-hover-opacity: 0%;
+}
+
+.abonnement-oplysninger ion-col{
+    padding: 0px;
+    margin: 0px;
+}
+
+.abonnement-modal-tekst{
+    margin: 10px 0px 0px 0px;
+}
+
+.abonnement-oplysninger h2{
+    margin: 10px 0px 0px 0px;
+}
+
+.payment-price-big{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0px 0px 0px;
+}
+
+/*buttons i modal*/
+.abonnement-modal-knapper{
+   padding: 0px;
+}
+
+.abonnement-modal-knapper ion-button{
+    --background-hover-opacity: 0%;
+    text-transform: none;
+    font-size: 12px;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.abonnement-modal-knap-ekstra{
+    margin: 25px 0px 0px 0px;
+}
+
+/*detaljer i modal*/
+
+.modal-detaljer ion-col{
+    padding: 0px;
+}
+
+.modal-detaljer h2{
+    margin: 0px;
+}
+
+.modal-detaljer-p-left{
+    margin: 20px 0px 0px 0px;
+}
+
+.modal-detaljer-p-left-ekstra{
+    margin: 10px 0px 0px 0px;
+}
+
+.modal-detaljer-p-right-ekstra{
+    margin: 10px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.modal-detaljer-p-right{
+    margin: 20px 0px 0px 0px;
+    font-weight: bold;
+
+}
+
+/*modal kort*/
+
+.modal-kort h2{
+    margin: 0px;
+}
+
+.modal-kort ion-col{
+    padding: 0px;
+}
+
+.modal-kort p{
+    margin: 10px 0px 0px 0px;
+}
+
+.modal-kort-tyk{
+    font-weight: bold;
+}
+
+/*seneste betalinger*/
+.modal-seneste-betalinger ion-col{
+    padding: 0px;
+}
+
+.modal-seneste-betalinger h2{
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-seneste-title{
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-seneste-indbetaling{
+    margin: 0px 0px 0px 0px;
+    font-size: 10px;
+}
+
+.modal-senest-pris{
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.modal-seneste-knap{
+    text-transform: none;
+    font-size: 12px;
+    --padding-end: 50px;
+    --padding-start: 50px;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><ion-content>    <div class="abonnementer-top-container">        <!-- user og notification icons -->        <div class="user-icon-bg">          <ion-icon name="person-outline" color=""></ion-icon>        </div>        <h1>          <!-- {{ username }} -->        </h1>        <div class="notification-icon-bg">          <ion-icon name="notifications-outline" size="" color=""></ion-icon>        </div>      </div>      <div class="forside-header-text">        <div *ngIf="user">          <p>Welcome, {{ user.displayName || user.email }}!</p>        </div>      </div>    <div class="forside-din-oversigt">        <h1 color="primary" class="ion-text-uppercase">Din oversigt</h1>    </div>    <ion-grid class="forside-din-oversigt-ion-grid ion-margin">      <ion-row class="forside-din-oversigt-ion-row">          <ion-col size="4">              <p>Total Måned</p>              <p>89,-</p>          </ion-col>          <ion-col class="forrside-din-oversigt-borders" size="4">              <p>Total Kvartal</p>              <p>59,-</p>          </ion-col>          <ion-col size="4">              <p>Total Årlig</p>              <p>699,-</p>          </ion-col>      </ion-row>    </ion-grid>          <div class="dine-abonnementer-section">        <h2 class="ion-text-uppercase ion-margin-start">Dine abonnementer</h2>      </div><!--Testkode her 44-50-->    <ion-grid class="ion-margin-start ion-margin-end ion-margin-top" *ngFor="let subscription of subscriptions">      <ion-row class="abonnement-boks ion-align-items-center backgroundrow ion-margin-top">        <ion-col class="abonnementkort-et" size="3">          <ion-img class="placeholder-image" src="assets/images/placeholder_image.png"></ion-img>        </ion-col>        <ion-col class="abonnementkort-to" size="6">          <p class="ion-text-right">{{ subscription.title }}</p>        </ion-col>        <ion-col class="abonnementkort-tre" size="3">          <p class="Pricebigger ion-text-end">{{ subscription.payment.price }},-</p>          <p class="intervalsmall ion-text-end">{{ subscription.payment.cycle }}</p>        </ion-col>      </ion-row>            <!--Ion-modal-->      <ion-row>        <ion-col size="12" class="modal-knap-col ion-text-right">          <ion-button class="modal-knap ion-no-padding" fill="clear" size="small" (click)="setOpen(true, subscription)">Flere detaljer</ion-button>        </ion-col>       </ion-row>      <ion-modal [isOpen]="isModalOpen">        <ng-template>          <ion-toolbar>            <ion-buttons slot="start">              <ion-button class="modal-tilbage-pil" (click)="setOpen(false)">                <ion-icon size="large" slot="start" name="arrow-back"></ion-icon>                Tilbage              </ion-button>            </ion-buttons>          </ion-toolbar>          <ion-content class="ion-padding-start ion-padding-end">            <ion-grid>              <ion-row class="abonnement-oplysninger">                <ion-col size="8">                  <h2>{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</h2>                  <p class="payment-price-big">{{ selectedSubscription.payment.price }} kr.</p>                  <p class="abonnement-modal-tekst">Tilmeldt: {{ selectedSubscription.startdate | date: \'dd-MM-yyyy\' }}</p>                  <p class="abonnement-modal-tekst">Næste betaling: {{ selectedSubscription.payment.nextpayment | date: \'dd-MM-yyyy\' }}</p>                </ion-col>                <ion-col size="4">                  <ion-img class="placeholder-image-detaljer" src="assets/images/placeholder_image.png"></ion-img>                </ion-col>              </ion-row>              <ion-row class="">                <ion-col size="7" class="abonnement-modal-knapper">                  <ion-button class="abonnement-modal-knap-ekstra" fill="clear" size="" (click)="AlertsetOpen()">                    <ion-icon slot="start" size="large" name="close-circle-outline"></ion-icon>                    Opsig abonnement                  </ion-button>                                    <ion-button fill="clear" size="" (click)="setTwoOpen(true)">                    <ion-icon slot="start" size="large" name="create-outline"></ion-icon>                    Rediger abonnement                  </ion-button>                         <ion-modal [isOpen]="isModalTwoOpen">                    <ng-template>                        <ion-toolbar>                          <ion-buttons slot="start">                            <ion-button (click)="setTwoOpen(false)">                              <ion-icon size="large" slot="start" name="arrow-back"></ion-icon>                              Annuler                            </ion-button>                          </ion-buttons>                        </ion-toolbar>                      <ion-content class="ion-padding-start ion-padding-end">                        <ion-list>                          <h2>Rediger abonnement</h2>                          <!-- update subscription category -->                          <ion-item>                            <ion-select [(ngModel)]="selectedSubscription.category" label="Kategori" placeholder=" vælg kategori">                              <ion-select-option value="Streamingtjeneste">Streamingtjeneste</ion-select-option>                            </ion-select>                          </ion-item>                                          <!-- update subscription platform -->                          <ion-item>                            <ion-select [(ngModel)]="selectedSubscription.title" label="Platform" placeholder=" vælg platform">                              <ion-select-option value="Netflix">Netflix</ion-select-option>                              <ion-select-option value="HBO MAX">HBO MAX</ion-select-option>                              <ion-select-option value="Nordisk Film+">Nordisk Film+</ion-select-option>                              <ion-select-option value="TV2 Play">TV2 Play</ion-select-option>                              <ion-select-option value="Disney+">Disney+</ion-select-option>                              <ion-select-option value="Viaplay">Viaplay</ion-select-option>                            </ion-select>                          </ion-item>                                          <!-- update subscription interval -->                          <ion-item>                            <ion-select [(ngModel)]="selectedSubscription.cycle" label="Betalingsinterval" placeholder="vælg interval">                              <ion-select-option value="Månedligt">Månedlig</ion-select-option>                              <ion-select-option value="Kvartallet">Kvartal</ion-select-option>                              <ion-select-option value="Årligt">Årlig</ion-select-option>                            </ion-select>                          </ion-item>                                          <!-- update subscription abonnement plan -->                          <ion-item>                            <ion-select [(ngModel)]="selectedSubscription.subscriptionplan" label="Abonnement plan" placeholder="vælg plan">                              <ion-select-option value="Basic">Basic</ion-select-option>                              <ion-select-option value="Standard">Standard</ion-select-option>                              <ion-select-option value="Premium">Premium</ion-select-option>                            </ion-select>                          </ion-item>                          <!-- create subscription start dato -->                          <ion-item>                            <ion-label label="Start Dato">Start dato</ion-label>                            <ion-datetime-button datetime="startDatetime"></ion-datetime-button>                                                      <ion-modal [keepContentsMounted]="true">                              <ng-template>                                <ion-datetime [(ngModel)]="selectedSubscription.startdate" id="startDatetime"></ion-datetime>                              </ng-template>                            </ion-modal>                          </ion-item>                                                    <!-- update subscription næste betaling -->                          <ion-item>                            <ion-label>Næste betaling</ion-label>                            <ion-datetime-button datetime="nextPaymentDatetime"></ion-datetime-button>                                                      <ion-modal [keepContentsMounted]="true">                              <ng-template>                                <ion-datetime [(ngModel)]="selectedSubscription.nextpayment" id="nextPaymentDatetime"></ion-datetime>                              </ng-template>                            </ion-modal>                          </ion-item>                          <ion-button expand="full" (click)="updateSubscriptionDetails(); closeModals();">Gem</ion-button>                        </ion-list>                      </ion-content>                    </ng-template>                  </ion-modal>                                      <ion-button fill="clear" size="">                    <ion-icon slot="start" size="large" name="reader-outline"></ion-icon>                    Vis lignende abonnementer                  </ion-button>                </ion-col>              </ion-row>              <hr class="line-border">              <ion-row class="modal-detaljer">                <ion-col size="12">                  <h2>Detaljer</h2>                </ion-col>                <ion-col size="6">                  <p class="modal-detaljer-p-left-ekstra">Gentagende</p>                </ion-col>                <ion-col size="6">                  <p class="modal-detaljer-p-right-ekstra ion-text-right">{{ selectedSubscription.payment.cycle }}</p>                </ion-col>                <ion-col size="6">                  <p class="modal-detaljer-p-left">Månedligt gennemsnit</p>                </ion-col>                <ion-col size="6">                  <p class="modal-detaljer-p-right ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>                </ion-col>                <ion-col size="6">                  <p class="modal-detaljer-p-left">Årligt gennemsnit</p>                </ion-col>                <ion-col size="6">                  <p class="modal-detaljer-p-right ion-text-right">1500 kr.</p>                </ion-col>              </ion-row>              <hr class="line-border">              <ion-row class="modal-kort">                <ion-col size="12">                  <h2>Kort</h2>                </ion-col>                <ion-col size="6">                  <p>Visa/Debit</p>                </ion-col>                <ion-col size="6">                  <p class="ion-text-right modal-kort-tyk">... 5329</p>                </ion-col>              </ion-row>              <hr class="line-border">              <ion-row class="modal-seneste-betalinger ion-align-items-center">                  <ion-col size="12">                    <h2>Seneste betalinger</h2>                  </ion-col>                  <ion-col class="" size="2">                    <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>                  </ion-col>                  <ion-col class="" size="5">                    <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>                    <p class="modal-seneste-indbetaling">05-05-2023</p>                  </ion-col>                  <ion-col class="" size="5">                    <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>                  </ion-col>                 <ion-col size="2">                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>                </ion-col>                <ion-col class="" size="5">                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>                  <p class="modal-seneste-indbetaling">05-04-2023</p>                </ion-col>                <ion-col size="5">                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>                </ion-col>                <ion-col size="2">                  <ion-img class="placeholder-image-seneste" src="assets/images/placeholder_image.png"></ion-img>                </ion-col>                <ion-col class="" size="5">                  <p class="modal-seneste-title">{{ selectedSubscription.title }} {{ selectedSubscription.subscriptionplan }}</p>                  <p class="modal-seneste-indbetaling">06-03-2023</p>                </ion-col>                <ion-col size="5">                  <p class="modal-senest-pris ion-text-right">{{ selectedSubscription.payment.price }} kr.</p>                </ion-col>                <ion-col class="ion-text-center" size="12">                  <ion-button class="modal-seneste-knap ion-margin-top ion-margin-bottom" shape="round">Vis alle</ion-button>                </ion-col>              </ion-row>            </ion-grid>          </ion-content>        </ng-template>      </ion-modal>    </ion-grid>    <ion-grid>      <ion-row>        <ion-col size="12">          <h2 class="ion-text-uppercase">Bank wrapped</h2>          <ion-card class="bank-wrapped-card">            <ion-img class="bank-wrapped-logo-image ion-margin-top ion-margin-start" src="assets/images/logo.png"></ion-img>            <ion-card-header>              <ion-card-title class="bank-wrapped-card-title">Bank Wrapped</ion-card-title>            </ion-card-header>                      <ion-card-content class="card-content-tekst">Tryk for at se din wrapped for det nye år</ion-card-content>          </ion-card>        </ion-col>      </ion-row>      <!--Aktive tilbud section-->      <ion-row>        <ion-col size="12">          <h2 class="ion-text-uppercase">Aktive tilbud</h2>          <ion-card class="viaplay-card">            <ion-img class="viaplay-logo-image ion-margin-top ion-margin-start" src="assets/images/Viaplay.png"></ion-img>            <ion-card-header>              <ion-card-title class="viaplay-card-title">10% rabat</ion-card-title>            </ion-card-header>            <ion-card-content class="card-content-tekst">Læs mere</ion-card-content>          </ion-card>        </ion-col>        <ion-col size="12">          <ion-card class="disney-card">            <ion-img class="disney-logo-image ion-margin-top ion-margin-start" src="assets/images/disney.png"></ion-img>            <ion-card-header>              <ion-card-title class="disney-card-title">Graits oprettelse</ion-card-title>            </ion-card-header>            <ion-card-content class="card-content-tekst">Læs mere</ion-card-content>          </ion-card>        </ion-col>        <ion-col size="12">          <ion-card class="spotify-card">            <ion-img class="spotify-logo-image ion-margin-top ion-margin-start" src="assets/images/spotify.png"></ion-img>            <ion-card-header>              <ion-card-title class="spotify-card-title">3 mnd. 99,-</ion-card-title>            </ion-card-header>            <ion-card-content class="card-content-tekst">Læs mere</ion-card-content>          </ion-card>        </ion-col>      </ion-row>    </ion-grid>      </ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'LandingpagePage', 'selector': 'app-landingpage'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'NotificationSettingsModalComponent', 'selector': 'app-notification-settings-modal'},{'name': 'RegistrationPage', 'selector': 'app-registration'},{'name': 'Tab1Page', 'selector': 'app-tab1'},{'name': 'Tab2Page', 'selector': 'app-tab2'},{'name': 'Tab3Page', 'selector': 'app-tab3'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Tab1Page'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Tab1Page.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
