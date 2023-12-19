@@ -6,6 +6,7 @@ export const environment = {
   firebaseConfig: {
     apiKey: "AIzaSyANfu1dnilNyxBfqcG1hVCnB7wrHhefIGg",
     authDomain: "abonnementzonendb.firebaseapp.com",
+    databaseURL: "https://abonnementzonendb-default-rtdb.europe-west1.firebasedatabase.app",
     projectId: "abonnementzonendb",
     storageBucket: "abonnementzonendb.appspot.com",
     messagingSenderId: "90106635185",
@@ -22,3 +23,4 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+

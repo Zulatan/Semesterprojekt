@@ -12,10 +12,6 @@ module.exports = (sequelize, DataType) => {
             type: DataType.STRING,
             allowNull: false
         },
-        price: {
-            type: DataType.INTEGER,
-            allowNull: false
-        },
         startdate: {
             type: DataType.DATE,
             allowNull: false
@@ -28,19 +24,18 @@ module.exports = (sequelize, DataType) => {
             type: DataType.TEXT("long"),
             allowNull: true
         },
-        cycle: {
-            type: DataType.STRING,
-            allowNull: false
-        },
         subscriptionplan: {
             type: DataType.STRING,
             allowNull: false
         },
-        nextpayment: {
-            type: DataType.DATE,
-            allowNull: false
-        }
     });
+
+    Subscription.associate = (models) => {
+        Subscription.belongsTo(models.Payment, {
+          foreignKey: "payment_id",
+          as: "payment",
+        });
+      };
 
     return Subscription;
 };

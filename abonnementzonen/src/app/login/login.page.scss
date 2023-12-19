@@ -1,0 +1,64 @@
+ion-input{
+    --placeholder-color: rgb(0, 0, 0);
+    --placeholder-opacity: 100;
+    margin-left: 10px;
+
+}
+
+ion-item{
+    --border-color: rgb(0, 0, 0);
+    padding-right: 11px;
+    
+}
+
+ion-img{
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+h1{
+    font-weight: bold;
+}
+
+p{
+    font-size: 12px;
+}
+
+ion-button{
+    --border-radius: 15px;
+}
+
+.google-f{
+    color: #DB4437;
+}
+
+.fb-f{
+    color: #4285F4;
+}
+
+.ikkebruger{
+    margin-top: 30px;
+}
+
+.opretnybruger{
+    color: #00619A;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.h1ryk{
+    margin-top: 250px;
+}
+
+.buttonned{
+    font-weight: 600;
+}
+
+.login-google{
+    /*--border-color: #e40c0c;
+    --color: #e91111;*/
+    margin-top: 20px;
+}

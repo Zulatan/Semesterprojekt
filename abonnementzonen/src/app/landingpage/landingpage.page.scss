@@ -1,0 +1,37 @@
+.paragrafmargin{
+    margin-bottom: 0px;
+    font-weight: 600;
+    margin-top: 300px;
+    font-size: 14;
+}
+
+.overblik{
+    font-size: 14;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 150px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+ion-button{
+    --border-radius: 15px;
+    font-weight: 600;
+}
+
+.buttonned{
+    margin-top: 150px;
+    font-weight: 600;
+    padding: 0px 10px 0px 10px;
+}
+
+.logindbruger{
+    color: #00619A;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 14;
+}
+
+ p span{
+    cursor: pointer;
+}

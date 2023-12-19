@@ -1,0 +1,344 @@
+ .abonnementer-top-container {
+    padding: 40px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    .user-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .notification-icon-bg {
+        width: 45px;
+        height: 45px;
+        background: var(--bg200, #E5E5E5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+/*Alt efter ikonerne*/
+
+ion-grid{
+    padding: 0px;
+}
+
+ion-col{
+    padding: 16px;
+}
+
+.forside-header-text {
+    padding: 0 20px;
+}
+
+.forside-din-oversigt {
+    padding: 0 20px;
+}
+
+.placeholder-image{
+    height: 50px;
+    width: 50px;
+}
+
+.placeholder-image-detaljer{
+    margin: 10px 0px 0px 0px;
+}
+
+.placeholder-image-seneste{
+    height: 40px;
+    width: 40px;
+}
+
+
+.forside-din-oversigt-ion-grid {
+    background-color: var( --ion-color-primary, accent200);
+    color: #ffffff; 
+    border-radius: 10px; 
+}
+
+.forside-din-oversigt-ion-row{
+    padding: 10px 0px 10px 0px;
+}
+
+.forside-din-oversigt-ion-row ion-col{
+    padding: 10px;
+}
+
+.forrside-din-oversigt-borders{
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+}
+
+.bank-wrapped-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #CEE7F5 , #005D7E);
+    --color: #C8FFFF;
+}
+
+.bank-wrapped-logo-image {
+    width: 143px;
+    height: 18px;
+}
+
+.bank-wrapped-card-title {
+    margin-top: 70px;
+    --color: #C8FFFF;
+    font-weight: bold;
+}
+
+.card-content-tekst{
+    text-decoration: underline;
+    /*font-family: 'montserrat', sans-serif;*/
+    /* hvis jeg sletter denne, vil den gå tilbage til
+    eller anden font, men stadig vise montserrat?*/ 
+}
+
+/*aktive tilbud - general*/
+
+.card-content-tekst{
+    text-decoration: underline;
+    /*font-family: 'montserrat', sans-serif;*/
+    /* hvis jeg sletter denne, vil den gå tilbage til
+    eller anden font, men stadig vise montserrat?*/ 
+}
+
+/*dedikeret styling*/
+
+.viaplay-card-title {
+    margin-top: 70px;
+    --color: #162931;
+    font-weight: bold;
+}
+
+.viaplay-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #C20000 , #9000C2);
+    --color: #162931;
+}
+
+.viaplay-logo-image {
+    width: 100px;
+}
+
+.disney-card-title {
+    margin-top: 39px;
+    --color: #97E6ED;
+    font-weight: bold;
+}
+
+.disney-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #A1F3F8 , #081750);
+    --color: #97E6ED;
+}
+
+.disney-logo-image {
+    width: 100px;
+}
+
+.spotify-card-title {
+    margin-top: 70px;
+    --color: #FFFFFF;
+    font-weight: bold;
+}
+
+.spotify-card {
+    margin: 0px;
+    --background: linear-gradient(to bottom, #093516 , #299933);
+    --color: #FFFFFF;
+}
+
+.spotify-logo-image {
+    width: 100px;
+}
+
+/*generel modal*/
+
+.line-border{
+    border: 1px solid #E5E5E5;
+    height: 0px;
+    margin: 30px 0px 20px 0px;
+}
+
+/*indhentede abonnementer*/
+
+.backgroundrow{
+    background: linear-gradient(to left, #E5E5E5 97%, #00619A 3px);
+}
+
+.abonnementkort p{
+    margin: 0px 0px 0px 0px;
+}
+
+.Pricebigger{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.intervalsmall{
+    font-size: 10px;
+    margin: 0px;
+}
+
+.abonnement-boks{
+    border-radius: 0px 10px 10px 0px;
+}
+
+.abonnementkort-et{
+    padding: 10px 0px 10px 16px;
+}
+
+.abonnementkort-to{
+    padding: 10px 0px 10px 10px;
+}
+
+.abonnementkort-tre{
+    padding: 10px 20px 10px 5px;
+}
+
+.modal-knap{
+    --background-hover-opacity: 0%;
+    --color: #000000;
+    font-size: 12px;
+    text-transform: none;
+    text-decoration: underline;
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-knap-col{
+    padding: 0px;
+}
+
+/*inde i modal*/
+
+.modal-tilbage-pil{
+    --background-hover-opacity: 0%;
+}
+
+.abonnement-oplysninger ion-col{
+    padding: 0px;
+    margin: 0px;
+}
+
+.abonnement-modal-tekst{
+    margin: 10px 0px 0px 0px;
+}
+
+.abonnement-oplysninger h2{
+    margin: 10px 0px 0px 0px;
+}
+
+.payment-price-big{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0px 0px 0px;
+}
+
+/*buttons i modal*/
+.abonnement-modal-knapper{
+   padding: 0px;
+}
+
+.abonnement-modal-knapper ion-button{
+    --background-hover-opacity: 0%;
+    text-transform: none;
+    font-size: 12px;
+    padding: 0px 0px 0px 0px;
+
+}
+
+.abonnement-modal-knap-ekstra{
+    margin: 25px 0px 0px 0px;
+}
+
+/*detaljer i modal*/
+
+.modal-detaljer ion-col{
+    padding: 0px;
+}
+
+.modal-detaljer h2{
+    margin: 0px;
+}
+
+.modal-detaljer-p-left{
+    margin: 20px 0px 0px 0px;
+}
+
+.modal-detaljer-p-left-ekstra{
+    margin: 10px 0px 0px 0px;
+}
+
+.modal-detaljer-p-right-ekstra{
+    margin: 10px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.modal-detaljer-p-right{
+    margin: 20px 0px 0px 0px;
+    font-weight: bold;
+
+}
+
+/*modal kort*/
+
+.modal-kort h2{
+    margin: 0px;
+}
+
+.modal-kort ion-col{
+    padding: 0px;
+}
+
+.modal-kort p{
+    margin: 10px 0px 0px 0px;
+}
+
+.modal-kort-tyk{
+    font-weight: bold;
+}
+
+/*seneste betalinger*/
+.modal-seneste-betalinger ion-col{
+    padding: 0px;
+}
+
+.modal-seneste-betalinger h2{
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-seneste-title{
+    margin: 0px 0px 0px 0px;
+}
+
+.modal-seneste-indbetaling{
+    margin: 0px 0px 0px 0px;
+    font-size: 10px;
+}
+
+.modal-senest-pris{
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+}
+
+.modal-seneste-knap{
+    text-transform: none;
+    font-size: 12px;
+    --padding-end: 50px;
+    --padding-start: 50px;
+}
+
+.modal-gem-button{
+    --padding-end: 50px;
+    --padding-start: 50px;
+    text-transform: none;
+    font-size: 12px;
+}

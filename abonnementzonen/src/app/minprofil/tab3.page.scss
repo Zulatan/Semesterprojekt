@@ -1,0 +1,259 @@
+
+.minprofil-top-section {
+    max-height: 132px;
+       
+}
+
+ 
+    .minprofil-title{
+        padding-top: 0px;
+        margin-left: 30px;
+        text-align: center;
+    }
+
+    .minprofil-title h3{
+        margin-top: 0px;
+    }
+
+    .minprofil-email{
+        padding-top: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .minprofil-email h3{
+        margin-top: 0;
+    }
+
+
+.minprofil-text{
+   font-style: italic;
+   margin-top: 15px;
+}
+
+.minprofil-text p{
+    margin-top: 50px;
+}
+
+.minprofil-section{
+    margin-top: 5px;
+}
+
+
+  ion-card-content{
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .minprofil-indstillinger{
+    background-color: grey;
+    margin-top: 5px;
+  }
+
+  .profilbillede-card-content{
+    padding: 0;
+    margin: 0;
+  }
+
+
+    .item-native::after{
+        padding: 20px;
+        background-color: aqua;
+    }
+
+    .ion-item-edit::after{
+        padding-top: 5px;
+    }
+
+
+    ion-list:last-child ion-item:nth-last-child(-n+2) {
+        margin-top: 20px;
+      }
+
+
+    ion-item::part(native) {
+        background: var(--ion-color-secondary);
+        color: var(dark);
+        border-radius: 5px;
+        margin: 5px;
+        padding: 3px;
+        margin-right: 13px;
+        width: 96%;
+        padding-right: 2px;
+      }
+      
+      ion-item::part(detail-icon) {
+        color: var(dark);
+        opacity: 0.8;
+        font-size: 20px;
+
+      }
+
+      .camera-icon {
+        font-size: 24px;
+      }
+      
+      ion-fab-button {
+        color: black; 
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+
+      }
+
+      ion-list button[ion-item] {
+        width: 96%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 4px;
+        height: 58px;
+        background-color: var(--ion-color-secondary);
+        color: var(--ion-color-dark);
+      }
+
+      ion-list button[ion-item] ion-fab-button{
+        background-color: var(--ion-color-secondary);
+        margin-left: 8px;
+        margin-top: 3px;
+    }
+
+      ion-list button[ion-item] ion-fab-button ion-icon {
+        height: 40px;
+        width: 30px;
+        background-color: none;
+        
+    }
+
+    ion-list button[ion-item] {
+        display: flex;
+        align-items:center;
+      }
+      
+
+    ion-list button[ion-item] ion-label {
+        flex: 1;
+    }
+
+    ion-list button[ion-item] ion-label h4 {
+        margin: 6px 0px 0px 7px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+ 
+    }
+
+    .arrow-icon {
+        color: var(--ion-color-dark);
+        font-size: 20px;
+        margin-right: 8px;    
+    }
+
+    .minprofil-chip{
+        border-radius: 100px;
+        background: none;
+        padding-left: 2px;
+
+    }
+    
+    .list-ion-icon{
+        height: 28px;
+        width: 58px;
+        margin: 0;
+    }
+
+    .list-ion-label{
+        font-size: 15px;
+    }
+
+    .list-ion-label-fabbutton{
+        margin: 0px;
+    }
+
+    .ion-item-edit-slet_konto{
+        padding-top: 0px;
+    }
+
+    .ion-item-edit-log_af{
+        padding-top: 5px;
+        margin: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+
+ 
+
+    .edit-icon{
+        height: 25px;
+        width: 25px;
+        color: var(--ion-color-primary);
+        padding-left: 5px;
+        border-radius: 20px;
+        
+    }
+
+
+    .icon-person{
+        height: 85px;
+        width: 85px;
+        color: var(--ion-color-primary);
+    }
+
+    .ion-button-delete {
+        text-decoration: underline var(--ion-color-primary);
+        padding: 0;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+
+    .minprofil-top-section ion-img {
+        height: 80px;
+        border-radius: 200px;
+
+      }
+
+      .img-chip{
+            width: 104px;
+            height: 103px; 
+            border-radius: 464px;
+            z-index: 2;
+            background-color: var(--ion-color-primary);
+            img{
+                border-radius: 50px;
+            }
+      }
+
+    
+      .ion-img-camera {
+        width: 150px; 
+
+
+      }
+
+      .style-img img{
+        display: block;
+        width: 47%;
+        height: 87%;
+        border-radius: 200%;
+        background: rosybrown;
+        
+
+      }
+
+
+      /*ion-img {
+        display: block;
+        width: 104px;
+        height: 103px;
+        /* object-fit: inherit; 
+        object-position: inherit;
+        border-radius: 464px;
+        background: var(--ion-color-primary)
+      }*/
+
+
+
+

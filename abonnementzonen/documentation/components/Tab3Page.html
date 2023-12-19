@@ -1,0 +1,1488 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>abonnementzonen documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+
+               if ($darkModeToggles.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">abonnementzonen documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  Tab3Page</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/minprofil/tab3.page.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-tab3</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>tab3.page.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>tab3.page.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#alertButtons" >alertButtons</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#photoService" >photoService</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addPhotoToGallery" >addPhotoToGallery</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#deletePhoto" >deletePhoto</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#LogAfAlert" >LogAfAlert</a>
+                            </li>
+                            <li>
+                                <a href="#logout" >logout</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#openNotificationSettingsModal" >openNotificationSettingsModal</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#presentAlert" >presentAlert</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#presentFeedbackAlert" >presentFeedbackAlert</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#SletKontoAlert" >SletKontoAlert</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(modalController: ModalController, alertController: AlertController, authService: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, router: Router, photoService: <a href="../injectables/PhotoService.html" target="_self">PhotoService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/minprofil/tab3.page.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>modalController</td>
+                                                  
+                                                        <td>
+                                                                    <code>ModalController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>alertController</td>
+                                                  
+                                                        <td>
+                                                                    <code>AlertController</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>authService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>photoService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PhotoService.html" target="_self" >PhotoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPhotoToGallery"></a>
+                    <span class="name">
+                        <span ><b>addPhotoToGallery</b></span>
+                        <a href="#addPhotoToGallery"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>addPhotoToGallery()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePhoto"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>deletePhoto</b></span>
+                        <a href="#deletePhoto"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deletePhoto(photo: <a href="../interfaces/UserPhoto.html" target="_self">UserPhoto</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="51"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:51</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>photo</td>
+                                            <td>
+                                                            <code><a href="../interfaces/UserPhoto.html" target="_self" >UserPhoto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="LogAfAlert"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>LogAfAlert</b></span>
+                        <a href="#LogAfAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>LogAfAlert()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="logout"></a>
+                    <span class="name">
+                        <span ><b>logout</b></span>
+                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>logout()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="32"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:32</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openNotificationSettingsModal"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>openNotificationSettingsModal</b></span>
+                        <a href="#openNotificationSettingsModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>openNotificationSettingsModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="131"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:131</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>unknown</code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="presentAlert"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>presentAlert</b></span>
+                        <a href="#presentAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>presentAlert()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="145"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:145</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="presentFeedbackAlert"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>presentFeedbackAlert</b></span>
+                        <a href="#presentFeedbackAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>presentFeedbackAlert()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="100"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:100</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SletKontoAlert"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>SletKontoAlert</b></span>
+                        <a href="#SletKontoAlert"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>SletKontoAlert()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="80"
+                                    class="link-to-prism">src/app/minprofil/tab3.page.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="alertButtons"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>alertButtons</b></span>
+                        <a href="#alertButtons"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      text: &#x27;No&#x27;,
+      cssClass: &#x27;alert-button-cancel&#x27;,
+    },
+    {
+      text: &#x27;Yes&#x27;,
+      cssClass: &#x27;alert-button-confirm&#x27;,
+    },
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/minprofil/tab3.page.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="photoService"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>photoService</b></span>
+                        <a href="#photoService"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../injectables/PhotoService.html" target="_self" >PhotoService</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/minprofil/tab3.page.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { ModalController } from &#x27;@ionic/angular&#x27;;
+import { AuthService } from &#x27;src/services/auth.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import { PhotoService, UserPhoto } from &#x27;../services/photo.service&#x27;;
+import { AlertController } from &#x27;@ionic/angular&#x27;;
+import { NotificationSettingsModalComponent } from &#x27;../notification-settings-modal/notification-settings-modal.component&#x27;;
+
+
+
+@Component({
+  selector: &#x27;app-tab3&#x27;,
+  templateUrl: &#x27;tab3.page.html&#x27;,
+  styleUrls: [&#x27;tab3.page.scss&#x27;]
+})
+export class Tab3Page implements OnInit {
+
+  public alertButtons &#x3D; [
+    {
+      text: &#x27;No&#x27;,
+      cssClass: &#x27;alert-button-cancel&#x27;,
+    },
+    {
+      text: &#x27;Yes&#x27;,
+      cssClass: &#x27;alert-button-confirm&#x27;,
+    },
+  ];
+
+
+  constructor(private modalController: ModalController, private alertController: AlertController, private authService: AuthService, private router: Router, public photoService: PhotoService) {}
+
+  logout() {
+    this.authService.logout().then(() &#x3D;&gt; {
+      // Redirect or perform other actions after logout
+      this.router.navigateByUrl(&#x27;login&#x27;)
+    }).catch((error) &#x3D;&gt; {
+      console.error(error);
+    });
+  }
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+   } 
+
+  //method to add a photo 
+  addPhotoToGallery() {
+   this.photoService.addNewToGallery();
+  } 
+
+
+  // Method to delete a photo
+  async deletePhoto(photo: UserPhoto) {
+    await this.photoService.deletePhoto(photo);
+  }
+
+
+  //alert log af
+  async LogAfAlert() {
+    const alert &#x3D; await this.alertController.create({
+      header: &#x27;Log af&#x27;,
+      message: &#x27;Du er i gang med at logge ud&#x27;,
+      buttons: [
+        {
+          text: &#x27;Annuller&#x27;,
+          role: &#x27;cancel&#x27;
+        },
+        {
+          text: &#x27;Bekræft&#x27;,
+          handler: () &#x3D;&gt; {
+            this.logout();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+  //alert log af
+  async SletKontoAlert() {
+    const alert &#x3D; await this.alertController.create({
+      header: &#x27;Slet konto&#x27;,
+      message: &#x27;Du er igang med at slette din konto&#x27;,
+      buttons: [
+        {
+          text:&#x27;Annuller&#x27;,
+          role: &#x27;cancel&#x27;
+        },
+        {
+          text: &#x27;Bekræft&#x27;
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+ //feedback alert
+ async presentFeedbackAlert() {
+  const alert &#x3D; await this.alertController.create({
+    header: &#x27;Hjælp &amp; feedback&#x27;,
+    message: &#x27;Har du brug for hjælp eller har du lyst til at give feedback, så giv os venligst besked&#x27;,
+    inputs: [
+      {
+        placeholder: &#x27;Navn&#x27;,
+      },
+
+      {
+        name: &#x27;feedback&#x27;,
+        type: &#x27;text&#x27;,
+        placeholder: &#x27;Skriv din besked&#x27;
+      }
+    ],
+    buttons: [
+      {
+        text: &#x27;Annuller&#x27;,
+        role: &#x27;cancel&#x27;,
+      },
+      {
+        text: &#x27;Send&#x27;,
+      }
+    ]
+  });
+
+  await alert.present();
+}
+
+  
+  //modal til notifikationer
+  async openNotificationSettingsModal() {
+    const modal &#x3D; await this.modalController.create({
+      component: NotificationSettingsModalComponent,
+    });
+
+    modal.onDidDismiss().then((data) &#x3D;&gt; {
+      if (data &amp;&amp; data.data) {
+        console.log(&#x27;Notification Enabled:&#x27;, data.data.notificationEnabled);
+      }
+    });
+
+    return await modal.present();
+  }
+
+  async presentAlert() {
+    const alert &#x3D; await this.alertController.create({
+      header: &#x27;Are you sure?&#x27;,
+      buttons: this.alertButtons,
+    });
+
+    await alert.present();
+  }
+
+}
+  
+
+/*
+  changeColorAndText() {
+    const button &#x3D; document.getElementById(&#x27;minprofil-user-icon&#x27;);
+
+    // Array med forskellige farver
+    const colors &#x3D; [&#x27;#2d2d2d&#x27;];
+
+    // Generer tilfældig farve
+    const randomColor &#x3D; colors[Math.floor(Math.random() * colors.length)];
+
+    // Skift farve og tekst
+    button.style.backgroundColor &#x3D; randomColor;
+    button.innerHTML &#x3D; &#x27;Ændre profilbillede&#x27;;
+  }
+*/</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!--ion-photo - add a photo--&gt;
+&lt;ion-content class&#x3D;&quot;minprofil-top-section&quot;&gt;
+  &lt;ion-grid&gt;
+    &lt;ion-row&gt;
+      &lt;ion-fab vertical&#x3D;&quot;top&quot; horizontal&#x3D;&quot;center&quot;&gt;
+        &lt;ion-img class&#x3D;&quot;ion-img-camera style-img&quot; *ngIf&#x3D;&quot;photoService.photos.length &gt; 0&quot; [src]&#x3D;&quot;photoService.photos[0].webviewPath&quot;&gt;&lt;/ion-img&gt;
+        &lt;ion-button class&#x3D;&quot;ion-button-delete&quot; *ngIf&#x3D;&quot;photoService.photos.length &gt; 0&quot; (click)&#x3D;&quot;deletePhoto(photoService.photos[0])&quot; lines&#x3D;&quot;none&quot; fill&#x3D;&quot;clear&quot; color&#x3D;&quot;primary&quot;&gt;Slet profilbillede&lt;/ion-button&gt;
+        &lt;ion-chip class&#x3D;&quot;minprofil-chip&quot; vertical&#x3D;&quot;top&quot; horizontal&#x3D;&quot;center&quot; *ngIf&#x3D;&quot;!photoService.photos.length&quot;&gt;
+            &lt;ion-icon class&#x3D;&quot;icon-person&quot; name&#x3D;&quot;person-circle&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/ion-chip&gt;
+      &lt;/ion-fab&gt;
+    &lt;/ion-row&gt;
+  &lt;/ion-grid&gt;
+&lt;/ion-content&gt;
+
+&lt;!--min profil detajler--&gt;
+  &lt;ion-content&gt;
+    &lt;ion-grid class&#x3D;&quot;minprofil-section&quot;&gt;
+      &lt;div class&#x3D;&quot;minprofil-title&quot;&gt;
+        &lt;h3&gt;
+          Hannah Phoebe Ejada Clausen
+          &lt;ion-icon class&#x3D;&quot;edit-icon&quot; name&#x3D;&quot;create-outline&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;minprofil-email&quot;&gt;
+        &lt;p&gt;
+          fornavnefternavn&amp;#64;gmail.com
+        &lt;/p&gt;
+        &lt;div class&#x3D;&quot;minprofil-text&quot;&gt;
+          &lt;p&gt;
+            Her kan du ændre i din profil, f.eks. email, adgangskode og andre indstillinger.
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/ion-grid&gt;
+
+    &lt;!--min profil - liste- start --&gt;
+      &lt;!--min profil - liste - skift adgangskode--&gt;
+      &lt;ion-list&gt;
+        &lt;ion-item detail&#x3D;&quot;true&quot; lines&#x3D;&quot;none&quot;&gt;
+          &lt;ion-icon class&#x3D;&quot;list-ion-icon&quot; aria-hidden&#x3D;&quot;true&quot; name&#x3D;&quot;lock-open-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          &lt;ion-label&gt;
+            &lt;h4 class&#x3D;&quot;list-ion-label&quot;&gt;Adgangskode&lt;/h4&gt;
+          &lt;/ion-label&gt;
+        &lt;/ion-item&gt;
+      &lt;/ion-list&gt;
+
+
+      &lt;!--min profil - liste - ændre i profilbillede--&gt;
+      &lt;ion-list&gt;
+        &lt;button ion-item detail&#x3D;&quot;true&quot; (click)&#x3D;&quot;addPhotoToGallery()&quot; lines&#x3D;&quot;none&quot;&gt;
+            &lt;ion-fab-button aria-hidden&#x3D;&quot;true&quot; slot&#x3D;&quot;start&quot; size&#x3D;&quot;small&quot; class&#x3D;&quot;ion-padding&quot; color&#x3D;&quot;transparent&quot;&gt;
+              &lt;ion-icon class&#x3D;&quot;camera-icon&quot; aria-hidden&#x3D;&quot;true&quot; name&#x3D;&quot;camera-outline&quot; color&#x3D;&quot;dark&quot; &gt;&lt;/ion-icon&gt;
+            &lt;/ion-fab-button&gt;
+            &lt;ion-label&gt;
+              &lt;h4 class&#x3D;&quot;list-ion-label list-ion-label-pb&quot;&gt;Ændre profilbillede&lt;/h4&gt;
+            &lt;/ion-label&gt;
+            &lt;ion-icon class&#x3D;&quot;arrow-icon&quot; name&#x3D;&quot;chevron-forward-outline&quot;&gt;&lt;/ion-icon&gt;
+        &lt;/button&gt;
+      &lt;/ion-list&gt;
+
+      &lt;!--min profil - liste - hjælp og feedback--&gt;
+      &lt;ion-list&gt;
+        &lt;ion-item detail&#x3D;&quot;true&quot; (click)&#x3D;&quot;presentFeedbackAlert()&quot; lines&#x3D;&quot;none&quot;&gt;
+          &lt;ion-icon class&#x3D;&quot;list-ion-icon&quot; aria-hidden&#x3D;&quot;true&quot; name&#x3D;&quot;happy-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          &lt;ion-label&gt;
+            &lt;h4 class&#x3D;&quot;list-ion-label&quot;&gt;Hjælp &amp; feedback&lt;/h4&gt;
+          &lt;/ion-label&gt;
+        &lt;/ion-item&gt;
+      &lt;/ion-list&gt;
+    
+      &lt;!--min profil - liste - indstillinger (notifikationer)--&gt;
+      &lt;ion-list&gt;
+        &lt;ion-item detail&#x3D;&quot;true&quot; (click)&#x3D;&quot;openNotificationSettingsModal()&quot; lines&#x3D;&quot;none&quot;&gt;
+          &lt;ion-icon class&#x3D;&quot;list-ion-icon&quot; aria-hidden&#x3D;&quot;true&quot; name&#x3D;&quot;settings-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          &lt;ion-label&gt;
+            &lt;h4 class&#x3D;&quot;list-ion-label&quot;&gt;Indstillinger&lt;/h4&gt;
+          &lt;/ion-label&gt;
+        &lt;/ion-item&gt;
+      &lt;/ion-list&gt;
+
+      &lt;!--min profil - liste - logaf--&gt;
+      &lt;ion-list&gt;
+          &lt;ion-item detail&#x3D;&quot;true&quot; (click)&#x3D;&quot;LogAfAlert()&quot; class&#x3D;&quot;ion-item-edit ion-item-edit-log_af&quot; lines&#x3D;&quot;none&quot;&gt;
+            &lt;ion-icon class&#x3D;&quot;list-ion-icon&quot; aria-hidden&#x3D;&quot;true&quot; name&#x3D;&quot;lock-open-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+              &lt;ion-label&gt;
+                &lt;h4 class&#x3D;&quot;list-ion-label&quot;&gt;Log af&lt;/h4&gt;
+              &lt;/ion-label&gt;
+              &lt;ion-alert trigger&#x3D;&quot;present-alert&quot; class&#x3D;&quot;custom-alert&quot; header&#x3D;&quot;Are you sure?&quot; [buttons]&#x3D;&quot;alertButtons&quot;&gt;&lt;/ion-alert&gt;
+          &lt;/ion-item&gt;
+      &lt;/ion-list&gt;
+
+
+      &lt;!--min profil - liste - slet konto--&gt;
+      &lt;ion-list&gt;
+        &lt;ion-item detail&#x3D;&quot;true&quot; (click)&#x3D;&quot;SletKontoAlert()&quot; class&#x3D;&quot;ion-item-edit ion-item-edit-slet_konto&quot; lines&#x3D;&quot;none&quot;&gt;
+          &lt;ion-icon class&#x3D;&quot;list-ion-icon&quot; aria-hidden&#x3D;&quot;true&quot; name&#x3D;&quot;close-circle-outline&quot; slot&#x3D;&quot;start&quot;&gt;&lt;/ion-icon&gt;
+          &lt;ion-label&gt;
+            &lt;h4 class&#x3D;&quot;list-ion-label&quot;&gt;Slet konto&lt;/h4&gt;
+          &lt;/ion-label&gt;
+        &lt;/ion-item&gt;
+      &lt;/ion-list&gt;
+
+      &lt;!--min profil - liste - slut--&gt;
+  &lt;/ion-content&gt;
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>tab3.page.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">
+.minprofil-top-section {
+    max-height: 132px;
+       
+}
+
+ 
+    .minprofil-title{
+        padding-top: 0px;
+        margin-left: 30px;
+        text-align: center;
+    }
+
+    .minprofil-title h3{
+        margin-top: 0px;
+    }
+
+    .minprofil-email{
+        padding-top: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+    .minprofil-email h3{
+        margin-top: 0;
+    }
+
+
+.minprofil-text{
+   font-style: italic;
+   margin-top: 15px;
+}
+
+.minprofil-text p{
+    margin-top: 50px;
+}
+
+.minprofil-section{
+    margin-top: 5px;
+}
+
+
+  ion-card-content{
+    padding: 5px;
+    margin: 2px;
+  }
+
+  .minprofil-indstillinger{
+    background-color: grey;
+    margin-top: 5px;
+  }
+
+  .profilbillede-card-content{
+    padding: 0;
+    margin: 0;
+  }
+
+
+    .item-native::after{
+        padding: 20px;
+        background-color: aqua;
+    }
+
+    .ion-item-edit::after{
+        padding-top: 5px;
+    }
+
+
+    ion-list:last-child ion-item:nth-last-child(-n+2) {
+        margin-top: 20px;
+      }
+
+
+    ion-item::part(native) {
+        background: var(--ion-color-secondary);
+        color: var(dark);
+        border-radius: 5px;
+        margin: 5px;
+        padding: 3px;
+        margin-right: 13px;
+        width: 96%;
+        padding-right: 2px;
+      }
+      
+      ion-item::part(detail-icon) {
+        color: var(dark);
+        opacity: 0.8;
+        font-size: 20px;
+
+      }
+
+      .camera-icon {
+        font-size: 24px;
+      }
+      
+      ion-fab-button {
+        color: black; 
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+
+      }
+
+      ion-list button[ion-item] {
+        width: 96%;
+        margin: 5px;
+        border-radius: 5px;
+        padding: 4px;
+        height: 58px;
+        background-color: var(--ion-color-secondary);
+        color: var(--ion-color-dark);
+      }
+
+      ion-list button[ion-item] ion-fab-button{
+        background-color: var(--ion-color-secondary);
+        margin-left: 8px;
+        margin-top: 3px;
+    }
+
+      ion-list button[ion-item] ion-fab-button ion-icon {
+        height: 40px;
+        width: 30px;
+        background-color: none;
+        
+    }
+
+    ion-list button[ion-item] {
+        display: flex;
+        align-items:center;
+      }
+      
+
+    ion-list button[ion-item] ion-label {
+        flex: 1;
+    }
+
+    ion-list button[ion-item] ion-label h4 {
+        margin: 6px 0px 0px 7px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+
+ 
+    }
+
+    .arrow-icon {
+        color: var(--ion-color-dark);
+        font-size: 20px;
+        margin-right: 8px;    
+    }
+
+    .minprofil-chip{
+        border-radius: 100px;
+        background: none;
+        padding-left: 2px;
+
+    }
+    
+    .list-ion-icon{
+        height: 28px;
+        width: 58px;
+        margin: 0;
+    }
+
+    .list-ion-label{
+        font-size: 15px;
+    }
+
+    .list-ion-label-fabbutton{
+        margin: 0px;
+    }
+
+    .ion-item-edit-slet_konto{
+        padding-top: 0px;
+    }
+
+    .ion-item-edit-log_af{
+        padding-top: 5px;
+        margin: 0;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+
+ 
+
+    .edit-icon{
+        height: 25px;
+        width: 25px;
+        color: var(--ion-color-primary);
+        padding-left: 5px;
+        border-radius: 20px;
+        
+    }
+
+
+    .icon-person{
+        height: 85px;
+        width: 85px;
+        color: var(--ion-color-primary);
+    }
+
+    .ion-button-delete {
+        text-decoration: underline var(--ion-color-primary);
+        padding: 0;
+        font-family: &#x27;Montserrat&#x27;;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+
+    .minprofil-top-section ion-img {
+        height: 80px;
+        border-radius: 200px;
+
+      }
+
+      .img-chip{
+            width: 104px;
+            height: 103px; 
+            border-radius: 464px;
+            z-index: 2;
+            background-color: var(--ion-color-primary);
+            img{
+                border-radius: 50px;
+            }
+      }
+
+    
+      .ion-img-camera {
+        width: 150px; 
+
+
+      }
+
+      .style-img img{
+        display: block;
+        width: 47%;
+        height: 87%;
+        border-radius: 200%;
+        background: rosybrown;
+        
+
+      }
+
+
+      /*ion-img {
+        display: block;
+        width: 104px;
+        height: 103px;
+        /* object-fit: inherit; 
+        object-position: inherit;
+        border-radius: 464px;
+        background: var(--ion-color-primary)
+      }*/
+
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!--ion-photo - add a photo--><ion-content class="minprofil-top-section">  <ion-grid>    <ion-row>      <ion-fab vertical="top" horizontal="center">        <ion-img class="ion-img-camera style-img" *ngIf="photoService.photos.length > 0" [src]="photoService.photos[0].webviewPath"></ion-img>        <ion-button class="ion-button-delete" *ngIf="photoService.photos.length > 0" (click)="deletePhoto(photoService.photos[0])" lines="none" fill="clear" color="primary">Slet profilbillede</ion-button>        <ion-chip class="minprofil-chip" vertical="top" horizontal="center" *ngIf="!photoService.photos.length">            <ion-icon class="icon-person" name="person-circle"></ion-icon>        </ion-chip>      </ion-fab>    </ion-row>  </ion-grid></ion-content><!--min profil detajler-->  <ion-content>    <ion-grid class="minprofil-section">      <div class="minprofil-title">        <h3>          Hannah Phoebe Ejada Clausen          <ion-icon class="edit-icon" name="create-outline"></ion-icon>        </h3>      </div>      <div class="minprofil-email">        <p>          fornavnefternavn&#64;gmail.com        </p>        <div class="minprofil-text">          <p>            Her kan du ændre i din profil, f.eks. email, adgangskode og andre indstillinger.          </p>        </div>      </div>    </ion-grid>    <!--min profil - liste- start -->      <!--min profil - liste - skift adgangskode-->      <ion-list>        <ion-item detail="true" lines="none">          <ion-icon class="list-ion-icon" aria-hidden="true" name="lock-open-outline" slot="start"></ion-icon>          <ion-label>            <h4 class="list-ion-label">Adgangskode</h4>          </ion-label>        </ion-item>      </ion-list>      <!--min profil - liste - ændre i profilbillede-->      <ion-list>        <button ion-item detail="true" (click)="addPhotoToGallery()" lines="none">            <ion-fab-button aria-hidden="true" slot="start" size="small" class="ion-padding" color="transparent">              <ion-icon class="camera-icon" aria-hidden="true" name="camera-outline" color="dark" ></ion-icon>            </ion-fab-button>            <ion-label>              <h4 class="list-ion-label list-ion-label-pb">Ændre profilbillede</h4>            </ion-label>            <ion-icon class="arrow-icon" name="chevron-forward-outline"></ion-icon>        </button>      </ion-list>      <!--min profil - liste - hjælp og feedback-->      <ion-list>        <ion-item detail="true" (click)="presentFeedbackAlert()" lines="none">          <ion-icon class="list-ion-icon" aria-hidden="true" name="happy-outline" slot="start"></ion-icon>          <ion-label>            <h4 class="list-ion-label">Hjælp & feedback</h4>          </ion-label>        </ion-item>      </ion-list>          <!--min profil - liste - indstillinger (notifikationer)-->      <ion-list>        <ion-item detail="true" (click)="openNotificationSettingsModal()" lines="none">          <ion-icon class="list-ion-icon" aria-hidden="true" name="settings-outline" slot="start"></ion-icon>          <ion-label>            <h4 class="list-ion-label">Indstillinger</h4>          </ion-label>        </ion-item>      </ion-list>      <!--min profil - liste - logaf-->      <ion-list>          <ion-item detail="true" (click)="LogAfAlert()" class="ion-item-edit ion-item-edit-log_af" lines="none">            <ion-icon class="list-ion-icon" aria-hidden="true" name="lock-open-outline" slot="start"></ion-icon>              <ion-label>                <h4 class="list-ion-label">Log af</h4>              </ion-label>              <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" [buttons]="alertButtons"></ion-alert>          </ion-item>      </ion-list>      <!--min profil - liste - slet konto-->      <ion-list>        <ion-item detail="true" (click)="SletKontoAlert()" class="ion-item-edit ion-item-edit-slet_konto" lines="none">          <ion-icon class="list-ion-icon" aria-hidden="true" name="close-circle-outline" slot="start"></ion-icon>          <ion-label>            <h4 class="list-ion-label">Slet konto</h4>          </ion-label>        </ion-item>      </ion-list>      <!--min profil - liste - slut-->  </ion-content></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'LandingpagePage', 'selector': 'app-landingpage'},{'name': 'LoginPage', 'selector': 'app-login'},{'name': 'NotificationSettingsModalComponent', 'selector': 'app-notification-settings-modal'},{'name': 'RegistrationPage', 'selector': 'app-registration'},{'name': 'Tab1Page', 'selector': 'app-tab1'},{'name': 'Tab2Page', 'selector': 'app-tab2'},{'name': 'Tab3Page', 'selector': 'app-tab3'},{'name': 'TabsPage', 'selector': 'app-tabs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'Tab3Page'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'Tab3Page.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
