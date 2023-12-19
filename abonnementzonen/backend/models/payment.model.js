@@ -14,7 +14,7 @@ module.exports = (sequelize, DataType) => {
         },
         nextpayment: {
             type: DataType.DATE,
-            allowNull:false
+            allowNull: true
         },
         cycle: {
             type: DataType.STRING,
