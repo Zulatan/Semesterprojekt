@@ -18,16 +18,19 @@ export class PhotoService {
 
   // Method to delete a photo
   public async deletePhoto(photo: UserPhoto) {
-    // Remove the photo from the array
-    this.photos = this.photos.filter(p => p !== photo);
+    // Check if the photo exists in the array
+    const index = this.photos.indexOf(photo);
+    if (index !== -1) {
+      // Remove the photo from the array
+      this.photos.splice(index, 1);
 
-    // Update the stored photos in Preferences
-    Preferences.set({
-      key: this.PHOTO_STORAGE,
-      value: JSON.stringify(this.photos),
-    });
+      // Update the stored photos in Preferences
+      Preferences.set({
+        key: this.PHOTO_STORAGE,
+        value: JSON.stringify(this.photos),
+      });
+    }
   }
-
 
   // Method to save a photo
   private async savePicture(photo: Photo) { 
@@ -56,8 +59,11 @@ export class PhotoService {
     const capturedPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      allowEditing: true,
+      quality: 100,
     });
+
+
       // Save the picture and add it to photo collection
       const savedImageFile = await this.savePicture(capturedPhoto);
       this.photos.unshift(savedImageFile);
