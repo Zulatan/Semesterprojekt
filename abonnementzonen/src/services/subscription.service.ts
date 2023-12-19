@@ -16,6 +16,7 @@ export class SubscriptionCreationService {
   }
 
   getAllSubscriptions(): Observable<any[]> {
+    console.log('hej');
     return this.http.get<any[]>(`${this.apiURL}/subscription`);
   }
 }

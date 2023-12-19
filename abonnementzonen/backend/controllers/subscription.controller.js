@@ -123,6 +123,7 @@ exports.findOne = (req, res) => {
 
 // find all subscriptions
 exports.findAll = (req, res) => {
+  console.log('hej igen');
   Subscription.findAll({
     include: [{ model: Payment, as: 'payment' }]
   })
