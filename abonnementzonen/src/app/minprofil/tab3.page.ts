@@ -60,11 +60,14 @@ export class Tab3Page implements OnInit {
       message: 'Du er i gang med at logge ud',
       buttons: [
         {
-          text:'Annuller',
+          text: 'Annuller',
           role: 'cancel'
         },
         {
-          text: 'Bekræft'
+          text: 'Bekræft',
+          handler: () => {
+            this.logout();
+          }
         }
       ]
     });
