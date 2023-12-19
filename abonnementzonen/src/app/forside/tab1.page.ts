@@ -21,6 +21,9 @@ export class Tab1Page implements OnInit {
     this.subscriptionService.getAllSubscriptionsWithPayments().subscribe((data) => {
       console.log('Subscription with payments:', data);
       this.subscriptions = data;
+
+      this.subscriptions = data.sort((a, b) => new Date(b.startdate).getTime() - new Date(a.startdate).getTime()).slice(0, 3);
+
     });
 
     this.authService.getUserData().subscribe((user) => {
