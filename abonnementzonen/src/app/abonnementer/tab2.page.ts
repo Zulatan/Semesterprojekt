@@ -226,7 +226,7 @@ export class Tab2Page implements OnInit {
 
   // Fetch all subscriptions and display them
   fetchSubscriptions() {
-    this.subscriptionService.getAllSubscriptions()
+    this.subscriptionCreationService.getAllSubscriptions()
       .subscribe(subscriptions => {
         console.log('All subscriptions', subscriptions);
         this.subscriptions = subscriptions; // Update the property
