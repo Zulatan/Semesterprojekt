@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from 'src/services/auth.service';
+import { SubscriptionService } from 'src/services/subscription.service';
 
 
 
@@ -15,26 +16,40 @@ export class Tab2Page implements OnInit {
 
   user: any;
 
-  constructor(private modalController: ModalController, private http: HttpClient, private authService: AuthService) {}
+  constructor(
+    private modalController: ModalController, 
+    private http: HttpClient, 
+    private authService: AuthService, 
+    private subscriptionService: SubscriptionService
+    ) {}
 
   ngOnInit(): void {
     this.authService.getUserData().subscribe((user) => {
       this.user = user;
     });
+
+    this.fetchSubscriptions();
   }
 
   subscription: any = {
     subscription_id: null,
     title: '',
-    price: '',
-    startdate: '',
+    startdate: new Date().toISOString(),
     category: '',
     image: '',
     cycle: '',
     subscriptionplan: '',
     nextpayment: '',
-    user_id: null
-  }
+    user_id: null,
+    payment: {
+      price: '',
+      nextpayment: '',
+      cycle: '',
+    },
+  };
+
+  subscriptions: any[] = [];
+
 
   isModalOpen = false;
 
@@ -48,20 +63,49 @@ export class Tab2Page implements OnInit {
   }
 
   saveSelectedOption() {
-    // Close the modal
-    this.closeModal();
+    // our subscription create service
+    this.subscriptionService.createSubscription(this.subscription)
+      .subscribe(response => {
+        console.log('Subscription saved successfully', response);
+
+        this.closeModal();
+
+        // resets the subscription object after successfully saving
+        this.subscription = {
+          subscription_id: null,
+          title: '',
+          startdate: new Date().toISOString(),
+          category: '',
+          image: '',
+          cycle: '',
+          subscriptionplan: '',
+          nextpayment: '',
+          user_id: null,
+          payment: {
+            price: '',
+            nextpayment: null,
+            cycle: '',
+          },
+        };
+
+        // Fetch all subscriptions again to update the displayed list
+        this.fetchSubscriptions();
+      }, error => {
+        console.error('Failed to save subscription', error);
+      });
   }
 
-  // onSubscriptionSubmit() {
-  //     // Make HTTP POST request to your Node.js server
-  //     this.http.post('http://localhost:8080/api/subscription')
-  //       .subscribe(response => {
-  //         console.log('Registration successful', response);
-  //         // You can handle success, navigate to another page, etc.
-  //       }, error => {
-  //         console.error('Registration failed', error);
-  //         // Handle the error, show a message to the user, etc.
-  //       });
-  //   }
+
+  // Fetch all subscriptions and display them
+  fetchSubscriptions() {
+    this.subscriptionService.getAllSubscriptions()
+      .subscribe(subscriptions => {
+        console.log('All subscriptions', subscriptions);
+        this.subscriptions = subscriptions; // Update the property
+      }, error => {
+        console.error('Failed to fetch subscriptions', error);
+        // Handle the error, show a message to the user, etc.
+      });
+  }
 
 }
